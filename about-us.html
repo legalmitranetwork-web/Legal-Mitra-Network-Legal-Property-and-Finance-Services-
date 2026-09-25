@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Legal Mitra Network - Legal, Property & Financial Ecosystem</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#001126',
+                            800: '#001c3d',
+                            700: '#002b5c',
+                            600: '#003a7a'
+                        },
+                        gold: {
+                            300: '#f3e092',
+                            400: '#F4C430',
+                            500: '#D4AF37',
+                            600: '#AA820A'
+                        },
+                        offwhite: '#f8fafc',
+                        charcoal: '#1E293B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(0, 17, 38, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F4C430 0%, #D4AF37 50%, #f3e092 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4C430 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #F4C430 0%, #D4AF37 100%);
+            box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #001126;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        .tab-btn.active {
+            border-bottom: 3px solid #D4AF37;
+            color: #D4AF37;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-offwhite text-charcoal font-sans antialiased overflow-x-hidden">
+
+    <!-- Top Info Bar -->
+    <div class="bg-navy-900 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-envelope text-gold-500 mr-1"></i> support@legalmitra.com</span>
+                <span><i class="fa-solid fa-phone text-gold-500 mr-1"></i> +91 1800-123-4567</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-gold-400 font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> Your Rights | Your Protection (आपले हक्क | आपले संरक्षण)</span>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-navy-700/50 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-navy-800 border-2 border-gold-500 flex items-center justify-center text-gold-500 shadow-md">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold font-serif tracking-wide block leading-none">LEGAL MITRA</span>
+                        <span class="text-[10px] text-gold-400 tracking-widest uppercase font-semibold">Network Platform</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+                    <a href="index.html" class="hover:text-gold-400 transition">Home</a>
+                    <a href="about-us.html" class="text-gold-400 font-semibold">About Us</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-gold-400 py-2">
+                            Services <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 hidden group-hover:block w-56 bg-navy-900 border border-slate-700 rounded-lg shadow-xl py-2 z-50">
+                            <a href="services.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">All Services Overview</a>
+                            <a href="property-services.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Property & Real Estate</a>
+                            <a href="finance-services.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Financial & Loans</a>
+                            <a href="legal-services.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Legal Solutions</a>
+                        </div>
+                    </div>
+
+                    <a href="partner-network.html" class="hover:text-gold-400 transition">Partner Network</a>
+                    <a href="calculators.html" class="hover:text-gold-400 transition">Calculators</a>
+                    <a href="educational-hub.html" class="hover:text-gold-400 transition">Learning Hub</a>
+
+                    <!-- More Pages Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-gold-400 py-2">
+                            More Pages <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 hidden group-hover:block w-60 bg-navy-900 border border-slate-700 rounded-lg shadow-xl py-2 z-50">
+                            <a href="marketing-hub.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Marketing Hub</a>
+                            <a href="document-checklist.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Document Checklist</a>
+                            <a href="blog.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Legal & Tax Blog</a>
+                            <a href="testimonials.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Client Testimonials</a>
+                            <a href="contact-us.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Contact Us</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Auth Buttons & Dashboards -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="user-dashboard.html" class="px-4 py-2 text-xs font-semibold text-slate-200 border border-slate-600 rounded-lg hover:border-gold-400 hover:text-gold-400 transition">Client Login</a>
+                    <a href="agent-dashboard.html" class="gold-btn px-4 py-2 text-xs font-bold text-navy-900 rounded-lg shadow">Agent Portal</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-200 hover:text-gold-400 text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden lg:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Home</a>
+            <a href="about-us.html" class="block py-2 text-gold-400 font-semibold border-b border-slate-800">About Us</a>
+            <a href="services.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">All Services</a>
+            <a href="partner-network.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Partner Network</a>
+            <a href="calculators.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Calculators</a>
+            <a href="educational-hub.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Educational Hub</a>
+            <a href="user-dashboard.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">User Dashboard</a>
+            <a href="agent-dashboard.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Agent Dashboard</a>
+            <a href="contact-us.html" class="block py-2 text-slate-200 hover:text-gold-400">Contact Support</a>
+        </div>
+    </header>
+
+    <!-- Hero Header Section -->
+    <section class="relative bg-navy-900 text-white py-20 lg:py-28 overflow-hidden">
+        <canvas id="about-hero-canvas" class="absolute inset-0 w-full h-full opacity-20 pointer-events-none"></canvas>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl">
+            <!-- Breadcrumbs -->
+            <nav class="flex justify-center items-center gap-2 text-xs text-slate-400 mb-6 uppercase tracking-wider">
+                <a href="index.html" class="hover:text-gold-400">Home</a>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                <span class="text-gold-400 font-semibold">About Us</span>
+            </nav>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-serif leading-tight">
+                Empowering India with <span class="gold-gradient-text">Legal, Property & Financial Clarity</span>
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg mt-6 font-light leading-relaxed">
+                Learn about Legal Mitra Network — bridging legal expertise, real estate intelligence, and seamless financial solutions across India with cutting-edge tech and a nationwide affiliate network.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story & Journey Section -->
+    <section class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold text-gold-600 uppercase tracking-widest">Our Genesis</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-navy-900">
+                        Bridging Complexity with Trust & Technology
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Legal Mitra Network was founded to solve a persistent challenge in India: fragmented services across property verification, bank loan approvals, and legal counsel. Traditionally, citizens had to consult separate lawyers, CA firms, property brokers, and bank DSA agents, leading to delays and lack of transparency.
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We unified these domain pillars onto a single digital ecosystem. By pairing top-tier advocates and financial experts with a Turtlemint-style POSP partner model, we enable independent advisors and brokers to offer comprehensive financial and legal guidance to clients in every corner of India.
+                    </p>
+
+                    <!-- Interactive Story Tabs -->
+                    <div class="pt-4">
+                        <div class="flex border-b border-slate-200 gap-6">
+                            <button class="tab-btn active pb-2 text-sm font-semibold" onclick="switchTab(event, 'tab-foundation')">2021: Foundation</button>
+                            <button class="tab-btn pb-2 text-sm font-semibold text-slate-500 hover:text-navy-900" onclick="switchTab(event, 'tab-expansion')">2023: Tech & POSP Launch</button>
+                            <button class="tab-btn pb-2 text-sm font-semibold text-slate-500 hover:text-navy-900" onclick="switchTab(event, 'tab-today')">2026: Pan-India Leader</button>
+                        </div>
+                        <div id="tab-foundation" class="tab-content pt-4 text-xs text-slate-600 space-y-2">
+                            <p>• Established corporate headquarters in Mumbai with 15 senior Advocates and CAs.</p>
+                            <p>• Digitized property title search reports across 10 major urban hubs in Maharashtra and Karnataka.</p>
+                        </div>
+                        <div id="tab-expansion" class="tab-content hidden pt-4 text-xs text-slate-600 space-y-2">
+                            <p>• Integrated multi-bank loan comparison engine for 40+ lending institutions.</p>
+                            <p>• Launched the Agent Partner Portal allowing POSP advisors to track referral payouts live.</p>
+                        </div>
+                        <div id="tab-today" class="tab-content hidden pt-4 text-xs text-slate-600 space-y-2">
+                            <p>• Over 25,000+ active referral partner agents nationwide.</p>
+                            <p>• Processed ₹250 Cr+ in loan disbursements and completed 10,000+ legal title document verifications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 bg-navy-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-2xl"></div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-8 border-b border-slate-800 pb-4">Our Impact at a Glance</h3>
+                    
+                    <div class="grid grid-cols-2 gap-8 text-center">
+                        <div class="p-4 bg-navy-800/80 rounded-2xl border border-slate-700/60">
+                            <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif counter" data-target="10000">0</p>
+                            <p class="text-xs text-slate-300 mt-2 uppercase font-medium">Verified Legal Cases</p>
+                        </div>
+                        <div class="p-4 bg-navy-800/80 rounded-2xl border border-slate-700/60">
+                            <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif counter" data-target="500">0</p>
+                            <p class="text-xs text-slate-300 mt-2 uppercase font-medium">Advocates & CAs</p>
+                        </div>
+                        <div class="p-4 bg-navy-800/80 rounded-2xl border border-slate-700/60">
+                            <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif">₹<span class="counter" data-target="250">0</span> Cr+</p>
+                            <p class="text-xs text-slate-300 mt-2 uppercase font-medium">Loans Disbursed</p>
+                        </div>
+                        <div class="p-4 bg-navy-800/80 rounded-2xl border border-slate-700/60">
+                            <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif counter" data-target="25000">0</p>
+                            <p class="text-xs text-slate-300 mt-2 uppercase font-medium">Active POSP Agents</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Pillars Section -->
+    <section class="py-20 bg-offwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2">3 Pillars of Excellence</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-navy-900">How We Empower Our Stakeholders</h3>
+                <p class="text-slate-600 mt-3 text-sm">Combining domain authority across legal, financial, and real estate sectors.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-serif text-navy-900 mb-3">Legal Integrity</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Rigorous due diligence, title search reports, sale deed drafting, GST/CA incorporation filings, and court notice responses overseen by verified senior advocates.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> High Court & District Advocates</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Encumbrance & Title Search</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-serif text-navy-900 mb-3">Financial Empowerment</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Direct tie-ups with 40+ premier PSU and private banks. Instant home loan eligibility checks, balance transfer facilitation, and CIBIL score recovery.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Lowest Interest Rates</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Multi-Bank Approval Tracking</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-serif text-navy-900 mb-3">Real Estate Transparency</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            7/12 extract verification, CTS map checks, RERA compliance audits, and stamp duty calculation for buyers, developers, and field brokers.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> RERA Compliant Verification</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Property Card Audit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision, Mission & Values -->
+    <section class="py-20 bg-navy-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-gold-400 uppercase tracking-widest mb-2">Our Foundation</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Vision, Mission & Core Values</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Mission Card -->
+                <div class="bg-navy-800 border border-slate-700 p-8 rounded-2xl relative group hover:border-gold-500 transition">
+                    <span class="text-4xl text-gold-400/20 font-serif font-bold absolute top-4 right-6">01</span>
+                    <h4 class="text-xl font-serif font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye text-gold-400"></i> Our Mission
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        To digitize legal, property, and financial services for over 1 Million citizens by providing transparent, affordable, and accessible expertise backed by smart technology and field advisors.
+                    </p>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="bg-navy-800 border border-slate-700 p-8 rounded-2xl relative group hover:border-gold-500 transition">
+                    <span class="text-4xl text-gold-400/20 font-serif font-bold absolute top-4 right-6">02</span>
+                    <h4 class="text-xl font-serif font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-eye text-gold-400"></i> Our Vision
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        To build India’s premier hybrid tech platform where every real estate buyer, business owner, and financial agent can execute end-to-end legal and loan transactions effortlessly.
+                    </p>
+                </div>
+
+                <!-- Core Values Card -->
+                <div class="bg-navy-800 border border-slate-700 p-8 rounded-2xl relative group hover:border-gold-500 transition">
+                    <span class="text-4xl text-gold-400/20 font-serif font-bold absolute top-4 right-6">03</span>
+                    <h4 class="text-xl font-serif font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-heart text-gold-400"></i> Core Values
+                    </h4>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-shield text-gold-500"></i> Uncompromised Ethics & Confidentiality</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-microchip text-gold-500"></i> Tech-First Simplicity</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-users text-gold-500"></i> Agent Prosperity & Growth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Advisory Panel -->
+    <section class="py-20 bg-offwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2">Expert Counsel</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-navy-900">Leadership & Legal Advisory Panel</h3>
+                <p class="text-slate-600 mt-2 text-sm">Guided by industry stalwarts across constitutional law, banking, and fintech.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Member 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm text-center">
+                    <div class="w-24 h-24 rounded-full bg-navy-800 text-gold-400 font-bold font-serif text-2xl flex items-center justify-center mx-auto mb-4 border-2 border-gold-500">
+                        ADV
+                    </div>
+                    <h4 class="text-base font-bold text-navy-900">Adv. Rameshwar Patil</h4>
+                    <span class="text-[11px] text-gold-600 font-semibold block mb-2">Chief Legal Counsel (22+ Yrs Exp)</span>
+                    <p class="text-xs text-slate-500 mb-4">Specialist in High Court property disputes, land title verification, and RERA tribunal cases.</p>
+                    <div class="flex justify-center gap-3 text-slate-400 text-xs">
+                        <a href="#" class="hover:text-gold-600"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-gold-600"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm text-center">
+                    <div class="w-24 h-24 rounded-full bg-navy-800 text-gold-400 font-bold font-serif text-2xl flex items-center justify-center mx-auto mb-4 border-2 border-gold-500">
+                        CA
+                    </div>
+                    <h4 class="text-base font-bold text-navy-900">Snehil Joshi, FCA</h4>
+                    <span class="text-[11px] text-gold-600 font-semibold block mb-2">Head of Financial Solutions</span>
+                    <p class="text-xs text-slate-500 mb-4">Former Banking Head with expertise in mortgage underwriting, CIBIL advisory, and corporate loans.</p>
+                    <div class="flex justify-center gap-3 text-slate-400 text-xs">
+                        <a href="#" class="hover:text-gold-600"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-gold-600"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm text-center">
+                    <div class="w-24 h-24 rounded-full bg-navy-800 text-gold-400 font-bold font-serif text-2xl flex items-center justify-center mx-auto mb-4 border-2 border-gold-500">
+                        CS
+                    </div>
+                    <h4 class="text-base font-bold text-navy-900">Pooja Kulkarni</h4>
+                    <span class="text-[11px] text-gold-600 font-semibold block mb-2">Head of Corporate Governance</span>
+                    <p class="text-xs text-slate-500 mb-4">Expert in startup incorporation, GST compliance, trademark registrations, and contract auditing.</p>
+                    <div class="flex justify-center gap-3 text-slate-400 text-xs">
+                        <a href="#" class="hover:text-gold-600"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-gold-600"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm text-center">
+                    <div class="w-24 h-24 rounded-full bg-navy-800 text-gold-400 font-bold font-serif text-2xl flex items-center justify-center mx-auto mb-4 border-2 border-gold-500">
+                        VK
+                    </div>
+                    <h4 class="text-base font-bold text-navy-900">Vikramaditya Rao</h4>
+                    <span class="text-[11px] text-gold-600 font-semibold block mb-2">VP - Partner Agent Network</span>
+                    <p class="text-xs text-slate-500 mb-4">Pioneer of POSP affiliate enablement, marketing collateral hubs, and agent growth strategies.</p>
+                    <div class="flex justify-center gap-3 text-slate-400 text-xs">
+                        <a href="#" class="hover:text-gold-600"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-gold-600"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POSP Affiliate Ecosystem Banner (Turtlemint Style) -->
+    <section class="py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 text-white border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-4">
+                    <span class="text-xs font-bold text-gold-400 uppercase tracking-widest">Affiliate Ecosystem</span>
+                    <h3 class="text-2xl sm:text-4xl font-serif font-bold text-white">
+                        Are You a Real Estate Agent, Financial Consultant, or Tax Advisor?
+                    </h3>
+                    <p class="text-slate-300 text-sm max-w-2xl leading-relaxed">
+                        Expand your service portfolio overnight. Refer your clients for property title clearance, home loans, or business registrations, and earn high-tier commission payouts directly into your bank account.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4">
+                    <a href="partner-network.html" class="gold-btn px-6 py-3.5 text-xs font-bold text-navy-900 rounded-xl text-center uppercase tracking-wider">
+                        Explore Partner Program
+                    </a>
+                    <a href="agent-dashboard.html" class="px-6 py-3.5 border border-slate-600 text-slate-200 hover:border-gold-400 text-xs font-bold rounded-xl text-center transition">
+                        Login To Agent Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive 4-Column Footer -->
+    <footer class="bg-navy-900 text-slate-400 text-xs border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Column 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-navy-800 border border-gold-500 flex items-center justify-center text-gold-400">
+                            <i class="fa-solid fa-scale-balanced text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold font-serif text-white tracking-wide">LEGAL MITRA</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Legal Mitra Network is India's leading unified portal providing end-to-end legal consultation, property title clearance, financial loan approvals, and advisor partner enablement.
+                    </p>
+                    <div class="pt-2 text-slate-300">
+                        <p><i class="fa-solid fa-location-dot text-gold-500 mr-2"></i> Corporate Office: Business Tower, BKC, Mumbai, MH</p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Main Services Pages -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Core Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="hover:text-gold-400 transition">All Services Overview</a></li>
+                        <li><a href="property-services.html" class="hover:text-gold-400 transition">Property & Title Legal Services</a></li>
+                        <li><a href="finance-services.html" class="hover:text-gold-400 transition">Home Loan & Mortgage Facilitation</a></li>
+                        <li><a href="legal-services.html" class="hover:text-gold-400 transition">Advocate & Court Legal Solutions</a></li>
+                        <li><a href="partner-network.html" class="hover:text-gold-400 transition">POSP Agent & Partner Program</a></li>
+                        <li><a href="calculators.html" class="hover:text-gold-400 transition">EMI & Loan Eligibility Calculators</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Dashboards & Hubs -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Dashboards & Portals</h4>
+                    <ul class="space-y-2">
+                        <li><a href="user-dashboard.html" class="hover:text-gold-400 transition">Client / User Portal</a></li>
+                        <li><a href="agent-dashboard.html" class="hover:text-gold-400 transition">Agent / Advisor Dashboard</a></li>
+                        <li><a href="marketing-hub.html" class="hover:text-gold-400 transition">Marketing Materials Hub</a></li>
+                        <li><a href="educational-hub.html" class="hover:text-gold-400 transition">Educational Knowledge Hub</a></li>
+                        <li><a href="document-checklist.html" class="hover:text-gold-400 transition">Document Checklist Guide</a></li>
+                        <li><a href="blog.html" class="hover:text-gold-400 transition">Legal & Tax Articles Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Corporate & Legal Pages -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Company & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about-us.html" class="hover:text-gold-400 transition">About Legal Mitra Network</a></li>
+                        <li><a href="testimonials.html" class="hover:text-gold-400 transition">Client Testimonials & Reviews</a></li>
+                        <li><a href="contact-us.html" class="hover:text-gold-400 transition">Contact & Support Center</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-gold-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html" class="hover:text-gold-400 transition">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html" class="hover:text-gold-400 transition">Cancellation & Refund Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Bottom Credits -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-[11px]">
+                <p>© 2026 Legal Mitra Network Technologies Pvt. Ltd. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-slate-400">Privacy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-slate-400">Terms</a>
+                    <a href="refund-policy.html" class="hover:text-slate-400">Refunds</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Client JavaScript -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileDrawer.classList.toggle('hidden');
+        });
+
+        // 2. Story Tabs Switcher
+        function switchTab(evt, tabName) {
+            const contents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].classList.add('hidden');
+            }
+            const tabBtns = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove('active');
+                tabBtns[i].classList.add('text-slate-500');
+            }
+            document.getElementById(tabName).classList.remove('hidden');
+            evt.currentTarget.classList.add('active');
+            evt.currentTarget.classList.remove('text-slate-500');
+        }
+
+        // 3. Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target.toLocaleString('en-IN');
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        let counterAnimated = false;
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY + window.innerHeight;
+            const targetPos = document.querySelector('.counter')?.offsetTop || 0;
+            if (scrollPos > targetPos && !counterAnimated) {
+                counterAnimated = true;
+                startCounters();
+            }
+        });
+
+        // Initial check if counters are visible on load
+        startCounters();
+
+        // 4. Hero Particle Canvas Animation
+        const canvas = document.getElementById('about-hero-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+
+            function initCanvas() {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+                particles = [];
+                for (let i = 0; i < 35; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.6,
+                        vy: (Math.random() - 0.5) * 0.6,
+                        radius: Math.random() * 2 + 1
+                    });
+                }
+            }
+
+            function animateCanvas() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = '#D4AF37';
+                ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
+
+                for (let i = 0; i < particles.length; i++) {
+                    let p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let p2 = particles[j];
+                        let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 100) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateCanvas);
+            }
+
+            window.addEventListener('resize', initCanvas);
+            initCanvas();
+            animateCanvas();
+        }
+    </script>
+</body>
+</html>
