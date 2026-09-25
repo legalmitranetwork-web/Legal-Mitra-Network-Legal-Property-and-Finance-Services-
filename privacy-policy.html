@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy & Data Security | Legal Mitra Network</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0B1B3D',
+              light: '#162C5B',
+              dark: '#061026',
+            },
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F4E296',
+              dark: '#AA820A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles and Glassmorphism Token Declarations -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+
+    .glass-nav {
+      background: rgba(11, 27, 61, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #061026;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 4px;
+    }
+
+    .status-pulse {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <header class="sticky top-0 z-50 glass-nav text-white transition-all duration-300 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Header -->
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-dark via-gold to-gold-light flex items-center justify-center text-navy font-black text-xl shadow-lg transform group-hover:scale-105 transition-all">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-gold transition-colors">
+                LEGAL MITRA <span class="text-gold">NETWORK</span>
+              </span>
+              <span class="text-[10px] uppercase tracking-widest text-slate-300 font-semibold">Privacy & Compliance Desk</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <a href="index.html" class="text-slate-200 hover:text-gold transition-colors">Home</a>
+          <a href="services.html" class="text-slate-200 hover:text-gold transition-colors">Services</a>
+          <a href="partner-network.html" class="text-slate-200 hover:text-gold transition-colors">POSP Network</a>
+          <a href="marketing-hub.html" class="text-slate-200 hover:text-gold transition-colors">Marketing Hub</a>
+          <a href="educational-hub.html" class="text-slate-200 hover:text-gold transition-colors">Video Academy</a>
+          <a href="document-checklist.html" class="text-slate-200 hover:text-gold transition-colors">Checklists</a>
+          <a href="blog.html" class="text-slate-200 hover:text-gold transition-colors">Blog</a>
+          <a href="testimonials.html" class="text-slate-200 hover:text-gold transition-colors">Testimonials</a>
+        </nav>
+
+        <!-- Right Side Badge & CTA -->
+        <div class="hidden sm:flex items-center gap-3">
+          <div class="flex items-center gap-2.5 bg-navy-dark/80 px-3.5 py-1.5 rounded-full border border-gold/30">
+            <div class="relative">
+              <div class="w-7 h-7 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-xs">
+                RK
+              </div>
+              <span class="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full status-pulse border border-navy"></span>
+            </div>
+            <div class="text-xs">
+              <p class="font-bold text-white leading-none">Rajesh Kumar</p>
+              <p class="text-slate-400 text-[10px] leading-none mt-0.5">POSP ID: <span class="text-gold font-mono">LMN-98421</span></p>
+            </div>
+          </div>
+          <a href="contact-us.html" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-shield-halved"></i> Data Officer
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobileMenuBtn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-navy-dark border-t border-gold/20 px-4 pt-3 pb-6 space-y-3">
+      <div class="flex items-center gap-3 p-3 bg-navy/60 rounded-lg mb-3">
+        <div class="w-9 h-9 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-sm">RK</div>
+        <div>
+          <p class="font-bold text-white text-sm">Rajesh Kumar</p>
+          <p class="text-slate-400 text-xs">POSP ID: LMN-98421</p>
+        </div>
+      </div>
+      <a href="index.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-house text-gold mr-2"></i> Home</a>
+      <a href="services.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-layer-group text-gold mr-2"></i> Services</a>
+      <a href="partner-network.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-handshake text-gold mr-2"></i> POSP Network</a>
+      <a href="marketing-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-bullhorn text-gold mr-2"></i> Marketing Hub</a>
+      <a href="educational-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-circle-play text-gold mr-2"></i> Video Academy</a>
+      <a href="document-checklist.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-list-check text-gold mr-2"></i> Checklists</a>
+      <a href="blog.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-blog text-gold mr-2"></i> Blog</a>
+      <a href="testimonials.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-star text-gold mr-2"></i> Testimonials</a>
+    </div>
+  </header>
+
+  <section class="relative bg-navy overflow-hidden py-16 lg:py-20 border-b border-gold/20">
+    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider">
+        <i class="fa-solid fa-lock text-xs"></i> ISO 27001 & DPDP Act Compliant
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight max-w-4xl mx-auto">
+        Privacy Policy & <br class="hidden sm:inline">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-yellow-500">
+          Data Protection Framework
+        </span>
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-light">
+        At Legal Mitra Network, safeguarding your financial records, property deeds, and personal KYC data is our highest institutional priority. Read how we collect, process, and protect your information.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4 text-xs text-slate-300">
+        <span class="flex items-center gap-1.5 bg-navy-dark/80 px-3.5 py-2 rounded-xl border border-gold/30"><i class="fa-solid fa-calendar text-gold"></i> Last Updated: January 15, 2026</span>
+        <span class="flex items-center gap-1.5 bg-navy-dark/80 px-3.5 py-2 rounded-xl border border-gold/30"><i class="fa-solid fa-shield-halved text-gold"></i> 256-Bit SSL Encryption</span>
+        <span class="flex items-center gap-1.5 bg-navy-dark/80 px-3.5 py-2 rounded-xl border border-gold/30"><i class="fa-solid fa-user-shield text-gold"></i> Consent-Driven Architecture</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      <!-- Table of Contents Sidebar -->
+      <aside class="lg:col-span-1">
+        <div class="sticky top-28 glass-card rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+          <h3 class="font-bold text-navy text-sm uppercase tracking-wider flex items-center gap-2 border-b border-slate-200 pb-3">
+            <i class="fa-solid fa-list text-gold"></i> Policy Navigation
+          </h3>
+          <nav class="space-y-2 text-xs font-medium text-slate-600">
+            <a href="#section-1" class="block p-2 rounded-xl hover:bg-gold/10 hover:text-navy transition-colors">1. Introduction & Scope</a>
+            <a href="#section-2" class="block p-2 rounded-xl hover:bg-gold/10 hover:text-navy transition-colors">2. Information We Collect</a>
+            <a href="#section-3" class="block p-2 rounded-xl hover:bg-gold/10 hover:text-navy transition-colors">3. KYC & Document Verification</a>
+            <a href="#section-4" class="block p-2 rounded-xl hover:bg-gold/10 hover:text-navy transition-colors">4. Affiliate & POSP Tracking</a>
+            <a href="#section-5" class="block p-2 rounded-xl hover:bg-gold/10 hover:text-navy transition-colors">5. Data Security & Storage</a>
+            <a href="#section-6" class="block p-2 rounded-xl hover:bg-gold/10 hover:text-navy transition-colors">6. Sharing & Disclosures</a>
+            <a href="#section-7" class="block p-2 rounded-xl hover:bg-gold/10 hover:text-navy transition-colors">7. User Rights & Choices</a>
+            <a href="#section-8" class="block p-2 rounded-xl hover:bg-gold/10 hover:text-navy transition-colors">8. Grievance Officer Contact</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Policy Sections -->
+      <div class="lg:col-span-3 space-y-10">
+        
+        <!-- Section 1 -->
+        <section id="section-1" class="glass-card rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 text-gold-dark">
+            <div class="w-10 h-10 rounded-xl bg-navy text-gold flex items-center justify-center font-bold text-sm">01</div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-navy">Introduction & Scope</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Legal Mitra Network ("we", "our", or "us"), operating as a comprehensive pan-India enablement platform for Property, Finance, and Legal Solutions along with a Point of Sales Person (POSP) partner network, is deeply committed to protecting the privacy and confidentiality of our users, clients, and affiliate partners.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            This Privacy Policy governs your use of our website (<a href="index.html" class="text-navy font-bold underline">legalmitranetwork.com</a>), mobile applications, agent dashboards, and integrated financial calculators. By accessing our platform or registering as a client or POSP partner, you explicitly consent to the collection, storage, use, and disclosure of your information as described herein.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="section-2" class="glass-card rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 text-gold-dark">
+            <div class="w-10 h-10 rounded-xl bg-navy text-gold flex items-center justify-center font-bold text-sm">02</div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-navy">Information We Collect</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            To provide seamless property title scrutiny, home loan processing, and POSP commission payouts, we collect various categories of information:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
+              <h4 class="font-bold text-navy text-xs uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-user text-gold"></i> Personal Identifiable Data
+              </h4>
+              <p class="text-slate-600 text-xs">Full name, mobile number, email address, residential address, date of birth, and professional credentials for registered agents.</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
+              <h4 class="font-bold text-navy text-xs uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-file-invoice-dollar text-gold"></i> Financial & Loan Data
+              </h4>
+              <p class="text-slate-600 text-xs">PAN card, Aadhaar number, CIBIL score reports, bank account statements, salary slips, and income tax returns (ITR).</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="section-3" class="glass-card rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 text-gold-dark">
+            <div class="w-10 h-10 rounded-xl bg-navy text-gold flex items-center justify-center font-bold text-sm">03</div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-navy">KYC & Document Verification</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            In compliance with Reserve Bank of India (RBI), National Housing Bank (NHB), and insurance regulatory guidelines for home loans and POSP onboarding, we conduct rigorous Know Your Customer (KYC) verifications.
+          </p>
+          <ul class="space-y-2 text-slate-600 text-sm list-disc pl-5">
+            <li>Digital Aadhaar and PAN validation through secure government-approved API gateways.</li>
+            <li>Property title deed examination, Index-II search extracts, and encumbrance certificate storage.</li>
+            <li>Biometric or OTP-based consent authentication prior to document submission to partner banking institutions.</li>
+          </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="section-4" class="glass-card rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 text-gold-dark">
+            <div class="w-10 h-10 rounded-xl bg-navy text-gold flex items-center justify-center font-bold text-sm">04</div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-navy">Affiliate & POSP Tracking</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Legal Mitra Network utilizes a Turtlesmint Pro-style partner ecosystem. When you interact with our platform via a registered POSP agent or affiliate marketing link:
+          </p>
+          <div class="bg-gold/10 p-4 rounded-2xl border border-gold/30 space-y-2 text-xs text-navy">
+            <p class="font-bold flex items-center gap-2"><i class="fa-solid fa-cookie-bite"></i> Cookie & Referral Link Attribution</p>
+            <p>We store secure tracking cookies and referral tokens to attribute loan applications, insurance leads, and legal advisory consultations accurately to your recommending agent for correct commission calculation.</p>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="section-5" class="glass-card rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 text-gold-dark">
+            <div class="w-10 h-10 rounded-xl bg-navy text-gold flex items-center justify-center font-bold text-sm">05</div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-navy">Data Security & Storage</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We implement robust administrative, technical, and physical security safeguards conforming to ISO 27001 standards to protect your sensitive personal and financial data.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center space-y-2">
+              <i class="fa-solid fa-shield-virus text-gold text-xl"></i>
+              <h4 class="font-bold text-navy text-xs">Encryption in Transit</h4>
+              <p class="text-[11px] text-slate-500">All data transferred is encrypted via 256-bit SSL protocols.</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center space-y-2">
+              <i class="fa-solid fa-server text-gold text-xl"></i>
+              <h4 class="font-bold text-navy text-xs">Secure Cloud Storage</h4>
+              <p class="text-[11px] text-slate-500">Hosted on secure Indian data center servers with strict role-based access.</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center space-y-2">
+              <i class="fa-solid fa-user-lock text-gold text-xl"></i>
+              <h4 class="font-bold text-navy text-xs">Access Auditing</h4>
+              <p class="text-[11px] text-slate-500">Regular automated security audits and access log monitoring.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="section-6" class="glass-card rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 text-gold-dark">
+            <div class="w-10 h-10 rounded-xl bg-navy text-gold flex items-center justify-center font-bold text-sm">06</div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-navy">Sharing & Disclosures</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We do not sell, rent, or trade your personal data to third-party marketing agencies. However, information may be shared under strict confidentiality agreements with:
+          </p>
+          <ul class="space-y-2 text-slate-600 text-sm list-disc pl-5">
+            <li>Scheduled commercial banks and housing finance companies (HFCs) for home loan underwriting.</li>
+            <li>Panel advocates, chartered accountants, and legal experts assisting in title due diligence.</li>
+            <li>Law enforcement agencies or regulatory authorities when mandated by Indian statutory law.</li>
+          </ul>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="section-7" class="glass-card rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 text-gold-dark">
+            <div class="w-10 h-10 rounded-xl bg-navy text-gold flex items-center justify-center font-bold text-sm">07</div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-navy">User Rights & Choices</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            As a registered user or POSP partner on Legal Mitra Network, you retain full ownership of your data rights under applicable data protection legislation:
+          </p>
+          <div class="space-y-3 pt-2">
+            <div class="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+              <i class="fa-solid fa-circle-check text-green-600 mt-1"></i>
+              <div>
+                <p class="font-bold text-navy text-xs">Right to Access & Rectify</p>
+                <p class="text-slate-500 text-xs">You can review, edit, or update your profile and KYC details at any time directly through your dashboard.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+              <i class="fa-solid fa-circle-check text-green-600 mt-1"></i>
+              <div>
+                <p class="font-bold text-navy text-xs">Right to Data Erasure</p>
+                <p class="text-slate-500 text-xs">You may request deletion of your account and non-regulatory data records by submitting a formal privacy request.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="section-8" class="glass-card rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 text-gold-dark">
+            <div class="w-10 h-10 rounded-xl bg-navy text-gold flex items-center justify-center font-bold text-sm">08</div>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-navy">Grievance & Data Protection Officer</h2>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            If you have any questions, concerns, or grievances regarding this Privacy Policy or the handling of your data, please contact our designated Data Protection & Grievance Officer:
+          </p>
+          <div class="bg-navy text-white p-6 rounded-2xl border border-gold/30 space-y-3">
+            <p class="font-bold text-gold text-sm">Adv. Siddharth Sharma (Data Protection Officer)</p>
+            <p class="text-xs text-slate-300"><i class="fa-solid fa-envelope text-gold mr-2"></i> privacy@legalmitranetwork.com</p>
+            <p class="text-xs text-slate-300"><i class="fa-solid fa-phone text-gold mr-2"></i> +91 (022) 6982-5000 / Toll-Free: 1800-LEG-MITRA</p>
+            <p class="text-xs text-slate-300"><i class="fa-solid fa-location-dot text-gold mr-2"></i> Legal Mitra Tower, Bandra Kurla Complex (BKC), Mumbai, Maharashtra - 400051</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-navy-dark text-slate-300 border-t border-gold/30 mt-20 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      
+      <!-- Footer Top Branding Header -->
+      <div class="flex flex-col md:flex-row items-center justify-between border-b border-slate-800 pb-10 mb-10 gap-6 text-center md:text-left">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gold flex items-center justify-center text-navy font-black text-xl">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div>
+            <span class="font-extrabold text-lg text-white tracking-wide">LEGAL MITRA NETWORK</span>
+            <p class="text-[11px] text-slate-400">Pan-India POSP Legal Enablement Ecosystem</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-slate-400">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-gold"></i> 256-Bit Encrypted Portal</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-award text-gold"></i> ISO 27001 Certified</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-headset text-gold"></i> POSP Partner Support</span>
+        </div>
+      </div>
+
+      <!-- Complete 19-Link Network Directory Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Column 1: Primary Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Core Portals</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-gold transition-colors">1. Home</a></li>
+            <li><a href="about-us.html" class="hover:text-gold transition-colors">2. About Us</a></li>
+            <li><a href="services.html" class="hover:text-gold transition-colors">3. All Services</a></li>
+            <li><a href="contact-us.html" class="hover:text-gold transition-colors">9. Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Legal Practice Areas -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Practice Solutions</h4>
+          <ul class="space-y-2">
+            <li><a href="property-services.html" class="hover:text-gold transition-colors">4. Property Services</a></li>
+            <li><a href="finance-services.html" class="hover:text-gold transition-colors">5. Finance Services</a></li>
+            <li><a href="legal-services.html" class="hover:text-gold transition-colors">6. Legal Solutions</a></li>
+            <li><a href="calculators.html" class="hover:text-gold transition-colors">8. Legal Calculators</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Partner & Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Partner Dashboards</h4>
+          <ul class="space-y-2">
+            <li><a href="partner-network.html" class="hover:text-gold transition-colors">7. POSP Network</a></li>
+            <li><a href="user-dashboard.html" class="hover:text-gold transition-colors">10. Client Portal</a></li>
+            <li><a href="agent-dashboard.html" class="hover:text-gold transition-colors">11. Agent Dashboard</a></li>
+            <li><a href="marketing-hub.html" class="hover:text-gold transition-colors">12. Marketing Hub</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Knowledge Hub -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Academy & Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="educational-hub.html" class="hover:text-gold transition-colors">13. Video Academy</a></li>
+            <li><a href="document-checklist.html" class="hover:text-gold transition-colors">14. Checklists</a></li>
+            <li><a href="blog.html" class="hover:text-gold transition-colors">15. Legal Blog</a></li>
+            <li><a href="testimonials.html" class="hover:text-gold transition-colors">16. Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal & Terms -->
+        <div class="col-span-2 md:col-span-4 lg:col-span-1 space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Compliance Desk</h4>
+          <ul class="space-y-2">
+            <li><a href="privacy-policy.html" class="hover:text-gold transition-colors font-bold text-gold">17. Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-gold transition-colors">18. Terms of Use</a></li>
+            <li><a href="refund-policy.html" class="hover:text-gold transition-colors">19. Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Line -->
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <p>© 2026 Legal Mitra Network. All Rights Reserved. Pan-India Legal Enablement Suite.</p>
+        <div class="flex space-x-6">
+          <a href="privacy-policy.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="terms-and-conditions.html" class="hover:text-slate-300">Terms of Service</a>
+          <a href="refund-policy.html" class="hover:text-slate-300">Refund Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // --- Mobile Nav Toggle ---
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // --- Hero Canvas Particle Network ---
+    function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      });
+
+      const particles = [];
+      const particleCount = 40;
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.7,
+          vy: (Math.random() - 0.5) * 0.7,
+          radius: Math.random() * 2 + 1,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particleCount; i++) {
+          for (let j = i + 1; j < particleCount; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(212, 175, 55, ${1 - dist / 120 * 0.8})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        for (let p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#D4AF37';
+          ctx.fill();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    window.onload = function() {
+      initHeroCanvas();
+    };
+  </script>
+</body>
+</html>
