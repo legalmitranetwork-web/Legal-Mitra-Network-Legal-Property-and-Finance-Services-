@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client & Partner Success Stories | Legal Mitra Network</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0B1B3D',
+              light: '#162C5B',
+              dark: '#061026',
+            },
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F4E296',
+              dark: '#AA820A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles and Glassmorphism Token Declarations -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+
+    .glass-nav {
+      background: rgba(11, 27, 61, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #061026;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 4px;
+    }
+
+    .status-pulse {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <header class="sticky top-0 z-50 glass-nav text-white transition-all duration-300 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Header -->
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-dark via-gold to-gold-light flex items-center justify-center text-navy font-black text-xl shadow-lg transform group-hover:scale-105 transition-all">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-gold transition-colors">
+                LEGAL MITRA <span class="text-gold">NETWORK</span>
+              </span>
+              <span class="text-[10px] uppercase tracking-widest text-slate-300 font-semibold">Success Stories & Testimonials</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <a href="index.html" class="text-slate-200 hover:text-gold transition-colors">Home</a>
+          <a href="services.html" class="text-slate-200 hover:text-gold transition-colors">Services</a>
+          <a href="partner-network.html" class="text-slate-200 hover:text-gold transition-colors">POSP Network</a>
+          <a href="marketing-hub.html" class="text-slate-200 hover:text-gold transition-colors">Marketing Hub</a>
+          <a href="educational-hub.html" class="text-slate-200 hover:text-gold transition-colors">Video Academy</a>
+          <a href="document-checklist.html" class="text-slate-200 hover:text-gold transition-colors">Checklists</a>
+          <a href="blog.html" class="text-slate-200 hover:text-gold transition-colors">Blog</a>
+          <a href="testimonials.html" class="text-gold font-bold transition-colors border-b-2 border-gold pb-1">Testimonials</a>
+        </nav>
+
+        <!-- Right Side Badge & CTA -->
+        <div class="hidden sm:flex items-center gap-3">
+          <div class="flex items-center gap-2.5 bg-navy-dark/80 px-3.5 py-1.5 rounded-full border border-gold/30">
+            <div class="relative">
+              <div class="w-7 h-7 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-xs">
+                RK
+              </div>
+              <span class="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full status-pulse border border-navy"></span>
+            </div>
+            <div class="text-xs">
+              <p class="font-bold text-white leading-none">Rajesh Kumar</p>
+              <p class="text-slate-400 text-[10px] leading-none mt-0.5">POSP ID: <span class="text-gold font-mono">LMN-98421</span></p>
+            </div>
+          </div>
+          <button onclick="scrollToFeedback()" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-pen-nib"></i> Share Story
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobileMenuBtn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-navy-dark border-t border-gold/20 px-4 pt-3 pb-6 space-y-3">
+      <div class="flex items-center gap-3 p-3 bg-navy/60 rounded-lg mb-3">
+        <div class="w-9 h-9 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-sm">RK</div>
+        <div>
+          <p class="font-bold text-white text-sm">Rajesh Kumar</p>
+          <p class="text-slate-400 text-xs">POSP ID: LMN-98421</p>
+        </div>
+      </div>
+      <a href="index.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-house text-gold mr-2"></i> Home</a>
+      <a href="services.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-layer-group text-gold mr-2"></i> Services</a>
+      <a href="partner-network.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-handshake text-gold mr-2"></i> POSP Network</a>
+      <a href="marketing-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-bullhorn text-gold mr-2"></i> Marketing Hub</a>
+      <a href="educational-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-circle-play text-gold mr-2"></i> Video Academy</a>
+      <a href="document-checklist.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-list-check text-gold mr-2"></i> Checklists</a>
+      <a href="blog.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-blog text-gold mr-2"></i> Blog</a>
+      <a href="testimonials.html" class="block text-gold font-bold py-1 text-sm"><i class="fa-solid fa-star text-gold mr-2"></i> Testimonials</a>
+    </div>
+  </header>
+
+  <section class="relative bg-navy overflow-hidden py-16 lg:py-22 border-b border-gold/20">
+    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider">
+        <i class="fa-solid fa-award text-xs"></i> Verified Impact & Trust
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight max-w-4xl mx-auto">
+        Trusted by 5,000+ POSP Partners & <br class="hidden sm:inline">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-yellow-500">
+          25,000+ Home Loan & Legal Clients
+        </span>
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-light">
+        Read real success stories from partners who scaled their advisory revenue and clients who secured property titles and home loans effortlessly through Legal Mitra Network.
+      </p>
+
+      <!-- Trust Metrics Banner -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8">
+        <div class="bg-navy-dark/80 p-4 rounded-2xl border border-gold/30 backdrop-blur-md">
+          <p class="text-2xl sm:text-3xl font-black text-gold">4.9 / 5.0</p>
+          <p class="text-slate-400 text-xs mt-1">Average Partner Rating</p>
+        </div>
+        <div class="bg-navy-dark/80 p-4 rounded-2xl border border-gold/30 backdrop-blur-md">
+          <p class="text-2xl sm:text-3xl font-black text-white">₹180 Cr+</p>
+          <p class="text-slate-400 text-xs mt-1">Home Loans Disbursed</p>
+        </div>
+        <div class="bg-navy-dark/80 p-4 rounded-2xl border border-gold/30 backdrop-blur-md">
+          <p class="text-2xl sm:text-3xl font-black text-gold">99.4%</p>
+          <p class="text-slate-400 text-xs mt-1">Title Verification Accuracy</p>
+        </div>
+        <div class="bg-navy-dark/80 p-4 rounded-2xl border border-gold/30 backdrop-blur-md">
+          <p class="text-2xl sm:text-3xl font-black text-white">5,200+</p>
+          <p class="text-slate-400 text-xs mt-1">Active POSP Agents</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+    <!-- Category Filter & Header Section -->
+    <section class="space-y-8">
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-5">
+        <div>
+          <span class="text-gold-dark font-bold text-xs uppercase tracking-widest">Client & Partner Voices</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-navy">Explore Verified Success Stories</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="categoryFilterContainer">
+          <button onclick="filterCategory('all')" class="cat-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-gold shadow-md" data-category="all">
+            <i class="fa-solid fa-border-all text-gold mr-1"></i> All Stories
+          </button>
+          <button onclick="filterCategory('posp_partners')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="posp_partners">
+            <i class="fa-solid fa-handshake text-blue-600 mr-1"></i> POSP Partners
+          </button>
+          <button onclick="filterCategory('home_loans')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="home_loans">
+            <i class="fa-solid fa-house-chimney text-emerald-600 mr-1"></i> Home Loan Clients
+          </button>
+          <button onclick="filterCategory('property_legal')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="property_legal">
+            <i class="fa-solid fa-scale-balanced text-purple-600 mr-1"></i> Property & Legal
+          </button>
+          <button onclick="filterCategory('tax_advisory')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="tax_advisory">
+            <i class="fa-solid fa-receipt text-amber-600 mr-1"></i> Tax & ITR
+          </button>
+        </div>
+      </div>
+
+      <!-- Responsive Testimonials Grid -->
+      <div id="testimonialsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Dynamically populated via JavaScript -->
+      </div>
+
+    </section>
+
+    <section id="feedback-section" class="bg-gradient-to-br from-navy via-navy-light to-slate-900 rounded-3xl p-8 lg:p-12 text-white shadow-2xl border border-gold/30">
+      <div class="max-w-3xl mx-auto space-y-8">
+        <div class="text-center space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-comment-dots"></i> Community Feedback
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Share Your Success Story with Us</h2>
+          <p class="text-slate-300 text-sm max-w-xl mx-auto font-light">
+            Have you grown your POSP practice or successfully closed a property loan with Legal Mitra Network? Tell us your story and inspire thousands across India.
+          </p>
+        </div>
+
+        <form onsubmit="handleFeedbackSubmit(event)" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider">Your Full Name</label>
+              <input type="text" id="feedbackName" placeholder="e.g. Rajesh Kumar" required class="w-full bg-navy-dark border border-slate-600 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold">
+            </div>
+            <div class="space-y-2">
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider">Your Role / Designation</label>
+              <input type="text" id="feedbackRole" placeholder="e.g. Senior POSP Partner (Mumbai)" required class="w-full bg-navy-dark border border-slate-600 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider">Category</label>
+              <select id="feedbackCategory" class="w-full bg-navy-dark border border-slate-600 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                <option value="posp_partners">POSP Partner Growth</option>
+                <option value="home_loans">Home Loan Client</option>
+                <option value="property_legal">Property Title / Legal Service</option>
+                <option value="tax_advisory">Tax & ITR Advisory</option>
+              </select>
+            </div>
+            <div class="space-y-2">
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider">Rating</label>
+              <select id="feedbackRating" class="w-full bg-navy-dark border border-slate-600 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold">
+                <option value="5">⭐⭐⭐⭐⭐ (5/5 - Exceptional)</option>
+                <option value="4">⭐⭐⭐⭐ (4/5 - Very Good)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider">Your Success Story / Testimonial</label>
+            <textarea id="feedbackText" rows="4" placeholder="Describe your experience, earnings growth, or loan clearance timeline..." required class="w-full bg-navy-dark border border-slate-600 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold"></textarea>
+          </div>
+
+          <div class="text-center pt-2">
+            <button type="submit" class="px-8 py-3.5 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow-xl transition-all inline-flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i> Submit Success Story
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="storyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-slate-200 shadow-2xl p-6 sm:p-10 space-y-6">
+      <button onclick="closeStoryModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-navy flex items-center justify-center text-lg transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="space-y-3 pr-10">
+        <div class="flex items-center gap-3">
+          <span id="modalCategoryBadge" class="bg-gold/20 text-gold-dark font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">POSP Partner</span>
+          <div id="modalRating" class="flex items-center text-amber-500 text-xs">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+        <h2 id="modalName" class="text-2xl font-black text-navy">Client Name</h2>
+        <p id="modalRole" class="text-xs font-semibold text-slate-500">POSP Partner - Mumbai</p>
+      </div>
+
+      <hr class="border-slate-200">
+
+      <div class="space-y-4 text-slate-700 text-sm leading-relaxed">
+        <div class="bg-gold/10 p-4 rounded-2xl border border-gold/30 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gold text-navy flex items-center justify-center text-xl font-bold flex-shrink-0">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-wider font-bold text-slate-500">Key Achievement Metric</p>
+            <p id="modalMetric" class="text-base font-extrabold text-navy">Increased Monthly Commission by 320%</p>
+          </div>
+        </div>
+        <p id="modalFullStory" class="text-slate-700 leading-relaxed">
+          Full story details will appear here dynamically when opened.
+        </p>
+      </div>
+
+      <div class="pt-6 border-t border-slate-200 flex items-center justify-between text-xs">
+        <span class="text-slate-400"><i class="fa-solid fa-shield-check text-green-600 mr-1"></i> Verified Legal Mitra Partner</span>
+        <button onclick="closeStoryModal()" class="px-5 py-2.5 bg-navy text-gold font-bold rounded-xl hover:bg-navy-light transition-colors">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast Bar -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-navy text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-gold/40 flex items-center gap-3 transition-all duration-300">
+    <i class="fa-solid fa-circle-check text-gold text-lg"></i>
+    <span id="toastMsg" class="text-xs font-medium">Notification message</span>
+  </div>
+
+  <footer class="bg-navy-dark text-slate-300 border-t border-gold/30 mt-20 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      
+      <!-- Footer Top Branding Header -->
+      <div class="flex flex-col md:flex-row items-center justify-between border-b border-slate-800 pb-10 mb-10 gap-6 text-center md:text-left">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gold flex items-center justify-center text-navy font-black text-xl">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div>
+            <span class="font-extrabold text-lg text-white tracking-wide">LEGAL MITRA NETWORK</span>
+            <p class="text-[11px] text-slate-400">Pan-India POSP Legal Enablement Ecosystem</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-slate-400">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-gold"></i> 256-Bit Encrypted Portal</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-award text-gold"></i> ISO 27001 Certified</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-headset text-gold"></i> POSP Partner Support</span>
+        </div>
+      </div>
+
+      <!-- Complete 19-Link Network Directory Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Column 1: Primary Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Core Portals</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-gold transition-colors">1. Home</a></li>
+            <li><a href="about-us.html" class="hover:text-gold transition-colors">2. About Us</a></li>
+            <li><a href="services.html" class="hover:text-gold transition-colors">3. All Services</a></li>
+            <li><a href="contact-us.html" class="hover:text-gold transition-colors">9. Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Legal Practice Areas -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Practice Solutions</h4>
+          <ul class="space-y-2">
+            <li><a href="property-services.html" class="hover:text-gold transition-colors">4. Property Services</a></li>
+            <li><a href="finance-services.html" class="hover:text-gold transition-colors">5. Finance Services</a></li>
+            <li><a href="legal-services.html" class="hover:text-gold transition-colors">6. Legal Solutions</a></li>
+            <li><a href="calculators.html" class="hover:text-gold transition-colors">8. Legal Calculators</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Partner & Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Partner Dashboards</h4>
+          <ul class="space-y-2">
+            <li><a href="partner-network.html" class="hover:text-gold transition-colors">7. POSP Network</a></li>
+            <li><a href="user-dashboard.html" class="hover:text-gold transition-colors">10. Client Portal</a></li>
+            <li><a href="agent-dashboard.html" class="hover:text-gold transition-colors">11. Agent Dashboard</a></li>
+            <li><a href="marketing-hub.html" class="hover:text-gold transition-colors">12. Marketing Hub</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Knowledge Hub -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Academy & Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="educational-hub.html" class="hover:text-gold transition-colors">13. Video Academy</a></li>
+            <li><a href="document-checklist.html" class="hover:text-gold transition-colors">14. Checklists</a></li>
+            <li><a href="blog.html" class="hover:text-gold transition-colors">15. Legal Blog</a></li>
+            <li><a href="testimonials.html" class="hover:text-gold transition-colors font-bold text-gold">16. Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal & Terms -->
+        <div class="col-span-2 md:col-span-4 lg:col-span-1 space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Compliance Desk</h4>
+          <ul class="space-y-2">
+            <li><a href="privacy-policy.html" class="hover:text-gold transition-colors">17. Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-gold transition-colors">18. Terms of Use</a></li>
+            <li><a href="refund-policy.html" class="hover:text-gold transition-colors">19. Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Line -->
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <p>© 2026 Legal Mitra Network. All Rights Reserved. Pan-India Legal Enablement Suite.</p>
+        <div class="flex space-x-6">
+          <a href="privacy-policy.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="terms-and-conditions.html" class="hover:text-slate-300">Terms of Service</a>
+          <a href="refund-policy.html" class="hover:text-slate-300">Refund Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // --- Mobile Nav Toggle ---
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // --- Toast Notification Helper ---
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    // --- Testimonials Database ---
+    const testimonialsData = [
+      {
+        id: "t1",
+        category: "posp_partners",
+        categoryName: "POSP Partner",
+        name: "Vikramaditya Deshmukh",
+        role: "Senior POSP Partner (Pune)",
+        initials: "VD",
+        rating: 5,
+        metric: "Grew Monthly Commission from ₹25K to ₹1.8 Lakhs",
+        shortReview: "Joining Legal Mitra Network as a POSP partner completely transformed my advisory practice. The integrated home loan and property title verification tools allowed me to cross-sell effortlessly.",
+        fullStory: "Before partnering with Legal Mitra, I was only selling insurance products with thin margins and heavy competition. Through Legal Mitra's POSP platform, I gained access to institutional home loan tie-ups and legal title scrutiny desks. My clients now rely on me as their single-window financial and legal advisor. My monthly earnings have multiplied by over 7x within 8 months."
+      },
+      {
+        id: "t2",
+        category: "home_loans",
+        categoryName: "Home Loan Client",
+        name: "Sandeep & Anjali Mehta",
+        role: "Homeowners (Thane, Mumbai)",
+        initials: "SM",
+        rating: 5,
+        metric: "Secured ₹75 Lakhs Home Loan Sanction in 5 Days",
+        shortReview: "We were struggling with conflicting bank requirements and missing property mutation entries until our POSP agent connected us with Legal Mitra Network's legal panel.",
+        fullSquare: "Our property purchase was on the verge of cancellation due to a 25-year title chain discrepancy. Legal Mitra's panel advocates investigated the ancestral deeds, resolved the mutation entry with the local revenue office, and secured our housing loan approval with SBI within 5 working days. Their professionalism is unmatched."
+      },
+      {
+        id: "t3",
+        category: "property_legal",
+        categoryName: "Property & Legal",
+        name: "Adv. Sunita Kulkarni",
+        role: "Practicing Advocate & Legal Partner",
+        initials: "SK",
+        rating: 5,
+        metric: "Processed 120+ Title Scrutiny Reports in FY26",
+        shortReview: "The structured checklists and standardized drafting formats on Legal Mitra Network save my office countless hours of manual drafting.",
+        fullStory: "As an independent advocate handling property litigation and conveyance, precision is everything. Legal Mitra Network provides state-of-the-art document verification workflows, Index-II search templates, and automated compliance trackers that have doubled our case handling capacity without increasing administrative overhead."
+      },
+      {
+        id: "t4",
+        category: "posp_partners",
+        categoryName: "POSP Partner",
+        name: "Rameshwar Prasad",
+        role: "Independent Financial Advisor (Nagpur)",
+        initials: "RP",
+        rating: 5,
+        metric: "Built a Network of 45 Sub-Agents Statewide",
+        shortReview: "The Marketing Hub and instant calculators give my clients immediate trust and transparency. Best partner support desk in the industry.",
+        fullStory: "The Marketing Hub alone is worth gold. I can instantly generate festival greeting banners, WhatsApp loan flyers, and instant EMI calculators with my own branding. This has helped me recruit and mentor over 45 sub-agents across the Vidarbha region under the Legal Mitra umbrella."
+      },
+      {
+        id: "t5",
+        category: "tax_advisory",
+        categoryName: "Tax & ITR",
+        name: "CA Manoj Agarwal",
+        role: "Chartered Accountant & Tax Consultant",
+        initials: "MA",
+        rating: 5,
+        metric: "Saved Clients Over ₹45 Lakhs in Home Loan Tax Deductions",
+        shortReview: "Seamless coordination between home loan disbursals and Section 24 / 80C tax planning for our high-net-worth clients.",
+        fullStory: "Managing tax filings for salaried and self-employed borrowers requires meticulous coordination with home loan amortization schedules. Legal Mitra's financial advisory tools ensure our mutual clients maximize their tax rebates seamlessly every fiscal year."
+      },
+      {
+        id: "t6",
+        category: "home_loans",
+        categoryName: "Home Loan Client",
+        name: "Deepika Rane",
+        role: "IT Professional & First-Time Buyer",
+        initials: "DR",
+        rating: 5,
+        metric: "Zero Documentation Stress & Lowest Interest Rate",
+        shortReview: "From CIBIL score pre-screening to final property registration, the Legal Mitra advisor handled everything with absolute transparency.",
+        fullStory: "Being a first-time homebuyer, I was intimidated by stamp duty, registration fees, and bank underwriting terms. My Legal Mitra advisor guided me through every single step, ensuring I secured the lowest interest rate and complete title clearance."
+      }
+    ];
+
+    let activeCategory = 'all';
+
+    // --- Render Testimonials Grid ---
+    function renderTestimonials(category) {
+      const container = document.getElementById('testimonialsGrid');
+      container.innerHTML = '';
+
+      const filtered = testimonialsData.filter(item => {
+        return category === 'all' || item.category === category;
+      });
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'glass-card rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group';
+        
+        let starsHTML = '';
+        for (let i = 0; i < item.rating; i++) {
+          starsHTML += '<i class="fa-solid fa-star"></i>';
+        }
+
+        card.innerHTML = `
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="bg-navy/10 text-navy font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">${item.categoryName}</span>
+              <div class="flex items-center text-amber-500 text-xs">${starsHTML}</div>
+            </div>
+            
+            <div class="bg-gold/10 p-3 rounded-xl border border-gold/30 text-xs font-bold text-navy flex items-center gap-2">
+              <i class="fa-solid fa-trophy text-gold text-sm flex-shrink-0"></i>
+              <span>${item.metric}</span>
+            </div>
+
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed italic">
+              "${item.shortReview}"
+            </p>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-navy text-gold font-bold flex items-center justify-center text-xs shadow">
+                ${item.initials}
+              </div>
+              <div>
+                <p class="font-bold text-navy text-xs">${item.name}</p>
+                <p class="text-[10px] text-slate-400">${item.role}</p>
+              </div>
+            </div>
+            <button onclick="openStoryModal('${item.id}')" class="px-3.5 py-2 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl shadow transition-all flex items-center gap-1">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // --- Category Filter Handler ---
+    function filterCategory(catKey) {
+      activeCategory = catKey;
+      const buttons = document.querySelectorAll('#categoryFilterContainer .cat-filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === catKey) {
+          btn.className = 'cat-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-gold shadow-md';
+        } else {
+          btn.className = 'cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200';
+        }
+      });
+      renderTestimonials(catKey);
+    }
+
+    // --- Modal Handler ---
+    function openStoryModal(id) {
+      const item = testimonialsData.find(t => t.id === id);
+      if (!item) return;
+
+      document.getElementById('modalCategoryBadge').textContent = item.categoryName;
+      document.getElementById('modalName').textContent = item.name;
+      document.getElementById('modalRole').textContent = item.role;
+      document.getElementById('modalMetric').textContent = item.metric;
+      document.getElementById('modalFullStory').textContent = item.fullStory;
+
+      let starsHTML = '';
+      for (let i = 0; i < item.rating; i++) {
+        starsHTML += '<i class="fa-solid fa-star"></i>';
+      }
+      document.getElementById('modalRating').innerHTML = starsHTML;
+
+      document.getElementById('storyModal').classList.remove('hidden');
+    }
+
+    function closeStoryModal() {
+      document.getElementById('storyModal').classList.add('hidden');
+    }
+
+    // --- Feedback Form Submit ---
+    function handleFeedbackSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('feedbackName').value;
+      const role = document.getElementById('feedbackRole').value;
+      const category = document.getElementById('feedbackCategory').value;
+      const rating = parseInt(document.getElementById('feedbackRating').value);
+      const text = document.getElementById('feedbackText').value;
+
+      if (!name || !text) return;
+
+      // Add dynamically to local array
+      const newItem = {
+        id: 'user_' + Date.now(),
+        category: category,
+        categoryName: category === 'posp_partners' ? 'POSP Partner' : (category === 'home_loans' ? 'Home Loan Client' : 'Property & Legal'),
+        name: name,
+        role: role,
+        initials: name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2),
+        rating: rating,
+        metric: "Successfully Completed Advisory Engagement",
+        shortReview: text.substring(0, 120) + '...',
+        fullStory: text
+      };
+
+      testimonialsData.unshift(newItem);
+      renderTestimonials(activeCategory);
+
+      showToast('Thank you! Your success story has been submitted successfully.');
+      e.target.reset();
+    }
+
+    function scrollToFeedback() {
+      document.getElementById('feedback-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // --- Hero Canvas Particle Network ---
+    function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      });
+
+      const particles = [];
+      const particleCount = 40;
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.7,
+          vy: (Math.random() - 0.5) * 0.7,
+          radius: Math.random() * 2 + 1,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particleCount; i++) {
+          for (let j = i + 1; j < particleCount; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(212, 175, 55, ${1 - dist / 120 * 0.8})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        for (let p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#D4AF37';
+          ctx.fill();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    // --- Window Onload Initialization ---
+    window.onload = function() {
+      initHeroCanvas();
+      renderTestimonials('all');
+    };
+  </script>
+</body>
+</html>
