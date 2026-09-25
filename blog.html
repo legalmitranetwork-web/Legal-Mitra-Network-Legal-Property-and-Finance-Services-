@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal & Financial Insights Blog | Legal Mitra Network</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0B1B3D',
+              light: '#162C5B',
+              dark: '#061026',
+            },
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F4E296',
+              dark: '#AA820A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles and Glassmorphism Token Declarations -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+
+    .glass-nav {
+      background: rgba(11, 27, 61, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #061026;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 4px;
+    }
+
+    .status-pulse {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Glassmorphic Navbar -->
+  <header class="sticky top-0 z-50 glass-nav text-white transition-all duration-300 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Header -->
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-dark via-gold to-gold-light flex items-center justify-center text-navy font-black text-xl shadow-lg transform group-hover:scale-105 transition-all">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-gold transition-colors">
+                LEGAL MITRA <span class="text-gold">NETWORK</span>
+              </span>
+              <span class="text-[10px] uppercase tracking-widest text-slate-300 font-semibold">Insights & Expert Legal Blog</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <a href="index.html" class="text-slate-200 hover:text-gold transition-colors">Home</a>
+          <a href="services.html" class="text-slate-200 hover:text-gold transition-colors">Services</a>
+          <a href="partner-network.html" class="text-slate-200 hover:text-gold transition-colors">POSP Network</a>
+          <a href="marketing-hub.html" class="text-slate-200 hover:text-gold transition-colors">Marketing Hub</a>
+          <a href="educational-hub.html" class="text-slate-200 hover:text-gold transition-colors">Video Academy</a>
+          <a href="document-checklist.html" class="text-slate-200 hover:text-gold transition-colors">Checklists</a>
+          <a href="blog.html" class="text-gold font-bold transition-colors border-b-2 border-gold pb-1">Blog</a>
+        </nav>
+
+        <!-- Right Side Badge & CTA -->
+        <div class="hidden sm:flex items-center gap-3">
+          <div class="flex items-center gap-2.5 bg-navy-dark/80 px-3.5 py-1.5 rounded-full border border-gold/30">
+            <div class="relative">
+              <div class="w-7 h-7 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-xs">
+                RK
+              </div>
+              <span class="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full status-pulse border border-navy"></span>
+            </div>
+            <div class="text-xs">
+              <p class="font-bold text-white leading-none">Rajesh Kumar</p>
+              <p class="text-slate-400 text-[10px] leading-none mt-0.5">POSP ID: <span class="text-gold font-mono">LMN-98421</span></p>
+            </div>
+          </div>
+          <button onclick="scrollToNewsletter()" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-envelope-open-text"></i> Subscribe Newsletter
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobileMenuBtn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-navy-dark border-t border-gold/20 px-4 pt-3 pb-6 space-y-3">
+      <div class="flex items-center gap-3 p-3 bg-navy/60 rounded-lg mb-3">
+        <div class="w-9 h-9 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-sm">RK</div>
+        <div>
+          <p class="font-bold text-white text-sm">Rajesh Kumar</p>
+          <p class="text-slate-400 text-xs">POSP ID: LMN-98421</p>
+        </div>
+      </div>
+      <a href="index.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-house text-gold mr-2"></i> Home</a>
+      <a href="services.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-layer-group text-gold mr-2"></i> Services</a>
+      <a href="partner-network.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-handshake text-gold mr-2"></i> POSP Network</a>
+      <a href="marketing-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-bullhorn text-gold mr-2"></i> Marketing Hub</a>
+      <a href="educational-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-circle-play text-gold mr-2"></i> Video Academy</a>
+      <a href="document-checklist.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-list-check text-gold mr-2"></i> Checklists</a>
+      <a href="blog.html" class="block text-gold font-bold py-1 text-sm"><i class="fa-solid fa-blog text-gold mr-2"></i> Blog</a>
+    </div>
+  </header>
+
+  <!-- Hero Section with Canvas Particle Network -->
+  <section class="relative bg-navy overflow-hidden py-16 lg:py-22 border-b border-gold/20">
+    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider">
+        <i class="fa-solid fa-newspaper text-xs"></i> Legal & Financial Knowledge Hub
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight max-w-4xl mx-auto">
+        Expert Insights on Indian Law, Property Titles, <br class="hidden sm:inline">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-yellow-500">
+          Home Loans & POSP Growth
+        </span>
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-light">
+        Stay updated with recent Supreme Court judgments, RBI guidelines, tax exemptions, and proven strategies for building a thriving legal advisory practice.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="max-w-xl mx-auto pt-4">
+        <div class="relative flex items-center">
+          <input type="text" id="searchInput" oninput="filterArticles()" placeholder="Search articles by keyword, author, or topic..." class="w-full bg-navy-dark/90 border border-gold/40 rounded-2xl py-3.5 pl-12 pr-4 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold shadow-xl">
+          <i class="fa-solid fa-magnifying-glass absolute left-4 text-gold text-base"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+    <!-- FEATURED POST BANNER HERO -->
+    <section id="featuredPostSection">
+      <!-- Dynamically rendered or static high-impact featured article -->
+      <div class="glass-card rounded-3xl border border-gold/40 overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-7 bg-navy-dark p-8 sm:p-10 flex flex-col justify-between relative text-white">
+          <div class="absolute top-0 right-0 p-6 opacity-10 pointer-events-none text-8xl text-gold">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div class="space-y-4 relative z-10">
+            <div class="flex items-center gap-3">
+              <span class="bg-gold text-navy font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Featured Cover Story</span>
+              <span class="text-slate-400 text-xs"><i class="fa-regular fa-clock text-gold mr-1"></i> 6 Min Read</span>
+              <span class="text-slate-400 text-xs"><i class="fa-regular fa-calendar text-gold mr-1"></i> Oct 24, 2026</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black text-white hover:text-gold transition-colors cursor-pointer" onclick="openArticleModal('feat_1')">
+              Navigating 30-Year Title Chain Verifications: Essential Due Diligence for Property Buyers & POSPs
+            </h2>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Uncover the complex nuances of ancestral property claims, missing mutation entries (Ferfar), and Index-II discrepancies that can invalidate a property loan approval. Learn how our legal panel conducts bulletproof title searches.
+            </p>
+          </div>
+
+          <div class="flex items-center justify-between pt-6 border-t border-slate-800 mt-6 relative z-10">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-sm shadow">
+                AS
+              </div>
+              <div>
+                <p class="font-bold text-white text-xs">Adv. Anand Sharma</p>
+                <p class="text-[10px] text-slate-400">Senior High Court Counsel</p>
+              </div>
+            </div>
+            <button onclick="openArticleModal('feat_1')" class="px-5 py-2.5 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5">
+              Read Full Article <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-navy flex items-center justify-center p-8 relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-tr from-navy-dark to-navy opacity-80"></div>
+          <div class="relative z-10 text-center space-y-4 p-6">
+            <div class="w-20 h-20 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-4xl mx-auto shadow-2xl">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            <h4 class="font-bold text-white text-base">Legal Mitra Research Desk</h4>
+            <p class="text-slate-400 text-xs max-w-xs mx-auto">Verified legal precedents and regulatory updates curated for 5,000+ active partners nationwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY FILTER TABS & ARTICLE GRID SECTION -->
+    <section class="space-y-8">
+      
+      <!-- Category Filtering Bar -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-5">
+        <div>
+          <span class="text-gold-dark font-bold text-xs uppercase tracking-widest">Explore Library</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-navy">All Expert Articles & Guides</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="categoryFilterContainer">
+          <button onclick="filterCategory('all')" class="cat-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-gold shadow-md" data-category="all">
+            <i class="fa-solid fa-border-all text-gold mr-1"></i> All Articles
+          </button>
+          <button onclick="filterCategory('property_law')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="property_law">
+            <i class="fa-solid fa-house-chimney text-blue-600 mr-1"></i> Property Law
+          </button>
+          <button onclick="filterCategory('home_loans')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="home_loans">
+            <i class="fa-solid fa-file-invoice-dollar text-emerald-600 mr-1"></i> Home Loans
+          </button>
+          <button onclick="filterCategory('legal_drafting')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="legal_drafting">
+            <i class="fa-solid fa-gavel text-purple-600 mr-1"></i> Legal Drafting
+          </button>
+          <button onclick="filterCategory('tax_itr')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="tax_itr">
+            <i class="fa-solid fa-receipt text-amber-600 mr-1"></i> Tax & ITR
+          </button>
+          <button onclick="filterCategory('posp_tips')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="posp_tips">
+            <i class="fa-solid fa-chart-line text-rose-600 mr-1"></i> POSP Tips
+          </button>
+        </div>
+      </div>
+
+      <!-- Responsive Blog Post Grid -->
+      <div id="blogGridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Dynamically rendered via JavaScript -->
+      </div>
+
+    </section>
+
+    <!-- NEWSLETTER SUBSCRIPTION SECTION -->
+    <section id="newsletter-section" class="bg-gradient-to-br from-navy via-navy-light to-slate-900 rounded-3xl p-8 lg:p-12 text-white shadow-2xl border border-gold/30">
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-bold uppercase tracking-wider">
+          <i class="fa-solid fa-envelope-circle-check"></i> Never Miss a Legal Update
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Subscribe to the Legal Mitra Weekly Digest</h2>
+        <p class="text-slate-300 text-sm max-w-xl mx-auto font-light">
+          Join over 12,000 advocates, financial advisors, and POSP partners who receive our curated weekly brief on Supreme Court rulings and tax laws.
+        </p>
+
+        <!-- Newsletter Form -->
+        <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto pt-2">
+          <input type="email" id="newsletterEmail" placeholder="Enter your professional email..." required class="flex-1 bg-navy-dark border border-slate-600 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold">
+          <button type="submit" class="px-6 py-3.5 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> Subscribe Now
+          </button>
+        </form>
+        <p class="text-[11px] text-slate-400">Zero spam guarantee. Unsubscribe anytime with 1 click.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- READ ARTICLE READER MODAL -->
+  <div id="articleModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative border border-slate-200 shadow-2xl p-6 sm:p-10 space-y-6">
+      <button onclick="closeArticleModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-navy flex items-center justify-center text-lg transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Modal Content Header -->
+      <div class="space-y-3 pr-10">
+        <div class="flex items-center gap-3">
+          <span id="modalCategoryBadge" class="bg-gold/20 text-gold-dark font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Property Law</span>
+          <span id="modalReadTime" class="text-slate-500 text-xs"><i class="fa-regular fa-clock text-gold mr-1"></i> 5 Min Read</span>
+          <span id="modalDate" class="text-slate-500 text-xs"><i class="fa-regular fa-calendar text-gold mr-1"></i> Oct 2026</span>
+        </div>
+        <h2 id="modalTitle" class="text-2xl sm:text-3xl font-black text-navy leading-tight">Article Title Goes Here</h2>
+        <div class="flex items-center gap-3 pt-2">
+          <div id="modalAuthorInitials" class="w-9 h-9 rounded-full bg-navy text-gold font-bold flex items-center justify-center text-xs">AS</div>
+          <div>
+            <p id="modalAuthorName" class="font-bold text-navy text-xs">Adv. Anand Sharma</p>
+            <p id="modalAuthorRole" class="text-[10px] text-slate-500">Legal Expert</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-slate-200">
+
+      <!-- Modal Article Body -->
+      <div id="modalBodyContent" class="space-y-4 text-slate-700 text-sm leading-relaxed">
+        <!-- Populated via JS -->
+      </div>
+
+      <!-- Social Share Section -->
+      <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <span class="font-bold text-navy uppercase tracking-wider">Share This Article:</span>
+        <div class="flex items-center gap-2">
+          <button onclick="shareArticle('whatsapp')" class="px-3.5 py-2 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp</button>
+          <button onclick="shareArticle('linkedin')" class="px-3.5 py-2 bg-blue-700 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-linkedin text-sm"></i> LinkedIn</button>
+          <button onclick="shareArticle('copy')" class="px-3.5 py-2 bg-navy text-gold font-bold rounded-xl hover:bg-navy-light transition-colors flex items-center gap-1.5"><i class="fa-solid fa-link text-sm"></i> Copy Link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast Bar -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-navy text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-gold/40 flex items-center gap-3 transition-all duration-300">
+    <i class="fa-solid fa-circle-check text-gold text-lg"></i>
+    <span id="toastMsg" class="text-xs font-medium">Notification message</span>
+  </div>
+
+  <!-- Complete 19-Link Legal Mitra Network Directory Footer -->
+  <footer class="bg-navy-dark text-slate-300 border-t border-gold/30 mt-20 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      
+      <!-- Footer Top Branding Header -->
+      <div class="flex flex-col md:flex-row items-center justify-between border-b border-slate-800 pb-10 mb-10 gap-6 text-center md:text-left">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gold flex items-center justify-center text-navy font-black text-xl">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div>
+            <span class="font-extrabold text-lg text-white tracking-wide">LEGAL MITRA NETWORK</span>
+            <p class="text-[11px] text-slate-400">Pan-India POSP Legal Enablement Ecosystem</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-slate-400">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-gold"></i> 256-Bit Encrypted Portal</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-award text-gold"></i> ISO 27001 Certified</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-headset text-gold"></i> POSP Partner Support</span>
+        </div>
+      </div>
+
+      <!-- Complete 19-Link Network Directory Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Column 1: Primary Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Core Portals</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-gold transition-colors">1. Home</a></li>
+            <li><a href="about-us.html" class="hover:text-gold transition-colors">2. About Us</a></li>
+            <li><a href="services.html" class="hover:text-gold transition-colors">3. All Services</a></li>
+            <li><a href="contact-us.html" class="hover:text-gold transition-colors">9. Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Legal Practice Areas -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Practice Solutions</h4>
+          <ul class="space-y-2">
+            <li><a href="property-services.html" class="hover:text-gold transition-colors">4. Property Services</a></li>
+            <li><a href="finance-services.html" class="hover:text-gold transition-colors">5. Finance Services</a></li>
+            <li><a href="legal-services.html" class="hover:text-gold transition-colors">6. Legal Solutions</a></li>
+            <li><a href="calculators.html" class="hover:text-gold transition-colors">8. Legal Calculators</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Partner & Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Partner Dashboards</h4>
+          <ul class="space-y-2">
+            <li><a href="partner-network.html" class="hover:text-gold transition-colors">7. POSP Network</a></li>
+            <li><a href="user-dashboard.html" class="hover:text-gold transition-colors">10. Client Portal</a></li>
+            <li><a href="agent-dashboard.html" class="hover:text-gold transition-colors">11. Agent Dashboard</a></li>
+            <li><a href="marketing-hub.html" class="hover:text-gold transition-colors">12. Marketing Hub</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Knowledge Hub -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Academy & Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="educational-hub.html" class="hover:text-gold transition-colors">13. Video Academy</a></li>
+            <li><a href="document-checklist.html" class="hover:text-gold transition-colors">14. Checklists</a></li>
+            <li><a href="blog.html" class="hover:text-gold transition-colors font-bold text-gold">15. Legal Blog</a></li>
+            <li><a href="testimonials.html" class="hover:text-gold transition-colors">16. Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal & Terms -->
+        <div class="col-span-2 md:col-span-4 lg:col-span-1 space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Compliance Desk</h4>
+          <ul class="space-y-2">
+            <li><a href="privacy-policy.html" class="hover:text-gold transition-colors">17. Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-gold transition-colors">18. Terms of Use</a></li>
+            <li><a href="refund-policy.html" class="hover:text-gold transition-colors">19. Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Line -->
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <p>© 2026 Legal Mitra Network. All Rights Reserved. Pan-India Legal Enablement Suite.</p>
+        <div class="flex space-x-6">
+          <a href="privacy-policy.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="terms-and-conditions.html" class="hover:text-slate-300">Terms of Service</a>
+          <a href="refund-policy.html" class="hover:text-slate-300">Refund Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript Logic Execution -->
+  <script>
+    // --- Mobile Nav Toggle ---
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // --- Toast Notification Helper ---
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    // --- Blog Database ---
+    const blogArticles = [
+      {
+        id: "feat_1",
+        category: "property_law",
+        categoryName: "Property Law",
+        title: "Navigating 30-Year Title Chain Verifications: Essential Due Diligence for Property Buyers & POSPs",
+        readTime: "6 Min Read",
+        date: "Oct 24, 2026",
+        excerpt: "Uncover the complex nuances of ancestral property claims, missing mutation entries (Ferfar), and Index-II discrepancies that can invalidate a property loan approval.",
+        authorName: "Adv. Anand Sharma",
+        authorRole: "Senior High Court Counsel",
+        authorInitials: "AS",
+        content: `
+          <h3 class="font-bold text-navy text-lg">Understanding the 30-Year Rule in Title Investigation</h3>
+          <p>When banks and financial institutions evaluate property loans or Loan Against Property (LAP), the golden rule is examining a continuous 30-year chain of title ownership. Any break in this chain—such as an unregistered gift deed, missing probate on a will, or an unrecorded partition—creates severe legal vulnerabilities.</p>
+          <h3 class="font-bold text-navy text-lg">Key Documents to Scrutinize</h3>
+          <p>1. <strong>Index-II Records:</strong> Verifying registration details at the sub-registrar office.<br>
+          2. <strong>Mutation Entries (Ferfar):</strong> Ensuring revenue records reflect legal transfer of ownership.<br>
+          3. <strong>Encumbrance Certificate (EC):</strong> Confirming the property is free from mortgages or legal attachments.</p>
+          <p>Partnering with Legal Mitra Network panel advocates ensures all technical and legal scrutiny reports are generated within 48 hours with 100% bank compliance.</p>
+        `
+      },
+      {
+        id: "post_2",
+        category: "home_loans",
+        categoryName: "Home Loans",
+        title: "Top 5 Reasons Why Home Loan Sanctions Get Delayed (And How POSPs Can Prevent Them)",
+        readTime: "4 Min Read",
+        date: "Oct 22, 2026",
+        excerpt: "Discover common underwriting bottlenecks like CIBIL score drops, mismatched employment records, and unapproved property deviations that stall loan disbursements.",
+        authorName: "Priya Deshmukh",
+        authorRole: "Chief Underwriting Officer",
+        authorInitials: "PD",
+        content: `
+          <h3 class="font-bold text-navy text-lg">Eliminating Friction in Loan Disbursals</h3>
+          <p>Loan approval delays cost both clients and POSP agents valuable time and commission momentum. The most frequent hurdles include minor PAN-Aadhaar spelling mismatches, unregularized property extensions, and undocumented cash deposits in bank statements.</p>
+          <h3 class="font-bold text-navy text-lg">Actionable Checklist for Partners</h3>
+          <p>Always verify the applicant's 26AS tax statement against Form 16 before filing with institutional lenders. Pre-screening documents using our Document Checklist Hub reduces rejection rates by over 70%.</p>
+        `
+      },
+      {
+        id: "post_3",
+        category: "legal_drafting",
+        categoryName: "Legal Drafting",
+        title: "Drafting Bulletproof Leave & License Agreements: Clauses Every Property Owner Must Include",
+        readTime: "5 Min Read",
+        date: "Oct 19, 2026",
+        excerpt: "Protect your rental property with robust lock-in periods, timely escalation clauses, police verification protocols, and arbitration addendums.",
+        authorName: "Adv. Rohan Mehra",
+        authorRole: "Property & Contract Specialist",
+        authorInitials: "RM",
+        content: `
+          <h3 class="font-bold text-navy text-lg">Why Standard Agreement Templates Fall Short</h3>
+          <p>Downloading generic rental templates from the internet often leaves landlords unprotected against tenant holdovers and property damage. A legally robust Leave & License agreement must explicitly detail maintenance obligations, security deposit deductions, and immediate eviction clauses under default.</p>
+          <h3 class="font-bold text-navy text-lg">Mandatory Police Verification</h3>
+          <p>In Maharashtra and most metro regions, online police intimation is mandatory within 7 days of agreement execution to avoid statutory penalties.</p>
+        `
+      },
+      {
+        id: "post_4",
+        category: "tax_itr",
+        categoryName: "Tax & ITR",
+        title: "Maximizing Tax Deductions on Home Loans Under Section 24 and 80C for FY 2026-27",
+        readTime: "5 Min Read",
+        date: "Oct 15, 2026",
+        excerpt: "A comprehensive guide for salaried professionals and self-employed borrowers on claiming up to ₹3.5 Lakhs in annual tax rebates.",
+        authorName: "CA Sneha Kulkarni",
+        authorRole: "Senior Financial Advisor",
+        authorInitials: "SK",
+        content: `
+          <h3 class="font-bold text-navy text-lg">Optimizing Your Home Loan Tax Benefits</h3>
+          <p>Homeownership offers significant tax relief under the Income Tax Act. Borrowers can claim up to ₹2 Lakhs on home loan interest under Section 24(b) and up to ₹1.5 Lakhs on principal repayment under Section 80C.</p>
+          <h3 class="font-bold text-navy text-lg">Joint Home Loan Advantages</h3>
+          <p>Co-borrowing with a spouse allows both individuals to claim these deductions independently, effectively doubling tax savings up to ₹7 Lakhs annually.</p>
+        `
+      },
+      {
+        id: "post_5",
+        category: "posp_tips",
+        categoryName: "POSP Tips",
+        title: "Scaling Your POSP Advisory Practice: How to Cross-Sell Legal and Financial Services for 3x Revenue",
+        readTime: "7 Min Read",
+        date: "Oct 10, 2026",
+        excerpt: "Proven growth frameworks for POSP agents looking to transition from single-product insurance sellers to holistic wealth and legal advisors.",
+        authorName: "Vikram Malhotra",
+        authorRole: "Director of Partner Growth",
+        authorInitials: "VM",
+        content: `
+          <h3 class="font-bold text-navy text-lg">The Power of Holistic Advisory</h3>
+          <p>Clients seeking a home loan often require property title verification, legal notices, and property insurance simultaneously. By positioning yourself as a single-window advisor through the Legal Mitra Network, you capture the entire client lifecycle.</p>
+          <h3 class="font-bold text-navy text-lg">Leveraging Digital Marketing Tools</h3>
+          <p>Utilize the Legal Mitra Marketing Hub to generate customized festival banners, WhatsApp creatives, and instant quotation calculators that build instant client trust.</p>
+        `
+      },
+      {
+        id: "post_6",
+        category: "property_law",
+        categoryName: "Property Law",
+        title: "Understanding RERA Regulations: Buyer Rights and Builder Penalties for Delayed Possession",
+        readTime: "5 Min Read",
+        date: "Oct 05, 2026",
+        excerpt: "Know your statutory rights under the Real Estate Regulatory Authority when builders delay apartment handovers or alter approved building layouts.",
+        authorName: "Adv. Anand Sharma",
+        authorRole: "Senior High Court Counsel",
+        authorInitials: "AS",
+        content: `
+          <h3 class="font-bold text-navy text-lg">Enforcing Your Rights Under RERA</h3>
+          <p>Under Section 18 of the RERA Act, if a builder fails to complete possession on the stipulated date, buyers have the absolute right to withdraw from the project with full refund plus interest, or demand monthly compensation for delay.</p>
+          <h3 class="font-bold text-navy text-lg">Filing a RERA Complaint</h3>
+          <p>Our legal team assists clients in drafting and filing formal conciliation and adjudication complaints before state RERA tribunals with high success rates.</p>
+        `
+      }
+    ];
+
+    let currentCategory = 'all';
+
+    // --- Render Blog Grid ---
+    function renderBlogGrid(category, searchQuery = '') {
+      const container = document.getElementById('blogGridContainer');
+      container.innerHTML = '';
+
+      const filtered = blogArticles.filter(article => {
+        const matchesCategory = category === 'all' || article.category === category;
+        const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              article.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              article.authorName.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-16 text-center space-y-3 glass-card rounded-3xl">
+            <div class="w-16 h-16 rounded-full bg-gold/10 text-gold text-2xl flex items-center justify-center mx-auto">
+              <i class="fa-solid fa-search"></i>
+            </div>
+            <h3 class="font-bold text-navy text-lg">No Articles Found</h3>
+            <p class="text-slate-500 text-xs">Try adjusting your search query or selecting a different category.</p>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'glass-card rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group';
+        
+        card.innerHTML = `
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <span class="bg-navy/10 text-navy font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">${article.categoryName}</span>
+              <span class="text-slate-500"><i class="fa-regular fa-clock text-gold mr-1"></i> ${article.readTime}</span>
+            </div>
+            <h3 onclick="openArticleModal('${article.id}')" class="font-extrabold text-navy text-lg group-hover:text-gold-dark transition-colors cursor-pointer leading-snug">
+              ${article.title}
+            </h3>
+            <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">
+              ${article.excerpt}
+            </p>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-navy text-gold font-bold flex items-center justify-center text-xs">
+                ${article.authorInitials}
+              </div>
+              <div>
+                <p class="font-bold text-navy text-xs">${article.authorName}</p>
+                <p class="text-[10px] text-slate-400">${article.date}</p>
+              </div>
+            </div>
+            <button onclick="openArticleModal('${article.id}')" class="px-3.5 py-2 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl shadow transition-all flex items-center gap-1">
+              Read <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // --- Category Filter Handler ---
+    function filterCategory(catKey) {
+      currentCategory = catKey;
+      const buttons = document.querySelectorAll('#categoryFilterContainer .cat-filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === catKey) {
+          btn.className = 'cat-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-gold shadow-md';
+        } else {
+          btn.className = 'cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200';
+        }
+      });
+
+      const searchQuery = document.getElementById('searchInput').value;
+      renderBlogGrid(catKey, searchQuery);
+    }
+
+    // --- Search Input Handler ---
+    function filterArticles() {
+      const searchQuery = document.getElementById('searchInput').value;
+      renderBlogGrid(currentCategory, searchQuery);
+    }
+
+    // --- Article Modal Functions ---
+    function openArticleModal(articleId) {
+      let article = blogArticles.find(a => a.id === articleId);
+      if (!article && articleId === 'feat_1') {
+        article = blogArticles[0];
+      }
+      if (!article) return;
+
+      document.getElementById('modalCategoryBadge').textContent = article.categoryName;
+      document.getElementById('modalReadTime').innerHTML = `<i class="fa-regular fa-clock text-gold mr-1"></i> ${article.readTime}`;
+      document.getElementById('modalDate').innerHTML = `<i class="fa-regular fa-calendar text-gold mr-1"></i> ${article.date}`;
+      document.getElementById('modalTitle').textContent = article.title;
+      document.getElementById('modalAuthorInitials').textContent = article.authorInitials;
+      document.getElementById('modalAuthorName').textContent = article.authorName;
+      document.getElementById('modalAuthorRole').textContent = article.authorRole;
+      document.getElementById('modalBodyContent').innerHTML = article.content;
+
+      document.getElementById('articleModal').classList.remove('hidden');
+    }
+
+    function closeArticleModal() {
+      document.getElementById('articleModal').classList.add('hidden');
+    }
+
+    function shareArticle(platform) {
+      if (platform === 'copy') {
+        const dummyUrl = window.location.href;
+        document.execCommand('copy');
+        showToast('Article link copied to clipboard!');
+      } else if (platform === 'whatsapp') {
+        showToast('Opening WhatsApp share dialog...');
+      } else if (platform === 'linkedin') {
+        showToast('Opening LinkedIn share dialog...');
+      }
+    }
+
+    // --- Newsletter Subscription ---
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletterEmail').value;
+      if (!email) return;
+      showToast('Successfully subscribed to Legal Mitra Weekly Digest!');
+      document.getElementById('newsletterEmail').value = '';
+    }
+
+    function scrollToNewsletter() {
+      document.getElementById('newsletter-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // --- Dynamic Hero Particle Network Canvas ---
+    function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      });
+
+      const particles = [];
+      const particleCount = 40;
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.7,
+          vy: (Math.random() - 0.5) * 0.7,
+          radius: Math.random() * 2 + 1,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particleCount; i++) {
+          for (let j = i + 1; j < particleCount; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(212, 175, 55, ${1 - dist / 120 * 0.8})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        for (let p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#D4AF37';
+          ctx.fill();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    // --- Window Onload Initialization ---
+    window.onload = function() {
+      initHeroCanvas();
+      renderBlogGrid('all');
+    };
+  </script>
+</body>
+</html>
