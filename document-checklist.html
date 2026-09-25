@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Checklist Hub | Legal Mitra Network</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0B1B3D',
+              light: '#162C5B',
+              dark: '#061026',
+            },
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F4E296',
+              dark: '#AA820A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles and Glassmorphism Token Declarations -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+
+    .glass-nav {
+      background: rgba(11, 27, 61, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #061026;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 4px;
+    }
+
+    .status-pulse {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* Custom Checkbox Styling */
+    .custom-checkbox:checked {
+      background-color: #D4AF37;
+      border-color: #AA820A;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Glassmorphic Navbar -->
+  <header class="sticky top-0 z-50 glass-nav text-white transition-all duration-300 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Header -->
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-dark via-gold to-gold-light flex items-center justify-center text-navy font-black text-xl shadow-lg transform group-hover:scale-105 transition-all">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-gold transition-colors">
+                LEGAL MITRA <span class="text-gold">NETWORK</span>
+              </span>
+              <span class="text-[10px] uppercase tracking-widest text-slate-300 font-semibold">Document & Compliance Verification</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+          <a href="index.html" class="text-slate-200 hover:text-gold transition-colors">Home</a>
+          <a href="services.html" class="text-slate-200 hover:text-gold transition-colors">Services</a>
+          <a href="partner-network.html" class="text-slate-200 hover:text-gold transition-colors">POSP Network</a>
+          <a href="marketing-hub.html" class="text-slate-200 hover:text-gold transition-colors">Marketing Hub</a>
+          <a href="educational-hub.html" class="text-slate-200 hover:text-gold transition-colors">Video Academy</a>
+          <a href="document-checklist.html" class="text-gold font-bold transition-colors border-b-2 border-gold pb-1">Checklists</a>
+          <a href="calculators.html" class="text-slate-200 hover:text-gold transition-colors">Calculators</a>
+        </nav>
+
+        <!-- Right Side Badge & CTA -->
+        <div class="hidden sm:flex items-center gap-3">
+          <div class="flex items-center gap-2.5 bg-navy-dark/80 px-3.5 py-1.5 rounded-full border border-gold/30">
+            <div class="relative">
+              <div class="w-7 h-7 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-xs">
+                RK
+              </div>
+              <span class="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full status-pulse border border-navy"></span>
+            </div>
+            <div class="text-xs">
+              <p class="font-bold text-white leading-none">Rajesh Kumar</p>
+              <p class="text-slate-400 text-[10px] leading-none mt-0.5">POSP ID: <span class="text-gold font-mono">LMN-98421</span></p>
+            </div>
+          </div>
+          <button onclick="openUploadModal()" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-cloud-arrow-up"></i> Upload Documents
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobileMenuBtn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-navy-dark border-t border-gold/20 px-4 pt-3 pb-6 space-y-3">
+      <div class="flex items-center gap-3 p-3 bg-navy/60 rounded-lg mb-3">
+        <div class="w-9 h-9 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-sm">RK</div>
+        <div>
+          <p class="font-bold text-white text-sm">Rajesh Kumar</p>
+          <p class="text-slate-400 text-xs">POSP ID: LMN-98421</p>
+        </div>
+      </div>
+      <a href="index.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-house text-gold mr-2"></i> Home</a>
+      <a href="services.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-layer-group text-gold mr-2"></i> Services</a>
+      <a href="partner-network.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-handshake text-gold mr-2"></i> POSP Network</a>
+      <a href="marketing-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-bullhorn text-gold mr-2"></i> Marketing Hub</a>
+      <a href="educational-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-circle-play text-gold mr-2"></i> Video Academy</a>
+      <a href="document-checklist.html" class="block text-gold font-bold py-1 text-sm"><i class="fa-solid fa-list-check text-gold mr-2"></i> Checklists</a>
+      <button onclick="openUploadModal()" class="w-full mt-2 py-2.5 bg-gold text-navy font-bold rounded-xl text-xs"><i class="fa-solid fa-cloud-arrow-up mr-1"></i> Upload & Verify Documents</button>
+    </div>
+  </header>
+
+  <!-- Hero Section with Canvas Particle Network -->
+  <section class="relative bg-navy overflow-hidden py-16 lg:py-20 border-b border-gold/20">
+    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-10">
+      
+      <div class="lg:w-2/3 space-y-5">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider">
+          <i class="fa-solid fa-shield-check text-xs"></i> Verified Document Requirements 2026
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+          Comprehensive Legal & Financial <br class="hidden sm:inline">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-yellow-500">
+            Document Checklist Hub
+          </span>
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-light">
+          Verify requirements, track compliance readiness in real-time, generate custom document lists for clients, and streamline mortgage, property title, & legal notice filings.
+        </p>
+
+        <!-- Quick Metrics Badges -->
+        <div class="flex flex-wrap items-center gap-6 pt-2 justify-center lg:justify-start text-xs text-slate-300">
+          <span class="flex items-center gap-2 bg-navy-light/60 px-3 py-1.5 rounded-lg border border-slate-700">
+            <i class="fa-solid fa-file-circle-check text-gold"></i> 100% Bank Compliant Formats
+          </span>
+          <span class="flex items-center gap-2 bg-navy-light/60 px-3 py-1.5 rounded-lg border border-slate-700">
+            <i class="fa-solid fa-user-check text-gold"></i> Tailored by Employment Type
+          </span>
+          <span class="flex items-center gap-2 bg-navy-light/60 px-3 py-1.5 rounded-lg border border-slate-700">
+            <i class="fa-solid fa-bolt text-gold"></i> Instant PDF Export
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick Action Card -->
+      <div class="lg:w-1/3 w-full bg-navy-dark/80 p-6 rounded-3xl border border-gold/30 shadow-2xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Quick Readiness Check</span>
+          <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded">Live Verification</span>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between text-xs text-white font-medium">
+            <span>Overall Folder Readiness</span>
+            <span id="heroProgressText" class="text-gold font-bold">0%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+            <div id="heroProgressBar" class="bg-gradient-to-r from-gold-dark to-gold h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          Select items in the interactive lists below to calculate client file readiness before bank submission.
+        </p>
+        <button onclick="scrollToEligibility()" class="block w-full text-center py-2.5 bg-navy-light hover:bg-gold hover:text-navy text-gold font-bold text-xs rounded-xl border border-gold/40 transition-all">
+          Generate Custom Client Checklist <i class="fa-solid fa-sliders ml-1"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+    <!-- SECTION 1: Category Filter & Interactive Checklists -->
+    <section id="interactive-checklists" class="space-y-8 scroll-mt-24">
+      
+      <!-- Category Header & Filtering Bar -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-5">
+        <div>
+          <span class="text-gold-dark font-bold text-xs uppercase tracking-widest">Master Category Filter</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-navy">Interactive Document Checklists</h2>
+          <p class="text-slate-600 text-sm mt-1">Select a service module to view required documentation guidelines and track verified items.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="categoryFilterContainer">
+          <button onclick="filterCategory('home_loan')" class="cat-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-gold shadow-md" data-category="home_loan">
+            <i class="fa-solid fa-house-circle-check text-gold mr-1"></i> Home Loan & LAP
+          </button>
+          <button onclick="filterCategory('title_search')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="title_search">
+            <i class="fa-solid fa-magnifying-glass-location text-blue-600 mr-1"></i> Property Title Search
+          </button>
+          <button onclick="filterCategory('legal_notice')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="legal_notice">
+            <i class="fa-solid fa-gavel text-purple-600 mr-1"></i> Legal Notice & Litigation
+          </button>
+          <button onclick="filterCategory('corporate')" class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="corporate">
+            <i class="fa-solid fa-building text-emerald-600 mr-1"></i> GST & Corporate Reg.
+          </button>
+        </div>
+      </div>
+
+      <!-- Checklist Progress Tracker Header Card -->
+      <div class="glass-card p-6 rounded-2xl border border-gold/30 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-1 w-full md:w-2/3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-navy uppercase tracking-wider" id="activeCategoryTitle">Home Loan & LAP Required Checklist</span>
+            <span class="text-xs font-bold text-gold-dark" id="progressPercentage">0% Completed (0/0)</span>
+          </div>
+          <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+            <div id="activeProgressBar" class="bg-gradient-to-r from-gold-dark via-gold to-yellow-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <button onclick="downloadChecklistPdf()" class="flex-1 md:flex-none px-4 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl shadow transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-file-pdf text-red-400"></i> Download Checklist PDF
+          </button>
+          <button onclick="openEmailModal()" class="flex-1 md:flex-none px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border border-slate-300 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane text-blue-600"></i> Email Client
+          </button>
+        </div>
+      </div>
+
+      <!-- Checklist Groups Container -->
+      <div id="checklistGroupsContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Dynamic Checklist Groups Render Here -->
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: Dynamic Document Eligibility & Readiness Generator Tool -->
+    <section id="eligibility-tool" class="bg-gradient-to-br from-navy via-navy-light to-slate-900 rounded-3xl p-6 lg:p-10 text-white shadow-2xl border border-gold/30 scroll-mt-24">
+      <div class="max-w-3xl mb-8">
+        <span class="bg-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full border border-gold/40 uppercase tracking-widest">
+          <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Interactive Wizard
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Document Eligibility & Readiness Generator</h2>
+        <p class="text-slate-300 text-sm mt-1">Configure profile parameters to generate a custom-tailored document requirement matrix for any client scenario.</p>
+      </div>
+
+      <!-- Wizard Controls Form -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-navy-dark/90 p-6 rounded-2xl border border-slate-700 mb-8">
+        
+        <!-- Parameter 1: Service Module -->
+        <div>
+          <label class="block text-xs font-bold text-gold uppercase tracking-wider mb-2">1. Select Service Type</label>
+          <select id="wizService" onchange="generateCustomChecklist()" class="w-full bg-navy border border-slate-600 text-white text-xs rounded-xl p-3 focus:outline-none focus:border-gold">
+            <option value="home_loan">Home Loan / LAP Sanction</option>
+            <option value="title_search">Property Title Verification</option>
+            <option value="legal_notice">Legal Notice / Consumer Case</option>
+            <option value="company_reg">GST & Private Limited Reg.</option>
+          </select>
+        </div>
+
+        <!-- Parameter 2: Applicant Profile -->
+        <div>
+          <label class="block text-xs font-bold text-gold uppercase tracking-wider mb-2">2. Applicant Employment</label>
+          <select id="wizApplicant" onchange="generateCustomChecklist()" class="w-full bg-navy border border-slate-600 text-white text-xs rounded-xl p-3 focus:outline-none focus:border-gold">
+            <option value="salaried">Salaried Employee</option>
+            <option value="self_employed">Self-Employed Professional / Business</option>
+            <option value="nri">NRI (Non-Resident Indian)</option>
+          </select>
+        </div>
+
+        <!-- Parameter 3: Property Type -->
+        <div>
+          <label class="block text-xs font-bold text-gold uppercase tracking-wider mb-2">3. Property Classification</label>
+          <select id="wizProperty" onchange="generateCustomChecklist()" class="w-full bg-navy border border-slate-600 text-white text-xs rounded-xl p-3 focus:outline-none focus:border-gold">
+            <option value="apartment">Builder Flat / Apartment</option>
+            <option value="non_agri">Non-Agricultural (NA) Plot / Bungalow</option>
+            <option value="agri">Agricultural Land / Farm Plot</option>
+            <option value="commercial">Commercial Shop / Office Space</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Generated Result Matrix Box -->
+      <div id="wizardResultContainer" class="bg-navy-dark border border-gold/40 rounded-2xl p-6 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-mono text-gold uppercase">Generated Matrix Result</span>
+            <h3 id="wizResultTitle" class="text-lg font-bold text-white mt-0.5">Custom Requirement List</h3>
+          </div>
+          <button onclick="downloadCustomMatrix()" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-download"></i> Save Customized Matrix
+          </button>
+        </div>
+
+        <!-- Generated List Content -->
+        <div id="wizResultItems" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 3: Document Verification Standards & Upload Modal Trigger Section -->
+    <section class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-100 pb-6">
+        <div>
+          <span class="text-gold-dark font-bold text-xs uppercase tracking-widest">Digital Verification Portal</span>
+          <h2 class="text-2xl font-extrabold text-navy">Document Upload & Scrutiny Guidelines</h2>
+          <p class="text-slate-600 text-sm mt-1">Standardized digital requirements for instant advocate & bank panel review.</p>
+        </div>
+        <button onclick="openUploadModal()" class="px-6 py-3 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-2">
+          <i class="fa-solid fa-cloud-arrow-up text-sm"></i> Launch Upload Studio
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-navy text-gold flex items-center justify-center font-bold">1</div>
+          <h4 class="font-bold text-navy">Format Specifications</h4>
+          <p class="text-slate-500">PDF, JPG, PNG files up to 10MB per document. Ensure all 4 edges of the document are visible.</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-navy text-gold flex items-center justify-center font-bold">2</div>
+          <h4 class="font-bold text-navy">Self-Attestation</h4>
+          <p class="text-slate-500">KYC and income proofs must be self-attested with client signature and current date.</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-navy text-gold flex items-center justify-center font-bold">3</div>
+          <h4 class="font-bold text-navy">Property Deeps Scans</h4>
+          <p class="text-slate-500">Original color scans required for 30-year title deeds, Index-II, and approved building plans.</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-navy text-gold flex items-center justify-center font-bold">4</div>
+          <h4 class="font-bold text-navy">Bank Scrutiny Speed</h4>
+          <p class="text-slate-500">Pre-verified checklists achieve 3x faster Legal Technical Scrutiny (LTS) approvals.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- UPLOAD & VERIFICATION PREVIEW MODAL -->
+  <div id="uploadModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative border border-slate-200 shadow-2xl space-y-6">
+      <button onclick="closeUploadModal()" class="absolute top-5 right-5 text-slate-400 hover:text-navy text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div>
+        <span class="bg-gold/10 text-gold-dark text-xs font-bold px-3 py-1 rounded-full border border-gold/30 uppercase">Document Verification Studio</span>
+        <h3 class="text-2xl font-extrabold text-navy mt-2">Upload & Verify Client Documents</h3>
+        <p class="text-xs text-slate-500 mt-1">Drag and drop documents for automated format verification and legal team staging.</p>
+      </div>
+
+      <!-- Drag and Drop Dropzone -->
+      <div id="dropzone" onclick="triggerFileInput()" class="border-2 border-dashed border-gold/60 bg-gold/5 hover:bg-gold/10 rounded-2xl p-8 text-center cursor-pointer transition-colors space-y-3">
+        <input type="file" id="fileInput" multiple onchange="handleFileSelect(event)" class="hidden" accept=".pdf,.jpg,.jpeg,.png">
+        <div class="w-14 h-14 rounded-full bg-navy text-gold flex items-center justify-center text-2xl mx-auto shadow-md">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+        </div>
+        <div>
+          <p class="text-sm font-bold text-navy">Click or Drag Files Here to Upload</p>
+          <p class="text-xs text-slate-400 mt-0.5">Supports PDF, JPG, PNG (Max file size: 10MB)</p>
+        </div>
+      </div>
+
+      <!-- Uploaded Files Preview List -->
+      <div id="uploadPreviewList" class="space-y-2 max-h-48 overflow-y-auto">
+        <!-- Dynamic preview list -->
+      </div>
+
+      <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs">
+        <span id="uploadCountText" class="text-slate-500">0 Files Attached</span>
+        <div class="flex gap-2">
+          <button onclick="closeUploadModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition-colors">Cancel</button>
+          <button onclick="submitFiles()" class="px-5 py-2 bg-navy hover:bg-navy-light text-gold font-bold rounded-xl shadow transition-colors">Submit For Scrutiny</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL CHECKLIST MODAL -->
+  <div id="emailModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative border border-slate-200 shadow-2xl">
+      <button onclick="closeEmailModal()" class="absolute top-5 right-5 text-slate-400 hover:text-navy text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="mb-6">
+        <span class="bg-gold/10 text-gold-dark text-xs font-bold px-3 py-1 rounded-full border border-gold/30 uppercase">Dispatch Checklist</span>
+        <h3 class="text-2xl font-extrabold text-navy mt-2">Email Checklist to Client</h3>
+        <p class="text-xs text-slate-500 mt-1">Send a pre-formatted requirement email with active checkboxes directly to your client.</p>
+      </div>
+
+      <form onsubmit="handleEmailSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-navy mb-1">Client Full Name</label>
+          <input type="text" placeholder="e.g. Ramesh Patel" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-navy focus:outline-none focus:border-gold">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-navy mb-1">Client Email Address</label>
+          <input type="email" placeholder="client@example.com" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-navy focus:outline-none focus:border-gold">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-navy mb-1">Include Custom Message</label>
+          <textarea rows="3" placeholder="Please arrange the attached items before our legal verification meeting..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-navy focus:outline-none focus:border-gold"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+          <button type="button" onclick="closeEmailModal()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition-colors">Cancel</button>
+          <button type="submit" class="px-6 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold rounded-xl text-xs shadow-md transition-colors"><i class="fa-solid fa-paper-plane mr-1"></i> Send Email</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toast Bar -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-navy text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-gold/40 flex items-center gap-3 transition-all duration-300">
+    <i class="fa-solid fa-circle-check text-gold text-lg"></i>
+    <span id="toastMsg" class="text-xs font-medium">Notification message</span>
+  </div>
+
+  <!-- SECTION 4: Complete 19-Link Legal Mitra Network Directory Footer -->
+  <footer class="bg-navy-dark text-slate-300 border-t border-gold/30 mt-20 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      
+      <!-- Footer Top Branding Header -->
+      <div class="flex flex-col md:flex-row items-center justify-between border-b border-slate-800 pb-10 mb-10 gap-6 text-center md:text-left">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gold flex items-center justify-center text-navy font-black text-xl">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div>
+            <span class="font-extrabold text-lg text-white tracking-wide">LEGAL MITRA NETWORK</span>
+            <p class="text-[11px] text-slate-400">Pan-India POSP Legal Enablement Ecosystem</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-slate-400">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-gold"></i> 256-Bit Encrypted Portal</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-award text-gold"></i> ISO 27001 Certified</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-headset text-gold"></i> POSP Partner Support</span>
+        </div>
+      </div>
+
+      <!-- Complete 19-Link Network Directory Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Column 1: Primary Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Core Portals</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-gold transition-colors">1. Home</a></li>
+            <li><a href="about-us.html" class="hover:text-gold transition-colors">2. About Us</a></li>
+            <li><a href="services.html" class="hover:text-gold transition-colors">3. All Services</a></li>
+            <li><a href="contact-us.html" class="hover:text-gold transition-colors">9. Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Legal Practice Areas -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Practice Solutions</h4>
+          <ul class="space-y-2">
+            <li><a href="property-services.html" class="hover:text-gold transition-colors">4. Property Services</a></li>
+            <li><a href="finance-services.html" class="hover:text-gold transition-colors">5. Finance Services</a></li>
+            <li><a href="legal-services.html" class="hover:text-gold transition-colors">6. Legal Solutions</a></li>
+            <li><a href="calculators.html" class="hover:text-gold transition-colors">8. Legal Calculators</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Partner & Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Partner Dashboards</h4>
+          <ul class="space-y-2">
+            <li><a href="partner-network.html" class="hover:text-gold transition-colors">7. POSP Network</a></li>
+            <li><a href="user-dashboard.html" class="hover:text-gold transition-colors">10. Client Portal</a></li>
+            <li><a href="agent-dashboard.html" class="hover:text-gold transition-colors">11. Agent Dashboard</a></li>
+            <li><a href="marketing-hub.html" class="hover:text-gold transition-colors">12. Marketing Hub</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Knowledge Hub -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Academy & Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="educational-hub.html" class="hover:text-gold transition-colors">13. Video Academy</a></li>
+            <li><a href="document-checklist.html" class="hover:text-gold transition-colors font-bold text-gold">14. Checklists</a></li>
+            <li><a href="blog.html" class="hover:text-gold transition-colors">15. Legal Blog</a></li>
+            <li><a href="testimonials.html" class="hover:text-gold transition-colors">16. Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal & Terms -->
+        <div class="col-span-2 md:col-span-4 lg:col-span-1 space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Compliance Desk</h4>
+          <ul class="space-y-2">
+            <li><a href="privacy-policy.html" class="hover:text-gold transition-colors">17. Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-gold transition-colors">18. Terms of Use</a></li>
+            <li><a href="refund-policy.html" class="hover:text-gold transition-colors">19. Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Line -->
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <p>© 2026 Legal Mitra Network. All Rights Reserved. Pan-India Legal Enablement Suite.</p>
+        <div class="flex space-x-6">
+          <a href="privacy-policy.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="terms-and-conditions.html" class="hover:text-slate-300">Terms of Service</a>
+          <a href="refund-policy.html" class="hover:text-slate-300">Refund Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript Logic Execution -->
+  <script>
+    // --- Mobile Nav Toggle ---
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // --- Toast Notification Helper ---
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    // --- Data Store for Category Checklists ---
+    const checklistData = {
+      home_loan: {
+        title: "Home Loan & LAP Sanction Checklist",
+        groups: [
+          {
+            title: "1. KYC & Personal Identity",
+            icon: "fa-id-card",
+            items: [
+              "PAN Card Copy (Mandatory for All Applicants)",
+              "Aadhaar Card / Passport / Voter ID",
+              "2 Passport Size Photographs",
+              "Current Residence Address Proof (Utility Bill / Rent Agreement)"
+            ]
+          },
+          {
+            title: "2. Financial & Income Proofs",
+            icon: "fa-file-invoice-dollar",
+            items: [
+              "Last 6 Months Salary Slip / Form 16 (For Salaried)",
+              "Last 3 Years ITR with Computation Sheet (For Self-Employed)",
+              "Last 12 Months Bank Account Statement",
+              "Existing Loan Sanction Letters & Track Record"
+            ]
+          },
+          {
+            title: "3. Property Documents",
+            icon: "fa-building-circle-check",
+            items: [
+              "Registered Sale Agreement / Allotment Letter",
+              "Chain of Title Deeds for 30 Years",
+              "Approved Building Sanction Plan & Commencement Certificate",
+              "NOC from Builder / Housing Society"
+            ]
+          }
+        ]
+      },
+      title_search: {
+        title: "Property Title Verification Checklist",
+        groups: [
+          {
+            title: "1. Revenue & Land Records",
+            icon: "fa-map-location-dot",
+            items: [
+              "7/12 Extract / Saat Bara Utara (Rural/Agri properties)",
+              "City Survey Title Sheet (CTS) & Property Card (Urban)",
+              "Mutation Entries (Ferfar Patrak) for 30 Years",
+              "Khasra & Khatauni Records"
+            ]
+          },
+          {
+            title: "2. Registration & Tax Clearance",
+            icon: "fa-receipt",
+            items: [
+              "Index-II Registered Documents",
+              "Encumbrance Certificate (EC) for past 30 years",
+              "Latest Paid Property Tax Receipts",
+              "NOC from Tehsildar / Collector (if applicable)"
+            ]
+          }
+        ]
+      },
+      legal_notice: {
+        title: "Legal Notice & Litigation Support Checklist",
+        groups: [
+          {
+            title: "1. Dispute & Evidence Documentation",
+            icon: "fa-scale-unbalanced",
+            items: [
+              "Copy of Disputed Agreement / Contract / Cheque",
+              "Written Correspondence (Emails, Letters, WhatsApp logs)",
+              "Proof of Payment / Bank Transfer Records",
+              "Bank Cheque Return Memo (For Sec 138 NI Act)"
+            ]
+          },
+          {
+            title: "2. Party Details",
+            icon: "fa-user-tag",
+            items: [
+              "Full Legal Name & Official Address of Opposite Party",
+              "Chronological Event Timeline Narrative",
+              "Advocate Power of Attorney (Vakalatnama) Authorization"
+            ]
+          }
+        ]
+      },
+      corporate: {
+        title: "GST & Corporate Registration Checklist",
+        groups: [
+          {
+            title: "1. Director & Entity Proofs",
+            icon: "fa-briefcase",
+            items: [
+              "Director PAN Cards & Aadhaar Proofs",
+              "Digital Signature Certificate (DSC) Class 3",
+              "DIN (Director Identification Number) Details",
+              "Passport Copy (Mandatory for Foreign Directors)"
+            ]
+          },
+          {
+            title: "2. Business Registered Office",
+            icon: "fa-store",
+            items: [
+              "Proof of Office Ownership or Rent Agreement",
+              "No Objection Certificate (NOC) from Property Owner",
+              "Latest Electricity / Water Bill of Business Premises"
+            ]
+          }
+        ]
+      }
+    };
+
+    let activeCategory = 'home_loan';
+
+    // --- Render Category Checklist ---
+    function renderCategoryChecklist(catKey) {
+      activeCategory = catKey;
+      const data = checklistData[catKey];
+      document.getElementById('activeCategoryTitle').textContent = data.title;
+
+      const container = document.getElementById('checklistGroupsContainer');
+      container.innerHTML = '';
+
+      data.groups.forEach((group, groupIdx) => {
+        const groupEl = document.createElement('div');
+        groupEl.className = 'glass-card p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4';
+        
+        let itemsHtml = '';
+        group.items.forEach((item, itemIdx) => {
+          const itemId = `chk_${catKey}_${groupIdx}_${itemIdx}`;
+          itemsHtml += `
+            <label class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer border border-transparent hover:border-slate-200 transition-colors">
+              <input type="checkbox" id="${itemId}" onchange="updateProgress()" class="custom-checkbox mt-0.5 w-4 h-4 rounded text-gold focus:ring-gold border-slate-300">
+              <span class="text-xs text-slate-700 leading-snug font-medium">${item}</span>
+            </label>
+          `;
+        });
+
+        groupEl.innerHTML = `
+          <div class="flex items-center gap-2.5 border-b border-slate-100 pb-3">
+            <div class="w-8 h-8 rounded-lg bg-navy/10 text-navy flex items-center justify-center font-bold text-sm">
+              <i class="fa-solid ${group.icon} text-gold-dark"></i>
+            </div>
+            <h3 class="font-bold text-navy text-sm sm:text-base">${group.title}</h3>
+          </div>
+          <div class="space-y-1">
+            ${itemsHtml}
+          </div>
+        `;
+        container.appendChild(groupEl);
+      });
+
+      updateProgress();
+    }
+
+    // --- Filter Tab Logic ---
+    function filterCategory(catKey) {
+      const buttons = document.querySelectorAll('#categoryFilterContainer .cat-filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === catKey) {
+          btn.className = 'cat-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-gold shadow-md';
+        } else {
+          btn.className = 'cat-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200';
+        }
+      });
+
+      renderCategoryChecklist(catKey);
+    }
+
+    // --- Real-time Progress Calculator ---
+    function updateProgress() {
+      const checkboxes = document.querySelectorAll('#checklistGroupsContainer input[type="checkbox"]');
+      const total = checkboxes.length;
+      let checked = 0;
+
+      checkboxes.forEach(cb => {
+        if (cb.checked) checked++;
+      });
+
+      const percentage = total === 0 ? 0 : Math.round((checked / total) * 100);
+
+      document.getElementById('progressPercentage').textContent = `${percentage}% Completed (${checked}/${total})`;
+      document.getElementById('activeProgressBar').style.width = `${percentage}%`;
+
+      document.getElementById('heroProgressText').textContent = `${percentage}%`;
+      document.getElementById('heroProgressBar').style.width = `${percentage}%`;
+    }
+
+    // --- Dynamic Eligibility & Readiness Generator ---
+    function generateCustomChecklist() {
+      const service = document.getElementById('wizService').value;
+      const applicant = document.getElementById('wizApplicant').value;
+      const property = document.getElementById('wizProperty').value;
+
+      const titleEl = document.getElementById('wizResultTitle');
+      const container = document.getElementById('wizResultItems');
+
+      let reqs = [
+        "Applicant PAN & Aadhaar (Self-Attested)",
+        "3 Months Bank Statements with Active Balance"
+      ];
+
+      if (applicant === 'salaried') {
+        reqs.push("Latest 3 Months Salary Slips with Employer Stamp", "Form 16 (Part A & B) for last 2 years");
+      } else if (applicant === 'self_employed') {
+        reqs.push("3 Years Tax Returns with P&L Sheet", "GST Registration & MSME Udyam Certificate");
+      } else if (applicant === 'nri') {
+        reqs.push("Passport & Valid Work Visa / Green Card Copy", "NRE/NRO Bank Account Statements for 6 Months", "Power of Attorney (POA) Executed in Indian Embassy");
+      }
+
+      if (property === 'apartment') {
+        reqs.push("Builder Sale Agreement & RERA Registration Copy", "Occupancy Certificate (OC) / Possession Letter");
+      } else if (property === 'non_agri') {
+        reqs.push("Non-Agricultural (NA) Order & Layout Sanction Plan", "30-Year Search Report & Ferfar Entries");
+      } else if (property === 'agri') {
+        reqs.push("7/12 Extract & Mutation Entry (Ferfar)", "Collector Permission / Agricultural Status Proof");
+      } else if (property === 'commercial') {
+        reqs.push("Commercial Shop Act License", "Approved Municipal Commercial Plan & Society NOC");
+      }
+
+      titleEl.textContent = `Requirements Matrix: ${service.toUpperCase()} | ${applicant.toUpperCase()}`;
+
+      container.innerHTML = '';
+      reqs.forEach((r, idx) => {
+        const item = document.createElement('div');
+        item.className = 'p-3 bg-navy/80 border border-slate-700 rounded-xl flex items-start gap-2.5 text-slate-200';
+        item.innerHTML = `
+          <i class="fa-solid fa-circle-check text-gold mt-0.5"></i>
+          <span>${r}</span>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function downloadCustomMatrix() {
+      showToast('Custom Document Matrix generated and downloaded!');
+    }
+
+    function downloadChecklistPdf() {
+      showToast(`Downloading "${checklistData[activeCategory].title}.pdf"...`);
+    }
+
+    function scrollToEligibility() {
+      document.getElementById('eligibility-tool').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // --- Modal Controls & Email ---
+    function openEmailModal() {
+      document.getElementById('emailModal').classList.remove('hidden');
+    }
+    function closeEmailModal() {
+      document.getElementById('emailModal').classList.add('hidden');
+    }
+    function handleEmailSubmit(e) {
+      e.preventDefault();
+      closeEmailModal();
+      showToast('Checklist email successfully dispatched to client!');
+    }
+
+    // --- Upload Studio Modal Logic ---
+    let uploadedFiles = [];
+
+    function openUploadModal() {
+      document.getElementById('uploadModal').classList.remove('hidden');
+    }
+    function closeUploadModal() {
+      document.getElementById('uploadModal').classList.add('hidden');
+    }
+    function triggerFileInput() {
+      document.getElementById('fileInput').click();
+    }
+
+    function handleFileSelect(e) {
+      const files = Array.from(e.target.files);
+      files.forEach(f => {
+        uploadedFiles.push(f);
+      });
+      renderUploadList();
+    }
+
+    function renderUploadList() {
+      const list = document.getElementById('uploadPreviewList');
+      const count = document.getElementById('uploadCountText');
+      list.innerHTML = '';
+
+      uploadedFiles.forEach((f, idx) => {
+        const fileItem = document.createElement('div');
+        fileItem.className = 'flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs';
+        fileItem.innerHTML = `
+          <div class="flex items-center gap-2.5">
+            <i class="fa-solid fa-file-pdf text-red-500 text-base"></i>
+            <div>
+              <p class="font-bold text-navy">${f.name}</p>
+              <p class="text-[10px] text-slate-400">${(f.size / 1024 / 1024).toFixed(2)} MB • Ready for Scrutiny</p>
+            </div>
+          </div>
+          <button onclick="removeFile(${idx})" class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-trash"></i></button>
+        `;
+        list.appendChild(fileItem);
+      });
+
+      count.textContent = `${uploadedFiles.length} File(s) Attached`;
+    }
+
+    function removeFile(idx) {
+      uploadedFiles.splice(idx, 1);
+      renderUploadList();
+    }
+
+    function submitFiles() {
+      if (uploadedFiles.length === 0) {
+        showToast('Please attach at least one file before submitting.');
+        return;
+      }
+      closeUploadModal();
+      showToast(`${uploadedFiles.length} file(s) uploaded! Advocate scrutiny in progress.`);
+      uploadedFiles = [];
+      renderUploadList();
+    }
+
+    // --- Dynamic Hero Particle Network Canvas ---
+    function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      });
+
+      const particles = [];
+      const particleCount = 40;
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.7,
+          vy: (Math.random() - 0.5) * 0.7,
+          radius: Math.random() * 2 + 1,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particleCount; i++) {
+          for (let j = i + 1; j < particleCount; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(212, 175, 55, ${1 - dist / 120 * 0.8})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        for (let p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#D4AF37';
+          ctx.fill();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    // --- Window Onload Initialization ---
+    window.onload = function() {
+      initHeroCanvas();
+      renderCategoryChecklist('home_loan');
+      generateCustomChecklist();
+    };
+  </script>
+</body>
+</html>
