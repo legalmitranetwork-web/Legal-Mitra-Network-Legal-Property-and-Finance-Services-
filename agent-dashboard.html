@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent & POSP Partner Dashboard | Legal Mitra Network</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-navy: #0B1B3D;
+            --navy-light: #162B56;
+            --regal-gold: #D4AF37;
+            --gold-light: #F4E296;
+            --gold-dark: #AA820A;
+            --bg-offwhite: #F8FAFC;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --border-color: #E2E8F0;
+            --card-shadow: 0 10px 30px -5px rgba(11, 27, 61, 0.08);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --status-success: #10B981;
+            --status-warning: #F59E0B;
+            --status-info: #3B82F6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-offwhite);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphic Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 27, 61, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-crest {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--regal-gold);
+            background: linear-gradient(135deg, var(--primary-navy), var(--navy-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--regal-gold);
+            font-size: 1.2rem;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: var(--regal-gold);
+            font-size: 0.75rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #E2E8F0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--regal-gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--regal-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .agent-profile-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 6px 14px;
+            border-radius: 30px;
+            color: #FFFFFF;
+            font-size: 0.88rem;
+        }
+
+        .agent-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--regal-gold);
+            color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        /* Dashboard Header */
+        .dash-header {
+            position: relative;
+            padding: 140px 5% 60px;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #050d21 100%);
+            color: #FFFFFF;
+            overflow: hidden;
+        }
+
+        #agentCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .dash-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .welcome-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .welcome-text p {
+            color: #94A3B8;
+            font-size: 0.95rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--regal-gold), var(--gold-dark));
+            color: #000;
+            font-weight: 600;
+            padding: 0.65rem 1.4rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            font-size: 0.9rem;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, var(--gold-light), var(--regal-gold));
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            font-weight: 500;
+            padding: 0.65rem 1.4rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #FFFFFF;
+        }
+
+        /* Metrics Grid */
+        .metrics-container {
+            max-width: 1200px;
+            margin: -30px auto 40px;
+            position: relative;
+            z-index: 10;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--regal-gold);
+        }
+
+        .metric-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: rgba(11, 27, 61, 0.05);
+            color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .metric-info label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .metric-info .val {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Dashboard Main Layout */
+        .dash-body {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 5%;
+        }
+
+        /* Tabs Header */
+        .dash-tabs {
+            display: flex;
+            gap: 0.8rem;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+
+        .dash-tab-btn {
+            background: transparent;
+            border: none;
+            padding: 0.9rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dash-tab-btn.active, .dash-tab-btn:hover {
+            color: var(--primary-navy);
+        }
+
+        .dash-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--regal-gold);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .dash-pane {
+            display: none;
+        }
+
+        .dash-pane.active {
+            display: block;
+        }
+
+        /* Card Panels */
+        .panel-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .panel-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary-navy);
+        }
+
+        /* Tables */
+        .dash-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .dash-table th, .dash-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .dash-table th {
+            background: #FAFAFA;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-status {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .badge-verified { background: rgba(16, 185, 129, 0.15); color: #047857; }
+        .badge-pending { background: rgba(245, 158, 11, 0.15); color: #B45309; }
+        .badge-action { background: rgba(59, 130, 246, 0.15); color: #1D4ED8; }
+
+        /* Commission Calculator Widget */
+        .calc-widget-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .calc-box {
+            background: var(--bg-offwhite);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .calc-result-box {
+            background: linear-gradient(135deg, var(--primary-navy), var(--navy-light));
+            border-radius: 12px;
+            padding: 2rem;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .calc-result-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--regal-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-result-box .amt {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0.5rem 0;
+            color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-smooth);
+            background: #FFFFFF;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-navy);
+            box-shadow: 0 0 0 3px rgba(11, 27, 61, 0.1);
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 27, 61, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            max-width: 520px;
+            width: 100%;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            animation: modalFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        /* Standardized 19-Link Directory Footer */
+        .footer {
+            background: var(--primary-navy);
+            color: #94A3B8;
+            padding: 80px 5% 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-col h4 {
+            color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--regal-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--regal-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 850px) {
+            .dash-header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                display: none;
+            }
+            .calc-widget-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <div class="logo-crest"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="logo-text">
+                <h1>Legal Mitra</h1>
+                <span>Network</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="property-services.html">Property</a></li>
+            <li><a href="finance-services.html">Finance</a></li>
+            <li><a href="legal-services.html">Legal</a></li>
+            <li><a href="partner-network.html" class="active">Partner POSP</a></li>
+            <li><a href="calculators.html">Calculators</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+        <div class="agent-profile-badge">
+            <div class="agent-avatar">AM</div>
+            <span>Amit Mehta (POSP #4021)</span>
+        </div>
+    </nav>
+
+    <!-- Agent Dashboard Header -->
+    <section class="dash-header">
+        <canvas id="agentCanvas"></canvas>
+        <div class="dash-header-content">
+            <div class="welcome-text">
+                <h1>POSP Agent & Partner Portal</h1>
+                <p>Track prospective client leads, loan disbarment payouts, and legal title verification commissions.</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-gold" onclick="openModal('newLeadModal')"><i class="fa-solid fa-user-plus"></i> Submit Client Lead</button>
+                <button class="btn-outline-light" onclick="openModal('payoutModal')"><i class="fa-solid fa-hand-holding-dollar"></i> Request Payout</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Bar -->
+    <div class="metrics-container">
+        <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-wallet"></i></div>
+            <div class="metric-info">
+                <label>Total Commissions</label>
+                <div class="val">₹ 1,42,500</div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+            <div class="metric-info">
+                <label>Pending Payouts</label>
+                <div class="val">₹ 38,000</div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="metric-info">
+                <label>Active Leads</label>
+                <div class="val">14 Cases</div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="metric-info">
+                <label>Lead Conversion Rate</label>
+                <div class="val">68.4%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Workspace -->
+    <div class="dash-body">
+
+        <!-- Tabs -->
+        <div class="dash-tabs">
+            <button class="dash-tab-btn active" onclick="switchAgentTab('pipelineTab', this)"><i class="fa-solid fa-diagram-project"></i> Lead Pipeline & Cases</button>
+            <button class="dash-tab-btn" onclick="switchAgentTab('calcTab', this)"><i class="fa-solid fa-calculator"></i> Commission Calculator</button>
+            <button class="dash-tab-btn" onclick="switchAgentTab('payoutsTab', this)"><i class="fa-solid fa-money-bill-transfer"></i> Payout History</button>
+            <button class="dash-tab-btn" onclick="switchAgentTab('partnerKitTab', this)"><i class="fa-solid fa-briefcase"></i> POSP Resource Kit</button>
+        </div>
+
+        <!-- Tab 1: Pipeline & Lead Tracking -->
+        <div class="dash-pane active" id="pipelineTab">
+            <div class="panel-card">
+                <div class="panel-header">
+                    <h3>Client Pipeline & Status Tracker</h3>
+                    <button class="btn-gold" style="font-size: 0.85rem;" onclick="openModal('newLeadModal')"><i class="fa-solid fa-plus"></i> Add New Lead</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Client Name</th>
+                                <th>Vertical / Product</th>
+                                <th>Ticket Size</th>
+                                <th>Stage</th>
+                                <th>Est. Commission</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sunil Verma</strong><br><small style="color: var(--text-muted);">+91 98200 11223</small></td>
+                                <td>Home Loan Syndication</td>
+                                <td>₹ 85,00,000</td>
+                                <td><span class="badge-status badge-action">Bank Approval Stage</span></td>
+                                <td>₹ 21,250 (0.25%)</td>
+                                <td><a href="#" onclick="alert('Viewing case notes for Sunil Verma...')" style="color: var(--primary-navy); font-weight: 600; text-decoration: none;">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ananya Deshmukh</strong><br><small style="color: var(--text-muted);">+91 97110 44556</small></td>
+                                <td>Property Title Search (30 Yrs)</td>
+                                <td>₹ 12,000</td>
+                                <td><span class="badge-status badge-verified">Search Complete</span></td>
+                                <td>₹ 2,400 (20%)</td>
+                                <td><a href="#" onclick="alert('Payout generated for Ananya Deshmukh matter.')" style="color: var(--primary-navy); font-weight: 600; text-decoration: none;">Claim Payout</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vikramaditya Construction</strong><br><small style="color: var(--text-muted);">+91 99300 88776</small></td>
+                                <td>Project Legal Vetting</td>
+                                <td>₹ 2,50,000</td>
+                                <td><span class="badge-status badge-pending">Document Intake</span></td>
+                                <td>₹ 25,000 (10%)</td>
+                                <td><a href="#" onclick="alert('Document upload checklist sent to client.')" style="color: var(--primary-navy); font-weight: 600; text-decoration: none;">View Details</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Commission Calculator -->
+        <div class="dash-pane" id="calcTab">
+            <div class="panel-card">
+                <div class="panel-header">
+                    <h3>Interactive POSP Commission Calculator</h3>
+                </div>
+                <div class="calc-widget-grid">
+                    <div class="calc-box">
+                        <div class="form-group">
+                            <label>Product Vertical</label>
+                            <select class="form-control" id="productType" onchange="calculatePayout()">
+                                <option value="loan">Home Loan / LAP (0.30% Avg Comm.)</option>
+                                <option value="title">Property Title Search (20% Comm.)</option>
+                                <option value="legal">Legal Notice / Drafting (15% Comm.)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label id="amountLabel">Total Loan / Disbursement Amount (₹)</label>
+                            <input type="number" class="form-control" id="loanAmount" value="5000000" oninput="calculatePayout()">
+                        </div>
+                        <div class="form-group">
+                            <label>Monthly Target Leads</label>
+                            <input type="number" class="form-control" id="monthlyLeads" value="4" oninput="calculatePayout()">
+                        </div>
+                    </div>
+
+                    <div class="calc-result-box">
+                        <h4>Estimated Monthly Earnings</h4>
+                        <div class="amt" id="totalPayoutResult">₹ 60,000</div>
+                        <p style="color: #CBD5E1; font-size: 0.88rem;">Based on Legal Mitra Network POSP Tier 2 Commission Structure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Payout History -->
+        <div class="dash-pane" id="payoutsTab">
+            <div class="panel-card">
+                <div class="panel-header">
+                    <h3>Disbursement & Payout Log</h3>
+                    <button class="btn-gold" style="font-size: 0.85rem;" onclick="openModal('payoutModal')"><i class="fa-solid fa-hand-holding-dollar"></i> Request Payout</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Transaction Ref</th>
+                                <th>Payout Category</th>
+                                <th>Disbursement Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TXN-2026-9901</td>
+                                <td>Home Loan Disbursal Commission (Ref #802)</td>
+                                <td>01 Sep 2026</td>
+                                <td>₹ 45,000</td>
+                                <td><span class="badge-status badge-verified">Transferred</span></td>
+                            </tr>
+                            <tr>
+                                <td>TXN-2026-9412</td>
+                                <td>Title Search Retainer Share</td>
+                                <td>15 Aug 2026</td>
+                                <td>₹ 14,500</td>
+                                <td><span class="badge-status badge-verified">Transferred</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: POSP Resource Kit -->
+        <div class="dash-pane" id="partnerKitTab">
+            <div class="panel-card">
+                <div class="panel-header">
+                    <h3>Partner Enablement & Marketing Downloads</h3>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fa-solid fa-file-pdf" style="font-size: 2.5rem; color: var(--primary-navy); margin-bottom: 0.8rem;"></i>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Client Onboarding Brochure 2026</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">Co-branded PDF brochure detailing Title Search & Loan Syndication.</p>
+                        <a href="marketing-hub.html" class="btn-gold" style="font-size: 0.8rem; width: 100%; justify-content: center;"><i class="fa-solid fa-download"></i> Download PDF</a>
+                    </div>
+
+                    <div style="border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 2.5rem; color: var(--primary-navy); margin-bottom: 0.8rem;"></i>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">POSP Training Academy</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem;">Video tutorials on reading 7/12 extracts and mortgage legal checks.</p>
+                        <a href="educational-hub.html" class="btn-gold" style="font-size: 0.8rem; width: 100%; justify-content: center;"><i class="fa-solid fa-play"></i> Watch Tutorials</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- New Client Lead Modal -->
+    <div class="modal-overlay" id="newLeadModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('newLeadModal')">&times;</button>
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--primary-navy); font-size: 1.4rem; margin-bottom: 0.5rem;">Submit Prospective Lead</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">Enter client details to log under your POSP Partner Referral Code.</p>
+            
+            <form onsubmit="handleAgentFormSubmit(event, 'newLeadModal')">
+                <div class="form-group">
+                    <label>Client Full Name</label>
+                    <input type="text" class="form-control" placeholder="e.g. Ramesh Patel" required>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Category</label>
+                    <select class="form-control" required>
+                        <option value="loan">Home Loan / LAP</option>
+                        <option value="title">Property Title Verification</option>
+                        <option value="drafting">Legal Notice / Sale Deed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Estimated Value / Loan Amount</label>
+                    <input type="number" class="form-control" placeholder="e.g. 5000000" required>
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; margin-top: 1rem;">Register Lead</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payout Request Modal -->
+    <div class="modal-overlay" id="payoutModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('payoutModal')">&times;</button>
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--primary-navy); font-size: 1.4rem; margin-bottom: 0.5rem;">Request Payout Withdrawal</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">Available Commission Balance: <strong>₹ 38,000</strong></p>
+            
+            <form onsubmit="handleAgentFormSubmit(event, 'payoutModal')">
+                <div class="form-group">
+                    <label>Withdrawal Amount (₹)</label>
+                    <input type="number" class="form-control" value="38000" max="38000" required>
+                </div>
+                <div class="form-group">
+                    <label>Destination Bank Account</label>
+                    <select class="form-control" required>
+                        <option value="default">HDFC Bank - A/C Ending in ****4012</option>
+                        <option value="icici">ICICI Bank - A/C Ending in ****8890</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; margin-top: 1rem;">Confirm Transfer Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Standardized Directory Footer (19 Links) -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Main Directory</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">1. Home (index.html)</a></li>
+                    <li><a href="about-us.html">2. About Us (about-us.html)</a></li>
+                    <li><a href="services.html">3. All Services (services.html)</a></li>
+                    <li><a href="property-services.html">4. Property (property-services.html)</a></li>
+                    <li><a href="finance-services.html">5. Finance (finance-services.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Partner</h4>
+                <ul class="footer-links">
+                    <li><a href="legal-services.html">6. Legal Solutions (legal-services.html)</a></li>
+                    <li><a href="partner-network.html">7. POSP Network (partner-network.html)</a></li>
+                    <li><a href="calculators.html">8. Calculators (calculators.html)</a></li>
+                    <li><a href="contact-us.html">9. Contact Us (contact-us.html)</a></li>
+                    <li><a href="user-dashboard.html">10. Client Portal (user-dashboard.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Portals & Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="agent-dashboard.html">11. Agent Dashboard (agent-dashboard.html)</a></li>
+                    <li><a href="marketing-hub.html">12. Marketing Hub (marketing-hub.html)</a></li>
+                    <li><a href="educational-hub.html">13. Video Academy (educational-hub.html)</a></li>
+                    <li><a href="document-checklist.html">14. Checklists (document-checklist.html)</a></li>
+                    <li><a href="blog.html">15. Legal Blog (blog.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Trust & Compliance</h4>
+                <ul class="footer-links">
+                    <li><a href="testimonials.html">16. Testimonials (testimonials.html)</a></li>
+                    <li><a href="privacy-policy.html">17. Privacy Policy (privacy-policy.html)</a></li>
+                    <li><a href="terms-and-conditions.html">18. Terms of Use (terms-and-conditions.html)</a></li>
+                    <li><a href="refund-policy.html">19. Refund Policy (refund-policy.html)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Legal Mitra Network. All Rights Reserved. Built for Seamless Legal, Property & Financial Solutions.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Hero Canvas Particle Background
+        const canvas = document.getElementById('agentCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particles = Array.from({ length: 30 }, () => new Particle());
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Switch Dashboard Tabs
+        function switchAgentTab(tabId, btn) {
+            document.querySelectorAll('.dash-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.dash-pane').forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Commission Calculator Logic
+        function calculatePayout() {
+            const type = document.getElementById('productType').value;
+            const amount = parseFloat(document.getElementById('loanAmount').value) || 0;
+            const leads = parseInt(document.getElementById('monthlyLeads').value) || 0;
+            let result = 0;
+
+            if (type === 'loan') {
+                document.getElementById('amountLabel').innerText = "Total Loan / Disbursement Amount (₹)";
+                result = (amount * 0.003) * leads;
+            } else if (type === 'title') {
+                document.getElementById('amountLabel').innerText = "Average Title Search Fee (₹)";
+                result = (amount * 0.20) * leads;
+            } else {
+                document.getElementById('amountLabel').innerText = "Average Legal Notice / Drafting Fee (₹)";
+                result = (amount * 0.15) * leads;
+            }
+
+            document.getElementById('totalPayoutResult').innerText = "₹ " + Math.round(result).toLocaleString('en-IN');
+        }
+
+        // Modal Handlers
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        function handleAgentFormSubmit(e, id) {
+            e.preventDefault();
+            alert('Operation successful! Your POSP portfolio has been updated.');
+            closeModal(id);
+        }
+    </script>
+</body>
+</html>
