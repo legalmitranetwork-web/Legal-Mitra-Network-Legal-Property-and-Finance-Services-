@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Academy & Educational Hub | Legal Mitra Network</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0B1B3D',
+              light: '#162C5B',
+              dark: '#061026',
+            },
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F3E5AB',
+              dark: '#AA820A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles and Glassmorphism Token Declarations -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0B1B3D;
+      overflow-x: hidden;
+    }
+
+    .glass-nav {
+      background: rgba(11, 27, 61, 0.90);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #061026;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 4px;
+    }
+
+    .status-pulse {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* Accordion animation */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+    .faq-answer.open {
+      max-height: 300px;
+      padding-top: 0.75rem;
+      padding-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Glassmorphic Navbar -->
+  <header class="sticky top-0 z-50 glass-nav text-white transition-all duration-300 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Header -->
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-dark via-gold to-gold-light flex items-center justify-center text-navy font-black text-xl shadow-lg transform group-hover:scale-105 transition-all">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-extrabold text-xl tracking-tight text-white group-hover:text-gold transition-colors">
+                LEGAL MITRA <span class="text-gold">NETWORK</span>
+              </span>
+              <span class="text-[10px] uppercase tracking-widest text-slate-300 font-semibold">Video Academy & Knowledge Hub</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+          <a href="index.html" class="text-slate-200 hover:text-gold transition-colors">Home</a>
+          <a href="services.html" class="text-slate-200 hover:text-gold transition-colors">Services</a>
+          <a href="partner-network.html" class="text-slate-200 hover:text-gold transition-colors">POSP Network</a>
+          <a href="marketing-hub.html" class="text-slate-200 hover:text-gold transition-colors">Marketing Hub</a>
+          <a href="educational-hub.html" class="text-gold font-bold transition-colors border-b-2 border-gold pb-1">Video Academy</a>
+          <a href="calculators.html" class="text-slate-200 hover:text-gold transition-colors">Calculators</a>
+        </nav>
+
+        <!-- Right Side Badge & CTA -->
+        <div class="hidden sm:flex items-center gap-3">
+          <div class="flex items-center gap-2.5 bg-navy-dark/80 px-3.5 py-1.5 rounded-full border border-gold/30">
+            <div class="relative">
+              <div class="w-7 h-7 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-xs">
+                RK
+              </div>
+              <span class="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full status-pulse border border-navy"></span>
+            </div>
+            <div class="text-xs">
+              <p class="font-bold text-white leading-none">Rajesh Kumar</p>
+              <p class="text-slate-400 text-[10px] leading-none mt-0.5">POSP ID: <span class="text-gold font-mono">LMN-98421</span></p>
+            </div>
+          </div>
+          <button onclick="openCertModal()" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-graduation-cap"></i> Certificate Request
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="mobileMenuBtn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-navy-dark border-t border-gold/20 px-4 pt-3 pb-6 space-y-3">
+      <div class="flex items-center gap-3 p-3 bg-navy/60 rounded-lg mb-3">
+        <div class="w-9 h-9 rounded-full bg-gold text-navy font-bold flex items-center justify-center text-sm">RK</div>
+        <div>
+          <p class="font-bold text-white text-sm">Rajesh Kumar</p>
+          <p class="text-slate-400 text-xs">POSP ID: LMN-98421</p>
+        </div>
+      </div>
+      <a href="index.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-house text-gold mr-2"></i> Home</a>
+      <a href="services.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-layer-group text-gold mr-2"></i> Services</a>
+      <a href="partner-network.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-handshake text-gold mr-2"></i> POSP Network</a>
+      <a href="marketing-hub.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-bullhorn text-gold mr-2"></i> Marketing Hub</a>
+      <a href="educational-hub.html" class="block text-gold font-bold py-1 text-sm"><i class="fa-solid fa-circle-play text-gold mr-2"></i> Video Academy</a>
+      <a href="document-checklist.html" class="block text-slate-200 hover:text-gold py-1 text-sm"><i class="fa-solid fa-list-check text-gold mr-2"></i> Checklists</a>
+      <button onclick="openCertModal()" class="w-full mt-2 py-2.5 bg-gold text-navy font-bold rounded-xl text-xs"><i class="fa-solid fa-graduation-cap mr-1"></i> Request Certificate</button>
+    </div>
+  </header>
+
+  <!-- Hero Section with Canvas Particle Network -->
+  <section class="relative bg-navy overflow-hidden py-16 lg:py-20 border-b border-gold/20">
+    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-10">
+      
+      <div class="lg:w-2/3 space-y-5">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider">
+          <i class="fa-solid fa-circle-play text-xs animate-pulse"></i> Certified Legal & Financial Knowledge Hub
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+          Master Legal Audits & Home Loan Protocols with <br class="hidden sm:inline">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-yellow-500">
+            Interactive Video Training
+          </span>
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-light">
+          Step-by-step masterclasses, expert legal webinars, property title verification tutorials, and downloadable compliance checklists for POSP partners and clients.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="flex flex-wrap items-center gap-6 pt-2 justify-center lg:justify-start text-xs text-slate-300">
+          <span class="flex items-center gap-2 bg-navy-light/60 px-3 py-1.5 rounded-lg border border-slate-700">
+            <i class="fa-solid fa-video text-gold"></i> 48+ HD Video Lessons
+          </span>
+          <span class="flex items-center gap-2 bg-navy-light/60 px-3 py-1.5 rounded-lg border border-slate-700">
+            <i class="fa-solid fa-certificate text-gold"></i> POSP Certification Ready
+          </span>
+          <span class="flex items-center gap-2 bg-navy-light/60 px-3 py-1.5 rounded-lg border border-slate-700">
+            <i class="fa-solid fa-file-pdf text-gold"></i> 35+ Standard Operating Manuals
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Highlight Card -->
+      <div class="lg:w-1/3 w-full bg-navy-dark/80 p-6 rounded-3xl border border-gold/30 shadow-2xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Learning Progress</span>
+          <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded">Active Trainee</span>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between text-xs text-white font-medium">
+            <span>POSP Module Completion</span>
+            <span class="text-gold font-bold">75%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-gold-dark to-gold h-full rounded-full" style="width: 75%"></div>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          Complete 3 more video modules & pass the property law assessment to unlock your <strong class="text-white">Senior Legal POSP Badge</strong>.
+        </p>
+        <a href="#assessment" class="block w-full text-center py-2.5 bg-navy-light hover:bg-gold hover:text-navy text-gold font-bold text-xs rounded-xl border border-gold/40 transition-all">
+          Take Knowledge Assessment <i class="fa-solid fa-arrow-right ml-1"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+    <!-- SECTION 1: Video Academy & Resource Center -->
+    <section id="academy" class="space-y-8 scroll-mt-24">
+      
+      <!-- Category Header & Filtering Bar -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-5">
+        <div>
+          <span class="text-gold-dark font-bold text-xs uppercase tracking-widest">Video Masterclasses</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-navy">Legal & Financial Video Academy</h2>
+          <p class="text-slate-600 text-sm mt-1">Explore real-world case studies, property title checks, mortgage legal guides, and POSP selling skillsets.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="academyFilterContainer">
+          <button onclick="filterAcademy('all')" class="acad-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-gold shadow-md" data-category="all">All Modules</button>
+          <button onclick="filterAcademy('property')" class="acad-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="property"><i class="fa-solid fa-building-user text-gold-dark mr-1"></i> Property Title</button>
+          <button onclick="filterAcademy('loans')" class="acad-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="loans"><i class="fa-solid fa-hand-holding-dollar text-blue-600 mr-1"></i> Home Loans</button>
+          <button onclick="filterAcademy('drafting')" class="acad-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="drafting"><i class="fa-solid fa-file-signature text-purple-600 mr-1"></i> Legal Drafting</button>
+          <button onclick="filterAcademy('posp')" class="acad-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="posp"><i class="fa-solid fa-user-shield text-emerald-600 mr-1"></i> POSP Training</button>
+        </div>
+      </div>
+
+      <!-- Video Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="videoGrid">
+
+        <!-- Video Card 1 -->
+        <div class="acad-card property bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col justify-between group">
+          <div>
+            <!-- Video Thumbnail with Overlay -->
+            <div class="relative h-48 bg-slate-900 overflow-hidden cursor-pointer" onclick="playVideo('Property Title Search & 7/12 Extract Masterclass', 'Adv. S. Ramanathan', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Property Title Search" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+              
+              <!-- Duration & View Badges -->
+              <span class="absolute top-3 left-3 bg-navy/80 text-gold text-[10px] font-bold px-2.5 py-1 rounded-md border border-gold/30">
+                <i class="fa-solid fa-clock mr-1"></i> 18:45 Mins
+              </span>
+              <span class="absolute top-3 right-3 bg-black/60 text-white text-[10px] font-semibold px-2 py-1 rounded-md">
+                <i class="fa-solid fa-eye mr-1"></i> 12.4K Views
+              </span>
+
+              <!-- Center Play Icon -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-gold/90 text-navy flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition-transform">
+                  <i class="fa-solid fa-play ml-1"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content Details -->
+            <div class="p-5 space-y-3">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-gold-dark bg-gold/10 px-2 py-0.5 rounded border border-gold/20">Property Law</span>
+              <h3 class="font-bold text-navy text-base leading-snug group-hover:text-gold-dark transition-colors">
+                Property Title Search & 7/12 Revenue Extract Verification Guide
+              </h3>
+              <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                Learn how to detect encumbrances, verify ancestral claims, and cross-examine CTS numbers in agricultural and non-agricultural titles.
+              </p>
+              
+              <div class="flex items-center gap-2 pt-1 border-t border-slate-100 text-xs text-slate-500">
+                <div class="w-6 h-6 rounded-full bg-navy text-gold flex items-center justify-center font-bold text-[10px]">SR</div>
+                <span>Instructor: <strong>Adv. S. Ramanathan</strong> (Senior Title Counsel)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Actions -->
+          <div class="p-5 pt-0 flex items-center gap-3">
+            <button onclick="playVideo('Property Title Search & 7/12 Extract Masterclass', 'Adv. S. Ramanathan', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" class="flex-1 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow">
+              <i class="fa-solid fa-circle-play"></i> Watch Video
+            </button>
+            <button onclick="downloadPdf('Property_Title_Checklist_Guide.pdf')" class="px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1" title="Download Standard Guide PDF">
+              <i class="fa-solid fa-file-pdf text-red-500"></i> PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div class="acad-card loans bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="relative h-48 bg-slate-900 overflow-hidden cursor-pointer" onclick="playVideo('Home Loan Legal Technical Scrutiny (LTS) Demystified', 'Rajiv Mehta', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Home Loan Legal Scrutiny" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+              
+              <span class="absolute top-3 left-3 bg-navy/80 text-gold text-[10px] font-bold px-2.5 py-1 rounded-md border border-gold/30">
+                <i class="fa-solid fa-clock mr-1"></i> 24:10 Mins
+              </span>
+              <span class="absolute top-3 right-3 bg-black/60 text-white text-[10px] font-semibold px-2 py-1 rounded-md">
+                <i class="fa-solid fa-eye mr-1"></i> 8.9K Views
+              </span>
+
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-gold/90 text-navy flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition-transform">
+                  <i class="fa-solid fa-play ml-1"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-3">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">Mortgage & Finance</span>
+              <h3 class="font-bold text-navy text-base leading-snug group-hover:text-gold-dark transition-colors">
+                Home Loan Legal Scrutiny (LTS) & Mortgage Clearance
+              </h3>
+              <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                Understanding bank legal opinions, MODT (Memorandum of Deposit of Title Deeds), and builder NOC requirements.
+              </p>
+              
+              <div class="flex items-center gap-2 pt-1 border-t border-slate-100 text-xs text-slate-500">
+                <div class="w-6 h-6 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-[10px]">RM</div>
+                <span>Instructor: <strong>Rajiv Mehta</strong> (Ex-Bank Legal Head)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-3">
+            <button onclick="playVideo('Home Loan Legal Technical Scrutiny (LTS) Demystified', 'Rajiv Mehta', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" class="flex-1 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow">
+              <i class="fa-solid fa-circle-play"></i> Watch Video
+            </button>
+            <button onclick="downloadPdf('Home_Loan_LTS_Manual.pdf')" class="px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1">
+              <i class="fa-solid fa-file-pdf text-red-500"></i> PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 3 -->
+        <div class="acad-card posp bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="relative h-48 bg-slate-900 overflow-hidden cursor-pointer" onclick="playVideo('POSP Lead Conversion & Client Pitching Workshop', 'Priya Sharma', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="POSP Pitching" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+              
+              <span class="absolute top-3 left-3 bg-navy/80 text-gold text-[10px] font-bold px-2.5 py-1 rounded-md border border-gold/30">
+                <i class="fa-solid fa-clock mr-1"></i> 31:15 Mins
+              </span>
+              <span class="absolute top-3 right-3 bg-black/60 text-white text-[10px] font-semibold px-2 py-1 rounded-md">
+                <i class="fa-solid fa-eye mr-1"></i> 15.2K Views
+              </span>
+
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-gold/90 text-navy flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition-transform">
+                  <i class="fa-solid fa-play ml-1"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-3">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">POSP Partner Training</span>
+              <h3 class="font-bold text-navy text-base leading-snug group-hover:text-gold-dark transition-colors">
+                POSP Legal Sales Mastery & High-Ticket Referral Strategies
+              </h3>
+              <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                A complete roadmap for partner agents to present retainers to local businesses, builder ties-ups, and individual property buyers.
+              </p>
+              
+              <div class="flex items-center gap-2 pt-1 border-t border-slate-100 text-xs text-slate-500">
+                <div class="w-6 h-6 rounded-full bg-emerald-800 text-white flex items-center justify-center font-bold text-[10px]">PS</div>
+                <span>Instructor: <strong>Priya Sharma</strong> (Head of POSP Enablement)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-3">
+            <button onclick="playVideo('POSP Lead Conversion & Client Pitching Workshop', 'Priya Sharma', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" class="flex-1 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow">
+              <i class="fa-solid fa-circle-play"></i> Watch Video
+            </button>
+            <button onclick="downloadPdf('POSP_Sales_Playbook_2026.pdf')" class="px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1">
+              <i class="fa-solid fa-file-pdf text-red-500"></i> PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 4 -->
+        <div class="acad-card drafting bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="relative h-48 bg-slate-900 overflow-hidden cursor-pointer" onclick="playVideo('Drafting Airtight Commercial & Lease Agreements', 'Adv. Vikramaditya', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+              <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80" alt="Drafting Agreements" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+              
+              <span class="absolute top-3 left-3 bg-navy/80 text-gold text-[10px] font-bold px-2.5 py-1 rounded-md border border-gold/30">
+                <i class="fa-solid fa-clock mr-1"></i> 22:00 Mins
+              </span>
+              <span class="absolute top-3 right-3 bg-black/60 text-white text-[10px] font-semibold px-2 py-1 rounded-md">
+                <i class="fa-solid fa-eye mr-1"></i> 6.4K Views
+              </span>
+
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-gold/90 text-navy flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition-transform">
+                  <i class="fa-solid fa-play ml-1"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-3">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-purple-600 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">Legal Drafting</span>
+              <h3 class="font-bold text-navy text-base leading-snug group-hover:text-gold-dark transition-colors">
+                Drafting Airtight Commercial Lease & Sale Agreements
+              </h3>
+              <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                Key clauses to include in Leave & License agreements, indemnity provisions, stamp duty calculation, and court jurisdiction.
+              </p>
+              
+              <div class="flex items-center gap-2 pt-1 border-t border-slate-100 text-xs text-slate-500">
+                <div class="w-6 h-6 rounded-full bg-purple-900 text-white flex items-center justify-center font-bold text-[10px]">VK</div>
+                <span>Instructor: <strong>Adv. Vikramaditya</strong> (Civil Drafting Attorney)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-3">
+            <button onclick="playVideo('Drafting Airtight Commercial & Lease Agreements', 'Adv. Vikramaditya', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" class="flex-1 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow">
+              <i class="fa-solid fa-circle-play"></i> Watch Video
+            </button>
+            <button onclick="downloadPdf('Lease_Agreement_Drafting_Template.pdf')" class="px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1">
+              <i class="fa-solid fa-file-pdf text-red-500"></i> PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 5 -->
+        <div class="acad-card property bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="relative h-48 bg-slate-900 overflow-hidden cursor-pointer" onclick="playVideo('RERA Litigation & Buyer Rights Workshop', 'Adv. Ananya Roy', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+              <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="RERA Legal Guide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+              
+              <span class="absolute top-3 left-3 bg-navy/80 text-gold text-[10px] font-bold px-2.5 py-1 rounded-md border border-gold/30">
+                <i class="fa-solid fa-clock mr-1"></i> 27:40 Mins
+              </span>
+              <span class="absolute top-3 right-3 bg-black/60 text-white text-[10px] font-semibold px-2 py-1 rounded-md">
+                <i class="fa-solid fa-eye mr-1"></i> 10.1K Views
+              </span>
+
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-gold/90 text-navy flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition-transform">
+                  <i class="fa-solid fa-play ml-1"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-3">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-gold-dark bg-gold/10 px-2 py-0.5 rounded border border-gold/20">Property Law</span>
+              <h3 class="font-bold text-navy text-base leading-snug group-hover:text-gold-dark transition-colors">
+                RERA Tribunal Compliance & Homebuyer Compensation Rights
+              </h3>
+              <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                How to file delayed possession complaints, claim interest under RERA, and verify builder project registration numbers.
+              </p>
+              
+              <div class="flex items-center gap-2 pt-1 border-t border-slate-100 text-xs text-slate-500">
+                <div class="w-6 h-6 rounded-full bg-amber-800 text-white flex items-center justify-center font-bold text-[10px]">AR</div>
+                <span>Instructor: <strong>Adv. Ananya Roy</strong> (RERA Tribunal Specialist)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-3">
+            <button onclick="playVideo('RERA Litigation & Buyer Rights Workshop', 'Adv. Ananya Roy', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" class="flex-1 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow">
+              <i class="fa-solid fa-circle-play"></i> Watch Video
+            </button>
+            <button onclick="downloadPdf('RERA_Complaint_Filing_Handbook.pdf')" class="px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1">
+              <i class="fa-solid fa-file-pdf text-red-500"></i> PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Card 6 -->
+        <div class="acad-card posp bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="relative h-48 bg-slate-900 overflow-hidden cursor-pointer" onclick="playVideo('POSP Digital Branding & WhatsApp Marketing Mastery', 'Karan Verma', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="Digital Branding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent"></div>
+              
+              <span class="absolute top-3 left-3 bg-navy/80 text-gold text-[10px] font-bold px-2.5 py-1 rounded-md border border-gold/30">
+                <i class="fa-solid fa-clock mr-1"></i> 19:20 Mins
+              </span>
+              <span class="absolute top-3 right-3 bg-black/60 text-white text-[10px] font-semibold px-2 py-1 rounded-md">
+                <i class="fa-solid fa-eye mr-1"></i> 11.7K Views
+              </span>
+
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-gold/90 text-navy flex items-center justify-center text-xl shadow-xl transform group-hover:scale-110 transition-transform">
+                  <i class="fa-solid fa-play ml-1"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 space-y-3">
+              <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">POSP Partner Training</span>
+              <h3 class="font-bold text-navy text-base leading-snug group-hover:text-gold-dark transition-colors">
+                Co-Branded Marketing & Local Lead Generation Automation
+              </h3>
+              <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                Utilize the Banner Studio, build referral links, and distribute Legal Mitra Network collateral to gain high-intent legal leads.
+              </p>
+              
+              <div class="flex items-center gap-2 pt-1 border-t border-slate-100 text-xs text-slate-500">
+                <div class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-[10px]">KV</div>
+                <span>Instructor: <strong>Karan Verma</strong> (Growth Marketing Lead)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 pt-0 flex items-center gap-3">
+            <button onclick="playVideo('POSP Digital Branding & WhatsApp Marketing Mastery', 'Karan Verma', 'https://www.youtube.com/embed/dQw4w9WgXcQ')" class="flex-1 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow">
+              <i class="fa-solid fa-circle-play"></i> Watch Video
+            </button>
+            <button onclick="downloadPdf('POSP_Digital_Marketing_Guide.pdf')" class="px-3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1">
+              <i class="fa-solid fa-file-pdf text-red-500"></i> PDF
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: Interactive Knowledge Assessment Quiz Widget -->
+    <section id="assessment" class="bg-gradient-to-br from-navy via-navy-light to-slate-900 rounded-3xl p-6 lg:p-10 text-white shadow-2xl border border-gold/30 scroll-mt-24">
+      <div class="max-w-3xl mb-8">
+        <span class="bg-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full border border-gold/40 uppercase tracking-widest">
+          <i class="fa-solid fa-clipboard-question mr-1"></i> Interactive Evaluation
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Legal & Mortgage Knowledge Assessment</h2>
+        <p class="text-slate-300 text-sm mt-1">Test your understanding of Indian property law, title verification, and mortgage clearances. Score 100% to qualify for certified partner badges.</p>
+      </div>
+
+      <!-- Quiz Form Container -->
+      <div id="quizContainer" class="bg-navy-dark/90 p-6 sm:p-8 rounded-2xl border border-slate-700 space-y-6">
+        
+        <!-- Question 1 -->
+        <div class="quiz-step space-y-3" data-step="1">
+          <div class="flex items-center justify-between text-xs text-gold font-bold border-b border-slate-800 pb-2">
+            <span>Question 1 of 3</span>
+            <span>Topic: Property Title</span>
+          </div>
+          <p class="text-base font-semibold text-white">Which document serves as primary proof of land ownership and crop history in rural Maharashtra title searches?</p>
+          <div class="space-y-2 pt-2">
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q1" value="A" class="accent-gold">
+              <span>A) Form 16 Tax Certificate</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q1" value="B" class="accent-gold">
+              <span>B) 7/12 Extract (Saat Bara Utara) & Mutation Entry Extract</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q1" value="C" class="accent-gold">
+              <span>C) Builder Possession Letter</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="quiz-step space-y-3" data-step="2">
+          <div class="flex items-center justify-between text-xs text-gold font-bold border-b border-slate-800 pb-2">
+            <span>Question 2 of 3</span>
+            <span>Topic: Bank Mortgages</span>
+          </div>
+          <p class="text-base font-semibold text-white">What is the main legal purpose of an Encumbrance Certificate (EC) issued by the Sub-Registrar Office?</p>
+          <div class="space-y-2 pt-2">
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q2" value="A" class="accent-gold">
+              <span>A) To prove that the property is free from registered legal liabilities, mortgages, or liens for a specified period.</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q2" value="B" class="accent-gold">
+              <span>B) To verify electricity bill payments of the current resident.</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q2" value="C" class="accent-gold">
+              <span>C) To authorize municipal building plan alterations.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="quiz-step space-y-3" data-step="3">
+          <div class="flex items-center justify-between text-xs text-gold font-bold border-b border-slate-800 pb-2">
+            <span>Question 3 of 3</span>
+            <span>Topic: Legal Compliance</span>
+          </div>
+          <p class="text-base font-semibold text-white">Under RERA regulations, what percentage of project funds received from homebuyers must a promoter deposit into a separate escrow account?</p>
+          <div class="space-y-2 pt-2">
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q3" value="A" class="accent-gold">
+              <span>A) 30% of total funds</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q3" value="B" class="accent-gold">
+              <span>B) 50% of total funds</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-700 bg-navy hover:border-gold/50 cursor-pointer transition-colors text-xs text-slate-200">
+              <input type="radio" name="q3" value="C" class="accent-gold">
+              <span>C) 70% of total funds</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit Button & Feedback Display -->
+        <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <button onclick="evaluateQuiz()" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-navy font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-square-check"></i> Submit Answers & View Score
+          </button>
+          <div id="quizScoreBox" class="hidden text-right">
+            <span id="quizResultText" class="text-lg font-extrabold text-gold"></span>
+            <p id="quizSubText" class="text-xs text-slate-300 mt-0.5"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: Searchable Legal Knowledge Base & FAQ Accordion -->
+    <section id="faq" class="space-y-6 scroll-mt-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-5">
+        <div>
+          <span class="text-gold-dark font-bold text-xs uppercase tracking-widest">Instant Answers</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-navy">Legal Mitra Knowledge Base & FAQs</h2>
+          <p class="text-slate-600 text-sm mt-1">Search through verified legal precedents, POSP operational queries, and document standards.</p>
+        </div>
+
+        <!-- Search Input Field -->
+        <div class="w-full md:w-80 relative">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+          <input type="text" id="faqSearchInput" oninput="searchFaq()" placeholder="Search FAQs (e.g., RERA, Title, MODT)..." class="w-full bg-white border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-xs text-navy focus:outline-none focus:border-gold transition-colors shadow-sm">
+        </div>
+      </div>
+
+      <!-- FAQ Accordion Items Grid -->
+      <div class="space-y-4" id="faqContainer">
+
+        <!-- FAQ Item 1 -->
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-gold/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left focus:outline-none">
+            <span class="font-bold text-navy text-sm sm:text-base flex items-center gap-3">
+              <i class="fa-solid fa-shield-halved text-gold"></i>
+              What is a Property Legal Technical Scrutiny (LTS) report?
+            </span>
+            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+          </button>
+          <div class="faq-answer text-xs text-slate-600 leading-relaxed space-y-2">
+            <p>
+              An LTS report is a comprehensive legal evaluation conducted by an empanelled advocate to verify whether a property possesses a clear, marketable, and unencumbered title suitable for mortgage lending.
+            </p>
+            <p class="text-slate-500 font-mono">Key documents inspected: Sale deeds, index-II extracts, 30-year search report, occupancy certificate (OC), and NOC from society/builder.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-gold/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left focus:outline-none">
+            <span class="font-bold text-navy text-sm sm:text-base flex items-center gap-3">
+              <i class="fa-solid fa-file-contract text-blue-600"></i>
+              How long does it take to process a co-branded legal marketing request?
+            </span>
+            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+          </button>
+          <div class="faq-answer text-xs text-slate-600 leading-relaxed space-y-2">
+            <p>
+              Digital co-branded banners generated through our <a href="marketing-hub.html#generator" class="text-gold-dark font-bold underline">Banner Studio</a> are rendered instantly online. Custom physical roll-up standees or local newspaper display artwork are completed within 24 to 48 business hours by our design desk.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-gold/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left focus:outline-none">
+            <span class="font-bold text-navy text-sm sm:text-base flex items-center gap-3">
+              <i class="fa-solid fa-scale-balanced text-emerald-600"></i>
+              Can a POSP agent offer formal legal advice directly to property buyers?
+            </span>
+            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+          </button>
+          <div class="faq-answer text-xs text-slate-600 leading-relaxed space-y-2">
+            <p>
+              No. POSP agents act as certified facilitators connecting clients with Legal Mitra Network’s empanelled High Court and District advocates. All final title opinions, legal notices, and court petitions are signed exclusively by registered legal practitioners under the Advocates Act.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:border-gold/50 transition-colors">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between text-left focus:outline-none">
+            <span class="font-bold text-navy text-sm sm:text-base flex items-center gap-3">
+              <i class="fa-solid fa-file-invoice text-purple-600"></i>
+              What is MODT and why is it required during bank home loan disbursal?
+            </span>
+            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform"></i>
+          </button>
+          <div class="faq-answer text-xs text-slate-600 leading-relaxed space-y-2">
+            <p>
+              MODT stands for Memorandum of Deposit of Title Deeds. It is a legal document registered with the government where the borrower deposits original property title deeds with the lending bank as security for the home loan.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VIDEO PLAYER MODAL -->
+  <div id="videoModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="bg-navy-dark border border-gold/30 rounded-3xl max-w-4xl w-full p-4 sm:p-6 relative shadow-2xl">
+      <button onclick="closeVideoModal()" class="absolute -top-3 -right-3 w-10 h-10 bg-gold text-navy rounded-full font-bold flex items-center justify-center shadow-lg hover:bg-gold-light transition-colors">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="mb-4">
+        <span class="text-xs text-gold font-mono uppercase tracking-wider" id="modalInstructor">Instructor: Legal Specialist</span>
+        <h3 class="text-xl sm:text-2xl font-extrabold text-white" id="modalVideoTitle">Masterclass Video Player</h3>
+      </div>
+
+      <!-- Responsive Video Iframe Wrapper -->
+      <div class="w-full aspect-video rounded-2xl overflow-hidden bg-black border border-slate-800 relative">
+        <iframe id="modalIframe" class="w-full h-full" src="" title="Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="flex items-center justify-between mt-4 text-xs text-slate-400">
+        <span><i class="fa-solid fa-lock-open text-emerald-400 mr-1"></i> Verified POSP Learning Session</span>
+        <button onclick="closeVideoModal()" class="text-gold font-bold hover:underline">Close Player</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE / CUSTOM RESOURCE REQUEST MODAL -->
+  <div id="certModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative border border-slate-200 shadow-2xl">
+      <button onclick="closeCertModal()" class="absolute top-5 right-5 text-slate-400 hover:text-navy text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="mb-6">
+        <span class="bg-gold/10 text-gold-dark text-xs font-bold px-3 py-1 rounded-full border border-gold/30 uppercase">Academic Accreditation</span>
+        <h3 class="text-2xl font-extrabold text-navy mt-2">Request Completion Certificate</h3>
+        <p class="text-xs text-slate-500 mt-1">Submit your trainee credentials to claim your verified POSP Legal Specialist Certificate.</p>
+      </div>
+
+      <form id="certForm" onsubmit="handleCertSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-navy mb-1">Full Candidate Name</label>
+          <input type="text" value="Rajesh Kumar" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-navy focus:outline-none focus:border-gold">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-navy mb-1">POSP License ID</label>
+          <input type="text" value="LMN-98421" readonly class="w-full bg-slate-100 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-600 font-mono">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-navy mb-1">Completed Module Focus</label>
+          <select required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-navy focus:outline-none focus:border-gold">
+            <option value="property">Property Legal Audit & Revenue Scrutiny</option>
+            <option value="home_loan">Home Loan Mortgage & LTS Protocols</option>
+            <option value="rera">RERA Litigation & Buyer Redressal</option>
+            <option value="posp_mastery">Full POSP Network Enablement Program</option>
+          </select>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+          <button type="button" onclick="closeCertModal()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition-colors">Cancel</button>
+          <button type="submit" class="px-6 py-2.5 bg-navy hover:bg-navy-light text-gold font-bold rounded-xl text-xs shadow-md transition-colors">Issue Certificate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toast Bar -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-navy text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-gold/40 flex items-center gap-3 transition-all duration-300">
+    <i class="fa-solid fa-circle-check text-gold text-lg"></i>
+    <span id="toastMsg" class="text-xs font-medium">Notification message</span>
+  </div>
+
+  <!-- SECTION 4: Complete 19-Link Legal Mitra Network Directory Footer -->
+  <footer class="bg-navy-dark text-slate-300 border-t border-gold/30 mt-20 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      
+      <!-- Footer Top Branding Header -->
+      <div class="flex flex-col md:flex-row items-center justify-between border-b border-slate-800 pb-10 mb-10 gap-6 text-center md:text-left">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gold flex items-center justify-center text-navy font-black text-xl">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div>
+            <span class="font-extrabold text-lg text-white tracking-wide">LEGAL MITRA NETWORK</span>
+            <p class="text-[11px] text-slate-400">Pan-India POSP Legal Enablement Ecosystem</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-slate-400">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-gold"></i> 256-Bit Encrypted Portal</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-award text-gold"></i> ISO 27001 Certified</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-headset text-gold"></i> POSP Partner Support</span>
+        </div>
+      </div>
+
+      <!-- Complete 19-Link Network Directory Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Column 1: Primary Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Core Portals</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-gold transition-colors">1. Home</a></li>
+            <li><a href="about-us.html" class="hover:text-gold transition-colors">2. About Us</a></li>
+            <li><a href="services.html" class="hover:text-gold transition-colors">3. All Services</a></li>
+            <li><a href="contact-us.html" class="hover:text-gold transition-colors">9. Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Legal Practice Areas -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Practice Solutions</h4>
+          <ul class="space-y-2">
+            <li><a href="property-services.html" class="hover:text-gold transition-colors">4. Property Services</a></li>
+            <li><a href="finance-services.html" class="hover:text-gold transition-colors">5. Finance Services</a></li>
+            <li><a href="legal-services.html" class="hover:text-gold transition-colors">6. Legal Solutions</a></li>
+            <li><a href="calculators.html" class="hover:text-gold transition-colors">8. Legal Calculators</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Partner & Portals -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Partner Dashboards</h4>
+          <ul class="space-y-2">
+            <li><a href="partner-network.html" class="hover:text-gold transition-colors">7. POSP Network</a></li>
+            <li><a href="user-dashboard.html" class="hover:text-gold transition-colors">10. Client Portal</a></li>
+            <li><a href="agent-dashboard.html" class="hover:text-gold transition-colors">11. Agent Dashboard</a></li>
+            <li><a href="marketing-hub.html" class="hover:text-gold transition-colors">12. Marketing Hub</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Knowledge Hub -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Academy & Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="educational-hub.html" class="hover:text-gold transition-colors font-bold text-gold">13. Video Academy</a></li>
+            <li><a href="document-checklist.html" class="hover:text-gold transition-colors">14. Checklists</a></li>
+            <li><a href="blog.html" class="hover:text-gold transition-colors">15. Legal Blog</a></li>
+            <li><a href="testimonials.html" class="hover:text-gold transition-colors">16. Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal & Terms -->
+        <div class="col-span-2 md:col-span-4 lg:col-span-1 space-y-3">
+          <h4 class="font-bold text-white text-sm uppercase tracking-wider text-gold border-b border-gold/20 pb-1">Compliance Desk</h4>
+          <ul class="space-y-2">
+            <li><a href="privacy-policy.html" class="hover:text-gold transition-colors">17. Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" class="hover:text-gold transition-colors">18. Terms of Use</a></li>
+            <li><a href="refund-policy.html" class="hover:text-gold transition-colors">19. Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Line -->
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <p>© 2026 Legal Mitra Network. All Rights Reserved. Pan-India Legal Enablement Suite.</p>
+        <div class="flex space-x-6">
+          <a href="privacy-policy.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="terms-and-conditions.html" class="hover:text-slate-300">Terms of Service</a>
+          <a href="refund-policy.html" class="hover:text-slate-300">Refund Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JavaScript Logic Execution -->
+  <script>
+    // --- Mobile Nav Toggle ---
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // --- Toast Notification Helper ---
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+
+    // --- Mock PDF Downloader ---
+    function downloadPdf(filename) {
+      showToast(`Downloading "${filename}"...`);
+    }
+
+    // --- Video Player Modal Logic ---
+    function playVideo(title, instructor, embedUrl) {
+      document.getElementById('modalVideoTitle').textContent = title;
+      document.getElementById('modalInstructor').textContent = `Instructor: ${instructor}`;
+      document.getElementById('modalIframe').src = embedUrl + "?autoplay=1";
+      document.getElementById('videoModal').classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+      document.getElementById('modalIframe').src = "";
+      document.getElementById('videoModal').classList.add('hidden');
+    }
+
+    // --- Certificate Modal Logic ---
+    function openCertModal() {
+      document.getElementById('certModal').classList.remove('hidden');
+    }
+    function closeCertModal() {
+      document.getElementById('certModal').classList.add('hidden');
+    }
+    function handleCertSubmit(e) {
+      e.preventDefault();
+      closeCertModal();
+      showToast('Certificate request submitted! Verification badge will be updated shortly.');
+    }
+
+    // --- Video Category Filtering ---
+    function filterAcademy(category) {
+      const buttons = document.querySelectorAll('#academyFilterContainer .acad-filter-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = 'acad-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-navy text-gold shadow-md';
+        } else {
+          btn.className = 'acad-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200';
+        }
+      });
+
+      const cards = document.querySelectorAll('.acad-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // --- Interactive Quiz Evaluation ---
+    function evaluateQuiz() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const q3 = document.querySelector('input[name="q3"]:checked');
+
+      if (!q1 || !q2 || !q3) {
+        showToast('Please answer all 3 quiz questions before submitting!');
+        return;
+      }
+
+      let score = 0;
+      if (q1.value === 'B') score += 1;
+      if (q2.value === 'A') score += 1;
+      if (q3.value === 'C') score += 1;
+
+      const scoreBox = document.getElementById('quizScoreBox');
+      const resultText = document.getElementById('quizResultText');
+      const subText = document.getElementById('quizSubText');
+
+      scoreBox.classList.remove('hidden');
+
+      if (score === 3) {
+        resultText.textContent = "Score: 3/3 (100% Perfect!)";
+        resultText.className = "text-lg font-extrabold text-emerald-400";
+        subText.textContent = "Qualified for Senior Legal POSP Badge certification.";
+        showToast('Congratulations! You passed the Legal Scrutiny Evaluation!');
+      } else {
+        resultText.textContent = `Score: ${score}/3`;
+        resultText.className = "text-lg font-extrabold text-gold";
+        subText.textContent = "Review the property law videos above and try again to score 3/3.";
+        showToast('Quiz evaluated. Re-watch training modules to improve score.');
+      }
+    }
+
+    // --- Searchable FAQ Accordion Logic ---
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.fa-chevron-down');
+      
+      const isOpen = answer.classList.contains('open');
+      
+      // Close all answers
+      document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('open'));
+      document.querySelectorAll('.faq-item .fa-chevron-down').forEach(i => i.style.transform = 'rotate(0deg)');
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    function searchFaq() {
+      const input = document.getElementById('faqSearchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.faq-item');
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(input)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // --- Dynamic Hero Particle Network Canvas ---
+    function initHeroCanvas() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      });
+
+      const particles = [];
+      const particleCount = 40;
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.7,
+          vy: (Math.random() - 0.5) * 0.7,
+          radius: Math.random() * 2 + 1,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particleCount; i++) {
+          for (let j = i + 1; j < particleCount; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(212, 175, 55, ${1 - dist / 120 * 0.8})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        for (let p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#D4AF37';
+          ctx.fill();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    // --- Window Onload ---
+    window.onload = function() {
+      initHeroCanvas();
+    };
+  </script>
+</body>
+</html>
