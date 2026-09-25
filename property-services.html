@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property & Real Estate Legal Services | Legal Mitra Network</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#060F22',
+                            900: '#0B1B3D',
+                            800: '#0D224C',
+                            700: '#163166',
+                            600: '#1D3557'
+                        },
+                        gold: {
+                            300: '#F5E49B',
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#B8860B',
+                            700: '#946B08'
+                        },
+                        amberGold: '#F4C430',
+                        offwhite: '#F8FAFC',
+                        charcoal: '#1E293B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(11, 27, 61, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F5E49B 0%, #D4AF37 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 100%);
+            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.45);
+            transform: translateY(-2px);
+        }
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(11, 27, 61, 0.15), 0 0 15px rgba(212, 175, 55, 0.25);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060F22;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        .filter-btn.active {
+            background-color: #0B1B3D;
+            color: #D4AF37;
+            border-color: #D4AF37;
+            box-shadow: 0 4px 12px rgba(11, 27, 61, 0.2);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, opacity 0.25s ease;
+            opacity: 0;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            opacity: 1;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-offwhite text-charcoal font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <div class="bg-navy-950 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-envelope text-gold-500 mr-1.5"></i> property@legalmitra.com</span>
+                <span><i class="fa-solid fa-phone text-gold-500 mr-1.5"></i> +91 1800-123-4567</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-gold-400 font-semibold"><i class="fa-solid fa-house-lock mr-1.5"></i> Certified 30-Year Property Verification</span>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <a href="#" class="hover:text-gold-400 transition" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-50 glass-nav border-b border-navy-700/50 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-navy-800 border-2 border-gold-500 flex items-center justify-center text-gold-500 shadow-md">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold font-serif tracking-wide block leading-none">LEGAL MITRA</span>
+                        <span class="text-[10px] text-gold-400 tracking-widest uppercase font-semibold">Network Platform</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-5 xl:gap-6 text-xs xl:text-sm font-medium">
+                    <a href="index.html" class="hover:text-gold-400 transition">Home</a>
+                    <a href="services.html" class="hover:text-gold-400 transition">Services</a>
+                    <a href="property-services.html" class="text-gold-400 font-semibold border-b-2 border-gold-500 py-1">Property</a>
+                    <a href="finance-services.html" class="hover:text-gold-400 transition">Finance</a>
+                    <a href="legal-services.html" class="hover:text-gold-400 transition">Legal</a>
+                    <a href="calculators.html" class="hover:text-gold-400 transition">Calculators</a>
+                    <a href="educational-hub.html" class="hover:text-gold-400 transition">Learning Hub</a>
+                    <a href="contact-us.html" class="hover:text-gold-400 transition">Contact</a>
+                </nav>
+
+                <!-- Auth Buttons & Dashboards -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <button onclick="openPropertyModal('General Property Query', 'Get custom advice on property titles, registration, or disputes.')" class="px-4 py-2 text-xs font-semibold text-slate-200 border border-slate-600 rounded-lg hover:border-gold-400 hover:text-gold-400 transition">
+                        Get Quote
+                    </button>
+                    <a href="agent-dashboard.html" class="gold-btn px-4 py-2 text-xs font-bold text-navy-950 rounded-lg shadow">
+                        Agent Portal
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-200 hover:text-gold-400 text-2xl focus:outline-none" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-drawer" class="hidden lg:hidden bg-navy-900 border-b border-navy-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Home</a>
+            <a href="services.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">All Services</a>
+            <a href="property-services.html" class="block py-2 text-gold-400 font-semibold border-b border-navy-800">Property Legal Services</a>
+            <a href="finance-services.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Finance & Loans</a>
+            <a href="legal-services.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Advocate & Court Solutions</a>
+            <a href="partner-network.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Partner Network</a>
+            <a href="calculators.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Calculators</a>
+            <a href="educational-hub.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Educational Hub</a>
+            <a href="user-dashboard.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Client Dashboard</a>
+            <a href="agent-dashboard.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Agent Portal</a>
+            <a href="contact-us.html" class="block py-2 text-slate-200 hover:text-gold-400">Contact Support</a>
+        </div>
+    </header>
+
+    <section class="relative bg-navy-900 text-white py-20 lg:py-28 overflow-hidden">
+        <canvas id="property-hero-canvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl">
+            <!-- Breadcrumbs -->
+            <nav class="flex justify-center items-center gap-2 text-xs text-slate-400 mb-6 uppercase tracking-wider">
+                <a href="index.html" class="hover:text-gold-400 transition">Home</a>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                <a href="services.html" class="hover:text-gold-400 transition">Services</a>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                <span class="text-gold-400 font-semibold">Property Legal Services</span>
+            </nav>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-serif leading-tight">
+                End-to-End <span class="gold-gradient-text">Property & Real Estate</span> Legal Solutions
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg mt-6 font-light leading-relaxed max-w-3xl mx-auto">
+                From 7/12 & Property Card Extraction to Title Search, Search Reports, Valuation, and Deed Registrations — Protect Every Property Deal with Advocate Verification.
+            </p>
+
+            <!-- Quick Search Bar Integration -->
+            <div class="mt-8 max-w-2xl mx-auto relative">
+                <div class="relative flex items-center">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-lg"></i>
+                    <input type="text" id="property-search-input" placeholder="Search property solutions (e.g. Title Search, 7/12 Ferfar, Sale Deed, Valuation, Rent Agreement)..." 
+                        class="w-full pl-12 pr-10 py-4 rounded-xl bg-navy-800/90 border border-navy-600 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition shadow-2xl">
+                    <button id="clear-search-btn" class="hidden absolute right-4 text-slate-400 hover:text-white text-sm">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="py-16 bg-offwhite flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12" id="property-category-container">
+                <button class="filter-btn active px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="all">
+                    <i class="fa-solid fa-grid-2 mr-1.5"></i> All Property Solutions
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="verification">
+                    <i class="fa-solid fa-shield-halved mr-1.5"></i> Title Search & Extraction
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="drafting">
+                    <i class="fa-solid fa-file-contract mr-1.5"></i> Agreements & Registration
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="valuation">
+                    <i class="fa-solid fa-calculator mr-1.5"></i> Valuation & Assessment
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="disputes">
+                    <i class="fa-solid fa-gavel mr-1.5"></i> Mutation & Disputes
+                </button>
+            </div>
+
+            <!-- Property Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="property-services-grid">
+
+                <!-- Service 1: 30-Year Title Search & Report -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="verification" data-title="Title Search & 30-Year Search Report" data-keywords="30 year title search encumbrance cert report High Court Advocate verification index 2 legal report clearance certificate">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-magnifying-glass-location"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Verification</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">30-Year Legal Title Search Report</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Rigorous historical title investigation across land sub-registrar offices, verifying ownership chains, mortgages, litigations, and encumbrances.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> High Court Panel Advocate Clearance</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Search at Sub-Registrar Office (SRO)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Public Notice in Regional Newspapers</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500"><i class="fa-regular fa-clock mr-1"></i> 3-5 Working Days</span>
+                        <button onclick="openPropertyModal('30-Year Title Search & Report', 'Comprehensive 30-year search report certified by senior High Court advocates.', 'verification')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Request Search <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Land Extraction (7/12, Property Card, Index II) -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="verification" data-title="7/12 Extract, Property Card & Index II Procurement" data-keywords="7/12 extract property card cts map index ii ferfar record land revenue mahabhulekh digital certified">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Land Records</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Land & Revenue Record Extraction</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Instant government certified digital extraction of 7/12 extracts, Property Cards (CTS), Village Form 8A, Ferfar entries, and Index II copies.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Digital Signature Certified Copy</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> CTS Layout Map & Boundary Verification</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Historical Ferfar Audit</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500"><i class="fa-regular fa-clock mr-1"></i> 24-48 Hours</span>
+                        <button onclick="openPropertyModal('Land & Revenue Record Extraction', 'Get official digital 7/12, Property Card, and Index II copies for property verification.', 'verification')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Get Records <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Agreement Drafting & SRO Registration -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="drafting" data-title="Sale Deed, Gift Deed & Agreement to Sell Registration" data-keywords="sale deed gift deed agreement to sell release deed poa registration sub registrar stamp duty e-challan">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-file-signature"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Drafting & SRO</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Deed Drafting & SRO Registration</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Tailored legal drafting for Sale Deeds, Agreements to Sell, Gift Deeds, Release Deeds, and complete Sub-Registrar biometric registration execution.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Customized Purchaser Clause Protection</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> E-SBTR & Stamp Duty Payment Setup</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> On-site SRO Token & Slot Scheduling</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500"><i class="fa-regular fa-clock mr-1"></i> 2-3 Days</span>
+                        <button onclick="openPropertyModal('Deed Drafting & SRO Registration', 'End-to-end legal drafting and physical registration support at the Sub-Registrar Office.', 'drafting')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Book Drafting <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: Leave & License Online E-Registration -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="drafting" data-title="E-Rent Agreement & Leave & License Online Registration" data-keywords="leave and license e-registration rent agreement tenant biometric door step registration online rent deed">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Online Rent</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Leave & License E-Registration</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Government approved doorstep biometrics for online Rent Agreements. Complete legal e-stamping, tenant police intimation, and instant gov download.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Doorstep Biometric Verification</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Automated Tenant Police Intimation</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Direct Government Portal Submission</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500"><i class="fa-regular fa-clock mr-1"></i> Same Day Service</span>
+                        <button onclick="openPropertyModal('Leave & License E-Registration', 'Doorstep biometric registration for legal Leave & License Rent agreements.', 'drafting')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Register Rent <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5: Property Valuation & Approved Valuer Assessment -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="valuation" data-title="Govt. Approved Property Valuation & Market Rate Audit" data-keywords="property valuation gov approved valuer bank loan valuation market value ready reckoner stamp duty audit commercial valuation">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Valuation</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Government Approved Valuation</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Certified property valuation reports by Government-approved valuers for bank loans, capital gains taxation, visa requirements, and dispute settlements.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Registered Valuer Stamp & Signature</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Ready Reckoner vs Market Audit</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Income Tax & Wealth Tax Accepted</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500"><i class="fa-regular fa-clock mr-1"></i> 2-3 Days</span>
+                        <button onclick="openPropertyModal('Government Approved Property Valuation', 'Get official valuation reports for bank loan, capital tax, or legal proceedings.', 'valuation')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Get Valuation <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6: Mutation, Ferfar & Legal Dispute Guidance -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="disputes" data-title="7/12 Mutation (Ferfar), NA Conversion & Dispute Advisory" data-keywords="mutation ferfar na conversion non agricultural property dispute land legal notice rera complaint talathi revenue">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-gavel"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Mutation & Legal</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Property Mutation & NA Advisory</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Legal assistance for updating 7/12 revenue mutation (Ferfar), Non-Agricultural (NA) conversion permissions, boundary disputes, and RERA builder complaints.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Revenue Office (Tehsildar/Talathi) Filing</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> NA Order Procurement Guidance</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Legal Notice & RERA Dispute Filing</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500"><i class="fa-regular fa-clock mr-1"></i> Timeline Varies</span>
+                        <button onclick="openPropertyModal('Property Mutation & Dispute Consultation', 'Direct advocate support for revenue mutations, NA conversions, and land dispute notices.', 'disputes')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Book Advocate <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty Search Results Placeholder -->
+            <div id="no-property-found" class="hidden text-center py-16">
+                <div class="w-16 h-16 bg-slate-200 text-slate-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-house-circle-xmark"></i>
+                </div>
+                <h4 class="text-xl font-serif font-bold text-navy-900">No Property Services Found</h4>
+                <p class="text-xs text-slate-500 mt-2">Try searching for keywords like "Title Search", "Rent Agreement", "7/12", or "Valuation".</p>
+                <button id="reset-property-search-btn" class="mt-4 px-4 py-2 text-xs font-bold text-navy-950 bg-gold-400 rounded-lg hover:bg-gold-500 transition">
+                    Reset Filters
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="py-16 bg-gradient-to-b from-navy-950 to-navy-900 text-white border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-400 bg-navy-800 px-3 py-1 rounded-full border border-navy-700">Instant Quick Estimator</span>
+                <h2 class="text-2xl sm:text-4xl font-serif font-bold mt-3">Stamp Duty & Property Legal Fee Estimator</h2>
+                <p class="text-slate-300 text-xs sm:text-sm mt-2 font-light">
+                    Select your state, property valuation, and required service to compute estimated government stamp duty, registration charges, and Legal Mitra processing times.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-navy-900/80 p-6 sm:p-8 rounded-2xl border border-navy-700 shadow-2xl">
+                <!-- Calculator Inputs (7 Cols) -->
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">State / Jurisdiction *</label>
+                            <select id="est-state" class="w-full px-3.5 py-3 rounded-xl bg-navy-800 border border-navy-600 text-white text-xs focus:outline-none focus:border-gold-500">
+                                <option value="MH">Maharashtra (5% - 7% Stamp Duty)</option>
+                                <option value="KA">Karnataka (5% Stamp Duty)</option>
+                                <option value="DL">Delhi (4% - 6% Stamp Duty)</option>
+                                <option value="TS">Telangana / AP (6% Stamp Duty)</option>
+                                <option value="GJ">Gujarat (4.9% Stamp Duty)</option>
+                                <option value="OTHER">Other States across India</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Gender of Buyer (For Concessions)</label>
+                            <select id="est-gender" class="w-full px-3.5 py-3 rounded-xl bg-navy-800 border border-navy-600 text-white text-xs focus:outline-none focus:border-gold-500">
+                                <option value="male">Male Buyer</option>
+                                <option value="female">Female Buyer (1% Concession in MH)</option>
+                                <option value="joint">Joint (Male + Female)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Service Required</label>
+                            <select id="est-service" class="w-full px-3.5 py-3 rounded-xl bg-navy-800 border border-navy-600 text-white text-xs focus:outline-none focus:border-gold-500">
+                                <option value="deed">Sale Deed / Agreement Registration</option>
+                                <option value="title">30-Year Legal Title Search</option>
+                                <option value="valuation">Property Valuation Certificate</option>
+                                <option value="rent">E-Rent Agreement Registration</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Property Valuation / Cost (₹)</label>
+                            <input type="number" id="est-price" value="5000000" step="500000" placeholder="e.g. 5000000"
+                                class="w-full px-3.5 py-3 rounded-xl bg-navy-800 border border-navy-600 text-white text-xs focus:outline-none focus:border-gold-500">
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="calculatePropertyEstimate()" class="gold-btn w-full py-3.5 text-xs font-bold text-navy-950 uppercase tracking-wider rounded-xl shadow-lg">
+                            <i class="fa-solid fa-calculator mr-2"></i> Calculate Fees & Timeline
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calculator Output Card (5 Cols) -->
+                <div class="lg:col-span-5 bg-navy-950 rounded-2xl p-6 border border-navy-700/80 shadow-inner flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between pb-3 border-b border-navy-800">
+                            <span class="text-xs text-slate-400">Estimation Breakdown</span>
+                            <span class="text-[10px] font-bold tracking-wider uppercase bg-gold-500/10 text-gold-400 px-2.5 py-0.5 rounded border border-gold-500/20">Instant Quote</span>
+                        </div>
+
+                        <div class="mt-4 space-y-3">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-slate-400">Est. Govt. Stamp Duty:</span>
+                                <span id="out-stamp-duty" class="font-bold text-white">₹ 3,00,000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-slate-400">Govt. Registration Fee:</span>
+                                <span id="out-reg-fee" class="font-bold text-white">₹ 30,000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-slate-400">Legal Mitra Consulting Fee:</span>
+                                <span id="out-legal-fee" class="font-bold text-gold-400">₹ 4,999</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs pt-2 border-t border-navy-800">
+                                <span class="text-slate-300 font-semibold">Total Estimated Outlay:</span>
+                                <span id="out-total" class="font-extrabold text-base text-gold-400">₹ 3,34,999</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-navy-800 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] text-slate-400">Estimated Delivery:</span>
+                            <span id="out-timeline" class="text-xs font-bold text-slate-200">3 - 5 Working Days</span>
+                        </div>
+                        <button onclick="openPropertyModal('Estimated Quote Booking', 'Pre-calculated estimate quote for property deed or title verification.')" class="px-4 py-2 bg-navy-800 text-gold-400 text-xs font-bold rounded-lg hover:bg-navy-700 transition">
+                            Proceed with Quote
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-navy-900 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">Seamless Workflow</span>
+                <h2 class="text-2xl sm:text-4xl font-serif font-bold text-navy-950 mt-3">How Our Property Legal Service Works</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                    A transparent 4-step process executed by experienced property advocates and revenue legal experts.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative bg-offwhite p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 font-bold text-xl flex items-center justify-center mb-4">
+                        1
+                    </div>
+                    <h3 class="text-lg font-bold font-serif text-navy-900 mb-2">Submit Request & Documents</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Upload existing 7/12, Index II, previous deed copies, or property details via our secure online portal or through a local partner agent.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative bg-offwhite p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 font-bold text-xl flex items-center justify-center mb-4">
+                        2
+                    </div>
+                    <h3 class="text-lg font-bold font-serif text-navy-900 mb-2">SRO & Field Search</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Our ground team conducts physical searches at Sub-Registrar offices, revenue departments, and publishes public notices if required.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative bg-offwhite p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 font-bold text-xl flex items-center justify-center mb-4">
+                        3
+                    </div>
+                    <h3 class="text-lg font-bold font-serif text-navy-900 mb-2">High Court Advocate Audit</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Senior property lawyers review the encumbrance history, drafting clauses, and issue a legal opinion certificate.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative bg-offwhite p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 font-bold text-xl flex items-center justify-center mb-4">
+                        4
+                    </div>
+                    <h3 class="text-lg font-bold font-serif text-navy-900 mb-2">Delivery & SRO Execution</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Receive your certified legal report digitally or proceed with hassle-free appointment booking for deed registration at SRO.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-offwhite border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gold-600 bg-gold-500/10 px-3 py-1 rounded-full">Got Questions?</span>
+                <h2 class="text-2xl sm:text-4xl font-serif font-bold text-navy-950 mt-3">Frequently Asked Questions</h2>
+                <p class="text-slate-600 text-xs sm:text-sm mt-2">Everything you need to know about real estate legal title checks and registrations.</p>
+            </div>
+
+            <div class="space-y-4" id="faq-accordion">
+                
+                <!-- FAQ 1 -->
+                <div class="faq-item glass-card rounded-2xl p-5 cursor-pointer border border-slate-200" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-sm sm:text-base font-bold text-navy-900">Why is a 30-Year Title Search Report mandatory before buying property?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon text-gold-600 transition-transform"></i>
+                    </div>
+                    <div class="faq-answer mt-3 text-xs text-slate-600 leading-relaxed">
+                        A 30-year search report ensures that the seller has absolute legal ownership and that the property is free from undisclosed bank mortgages, legal suits, family partition disputes, or government acquisition claims. Banks also mandate this for home loan approvals.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item glass-card rounded-2xl p-5 cursor-pointer border border-slate-200" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-sm sm:text-base font-bold text-navy-900">How long does online Leave & License Rent Agreement registration take?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon text-gold-600 transition-transform"></i>
+                    </div>
+                    <div class="faq-answer mt-3 text-xs text-slate-600 leading-relaxed">
+                        Once doorstep biometric verification is completed for both Licensor and Licensee, the document is submitted to the government e-registration portal. Official registered copies with QR codes are generated typically within 24 to 48 working hours.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item glass-card rounded-2xl p-5 cursor-pointer border border-slate-200" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-sm sm:text-base font-bold text-navy-900">Can POSP Agents and Real Estate Brokers submit property leads for clients?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon text-gold-600 transition-transform"></i>
+                    </div>
+                    <div class="faq-answer mt-3 text-xs text-slate-600 leading-relaxed">
+                        Yes! Licensed POSP partners and channel brokers can submit title search or agreement drafting leads directly through the Agent Portal and track live status and earn referral commissions upon successful service completion.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item glass-card rounded-2xl p-5 cursor-pointer border border-slate-200" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-sm sm:text-base font-bold text-navy-900">What is the difference between 7/12 Extract and Property Card (CTS)?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon text-gold-600 transition-transform"></i>
+                    </div>
+                    <div class3="faq-answer mt-3 text-xs text-slate-600 leading-relaxed">
+                        A 7/12 Extract is a revenue record for rural or semi-urban land indicating ownership and crop details maintained by the Talathi. A Property Card (CTS Number) is the urban land equivalent issued by City Survey offices for properties situated within municipal limits.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="property-modal" class="fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+            <!-- Close Modal Button -->
+            <button onclick="closePropertyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-6">
+                <span id="prop-modal-badge" class="text-[10px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full inline-block mb-2">PROPERTY REQUEST</span>
+                <h3 id="prop-modal-title" class="text-2xl font-bold font-serif text-navy-900">Property Service Request</h3>
+                <p id="prop-modal-desc" class="text-xs text-slate-600 mt-2 leading-relaxed">Fill out your details to get connected with a property advocate or valuer.</p>
+            </div>
+
+            <form id="property-request-form" class="space-y-4" onsubmit="handlePropertySubmit(event)">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Your Full Name *</label>
+                    <input type="text" required placeholder="e.g. Vikramaditya Singh" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile Number *</label>
+                        <input type="tel" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">City / District *</label>
+                        <input type="text" required placeholder="e.g. Mumbai / Pune" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Property Type</label>
+                        <select class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500">
+                            <option>Residential Flat / House</option>
+                            <option>Agricultural Land / Plot</option>
+                            <option>Commercial Property</option>
+                            <option>Industrial Land</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Upload Doc (Optional)</label>
+                        <input type="file" class="w-full text-xs text-slate-500 border border-slate-300 rounded-lg p-1">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Specific Property Notes / Query</label>
+                    <textarea rows="3" placeholder="Provide survey number, location, or details about agreement drafting..." class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="gold-btn w-full py-3 text-xs font-bold text-navy-950 rounded-xl uppercase tracking-wider shadow">
+                        Submit Request
+                    </button>
+                </div>
+            </form>
+
+            <div id="prop-modal-success" class="hidden text-center py-6">
+                <div class="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="text-xl font-bold font-serif text-navy-900">Request Received!</h4>
+                <p class="text-xs text-slate-600 mt-2">Thank you! Our property legal executive will review your details and call you back within 2 business hours.</p>
+                <button onclick="closePropertyModal()" class="mt-6 px-6 py-2.5 bg-navy-900 text-gold-400 text-xs font-bold rounded-lg hover:bg-navy-800 transition">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white py-16 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+            <h2 class="text-2xl sm:text-4xl font-serif font-bold mb-4">Buying or Selling a Property Soon?</h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                Don't risk legal disputes or title flaws. Get 100% legal clarity and advocate verification before paying token advance money.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button onclick="openPropertyModal('Instant Legal Check', 'Verify title clearance before making property token advance.')" class="gold-btn px-8 py-3.5 text-xs font-bold text-navy-950 rounded-xl uppercase tracking-wider shadow">
+                    Book Pre-Purchase Check
+                </button>
+                <a href="partner-network.html" class="px-8 py-3.5 border border-slate-600 text-slate-200 hover:border-gold-400 hover:text-gold-400 text-xs font-bold rounded-xl transition">
+                    Become a Property Affiliate
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-950 text-slate-400 text-xs border-t border-navy-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-navy-800">
+                
+                <!-- Column 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-navy-800 border border-gold-500 flex items-center justify-center text-gold-400">
+                            <i class="fa-solid fa-scale-balanced text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold font-serif text-white tracking-wide">LEGAL MITRA</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Legal Mitra Network is India's leading unified portal providing end-to-end legal consultation, property title clearance, financial loan approvals, and advisor partner enablement.
+                    </p>
+                    <div class="pt-2 text-slate-300">
+                        <p><i class="fa-solid fa-location-dot text-gold-500 mr-2"></i> Corporate Office: Business Tower, BKC, Mumbai, MH</p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Main Services Directory -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Core Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="hover:text-gold-400 transition">All Services Overview</a></li>
+                        <li><a href="property-services.html" class="text-gold-400 font-medium">Property & Title Legal Services</a></li>
+                        <li><a href="finance-services.html" class="hover:text-gold-400 transition">Home Loan & Mortgage Facilitation</a></li>
+                        <li><a href="legal-services.html" class="hover:text-gold-400 transition">Advocate & Court Legal Solutions</a></li>
+                        <li><a href="partner-network.html" class="hover:text-gold-400 transition">POSP Agent & Partner Program</a></li>
+                        <li><a href="calculators.html" class="hover:text-gold-400 transition">EMI & Loan Eligibility Calculators</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Portals & Knowledge Hubs -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Dashboards & Portals</h4>
+                    <ul class="space-y-2">
+                        <li><a href="user-dashboard.html" class="hover:text-gold-400 transition">Client / User Portal</a></li>
+                        <li><a href="agent-dashboard.html" class="hover:text-gold-400 transition">Agent / Advisor Dashboard</a></li>
+                        <li><a href="marketing-hub.html" class="hover:text-gold-400 transition">Marketing Materials Hub</a></li>
+                        <li><a href="educational-hub.html" class="hover:text-gold-400 transition">Educational Knowledge Hub</a></li>
+                        <li><a href="document-checklist.html" class="hover:text-gold-400 transition">Document Checklist Guide</a></li>
+                        <li><a href="blog.html" class="hover:text-gold-400 transition">Legal & Tax Articles Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Corporate & Legal Pages -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Company & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about-us.html" class="hover:text-gold-400 transition">About Legal Mitra Network</a></li>
+                        <li><a href="testimonials.html" class="hover:text-gold-400 transition">Client Testimonials & Reviews</a></li>
+                        <li><a href="contact-us.html" class="hover:text-gold-400 transition">Contact & Support Center</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-gold-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html" class="hover:text-gold-400 transition">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html" class="hover:text-gold-400 transition">Cancellation & Refund Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Bottom Credits -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-[11px]">
+                <p>© 2026 Legal Mitra Network Technologies Pvt. Ltd. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-slate-400">Privacy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-slate-400">Terms</a>
+                    <a href="refund-policy.html" class="hover:text-slate-400">Refunds</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        mobileBtn.addEventListener('click', () => {
+            mobileDrawer.classList.toggle('hidden');
+        });
+
+        // 2. Interactive Search & Category Filter
+        const serviceCards = document.querySelectorAll('.service-card');
+        const filterBtns = document.querySelectorAll('#property-category-container .filter-btn');
+        const searchInput = document.getElementById('property-search-input');
+        const clearSearchBtn = document.getElementById('clear-search-btn');
+        const noServicesMsg = document.getElementById('no-property-found');
+        const resetSearchBtn = document.getElementById('reset-property-search-btn');
+
+        let activeCategory = 'all';
+
+        function filterPropertyServices() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            serviceCards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                const title = card.getAttribute('data-title').toLowerCase();
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+
+                const matchesCategory = activeCategory === 'all' || categories.includes(activeCategory);
+                const matchesQuery = query === '' || title.includes(query) || keywords.includes(query);
+
+                if (matchesCategory && matchesQuery) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0) {
+                noServicesMsg.classList.remove('hidden');
+            } else {
+                noServicesMsg.classList.add('hidden');
+            }
+
+            if (query !== '') {
+                clearSearchBtn.classList.remove('hidden');
+            } else {
+                clearSearchBtn.classList.add('hidden');
+            }
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.getAttribute('data-category');
+                filterPropertyServices();
+            });
+        });
+
+        searchInput.addEventListener('input', filterPropertyServices);
+
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filterPropertyServices();
+        });
+
+        resetSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            activeCategory = 'all';
+            filterBtns.forEach(b => b.classList.remove('active'));
+            filterBtns[0].classList.add('active');
+            filterPropertyServices();
+        });
+
+        // 3. Stamp Duty & Fee Estimator Calculation
+        function calculatePropertyEstimate() {
+            const state = document.getElementById('est-state').value;
+            const gender = document.getElementById('est-gender').value;
+            const service = document.getElementById('est-service').value;
+            const price = parseFloat(document.getElementById('est-price').value) || 0;
+
+            let stampRate = 0.06; // Default 6%
+            if (state === 'MH') stampRate = (gender === 'female') ? 0.05 : 0.06;
+            else if (state === 'KA' || state === 'TS') stampRate = 0.05;
+            else if (state === 'DL') stampRate = (gender === 'female') ? 0.04 : 0.06;
+            else if (state === 'GJ') stampRate = 0.049;
+
+            let stampDuty = Math.round(price * stampRate);
+            let regFee = Math.min(Math.round(price * 0.01), 30000); // Capped at 30k in many states
+            let legalFee = 4999;
+            let timeline = "3 - 5 Working Days";
+
+            if (service === 'title') {
+                stampDuty = 0;
+                regFee = 0;
+                legalFee = 3999;
+                timeline = "3 Working Days";
+            } else if (service === 'valuation') {
+                stampDuty = 0;
+                regFee = 0;
+                legalFee = 2999;
+                timeline = "2 Working Days";
+            } else if (service === 'rent') {
+                stampDuty = 1000;
+                regFee = 1000;
+                legalFee = 1499;
+                timeline = "Same Day Execution";
+            }
+
+            const total = stampDuty + regFee + legalFee;
+
+            document.getElementById('out-stamp-duty').innerText = '₹ ' + stampDuty.toLocaleString('en-IN');
+            document.getElementById('out-reg-fee').innerText = '₹ ' + regFee.toLocaleString('en-IN');
+            document.getElementById('out-legal-fee').innerText = '₹ ' + legalFee.toLocaleString('en-IN');
+            document.getElementById('out-total').innerText = '₹ ' + total.toLocaleString('en-IN');
+            document.getElementById('out-timeline').innerText = timeline;
+        }
+
+        // 4. Modal Request Dialog Logic
+        const propModal = document.getElementById('property-modal');
+        const propModalTitle = document.getElementById('prop-modal-title');
+        const propModalDesc = document.getElementById('prop-modal-desc');
+        const propModalBadge = document.getElementById('prop-modal-badge');
+        const propForm = document.getElementById('property-request-form');
+        const propSuccess = document.getElementById('prop-modal-success');
+
+        function openPropertyModal(title, description, category) {
+            propModalTitle.innerText = title;
+            propModalDesc.innerText = description;
+            propModalBadge.innerText = category ? category.toUpperCase() : 'PROPERTY REQUEST';
+            
+            propForm.classList.remove('hidden');
+            propSuccess.classList.add('hidden');
+            propForm.reset();
+            
+            propModal.classList.remove('hidden');
+        }
+
+        function closePropertyModal() {
+            propModal.classList.add('hidden');
+        }
+
+        function handlePropertySubmit(e) {
+            e.preventDefault();
+            propForm.classList.add('hidden');
+            propSuccess.classList.remove('hidden');
+        }
+
+        propModal.addEventListener('click', (e) => {
+            if (e.target === propModal) closePropertyModal();
+        });
+
+        // 5. FAQ Accordion Logic
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // 6. Hero Grid Canvas Animation
+        const canvas = document.getElementById('property-hero-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+
+            function initCanvas() {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+                particles = [];
+                for (let i = 0; i < 45; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.4,
+                        vy: (Math.random() - 0.5) * 0.4,
+                        radius: Math.random() * 2 + 1
+                    });
+                }
+            }
+
+            function animateCanvas() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = '#D4AF37';
+                ctx.strokeStyle = 'rgba(212, 175, 55, 0.12)';
+
+                for (let i = 0; i < particles.length; i++) {
+                    let p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let p2 = particles[j];
+                        let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateCanvas);
+            }
+
+            window.addEventListener('resize', initCanvas);
+            initCanvas();
+            animateCanvas();
+        }
+    </script>
+</body>
+</html>
