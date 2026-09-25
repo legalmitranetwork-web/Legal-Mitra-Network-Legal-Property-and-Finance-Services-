@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Mitra Network - Legal, Property, Finance & Affiliate Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display for Regal Headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0B2545',
+                            900: '#0D1B2A',
+                            700: '#134074'
+                        },
+                        gold: {
+                            400: '#F4C430',
+                            500: '#D4AF37',
+                            600: '#AA820A'
+                        },
+                        offwhite: '#F8F9FA',
+                        charcoal: '#1E293B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(13, 27, 42, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F4C430 0%, #D4AF37 50%, #FFF3B0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4C430 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #F4C430 0%, #D4AF37 100%);
+            box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D1B2A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-offwhite text-charcoal font-sans antialiased overflow-x-hidden">
+
+    <!-- Top Info Bar -->
+    <div class="bg-navy-900 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-envelope text-gold-500 mr-1"></i> support@legalmitra.com</span>
+                <span><i class="fa-solid fa-phone text-gold-500 mr-1"></i> +91 1800-123-4567</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-gold-400 font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> ISO 9001:2015 Certified Platform</span>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-navy-700/50 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-navy-800 border-2 border-gold-500 flex items-center justify-center text-gold-500 shadow-md">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold font-serif tracking-wide block leading-none">LEGAL MITRA</span>
+                        <span class="text-[10px] text-gold-400 tracking-widest uppercase font-semibold">Network Platform</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+                    <a href="index.html" class="text-gold-400 font-semibold">Home</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-gold-400 py-2">
+                            Services <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 hidden group-hover:block w-56 bg-navy-900 border border-slate-700 rounded-lg shadow-xl py-2 z-50">
+                            <a href="services.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">All Services Overview</a>
+                            <a href="property-services.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Property & Real Estate</a>
+                            <a href="finance-services.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Financial & Loans</a>
+                            <a href="legal-services.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Legal Solutions</a>
+                        </div>
+                    </div>
+
+                    <a href="partner-network.html" class="hover:text-gold-400">Partner Network</a>
+                    <a href="calculators.html" class="hover:text-gold-400">Calculators</a>
+                    <a href="educational-hub.html" class="hover:text-gold-400">Learning Hub</a>
+
+                    <!-- More Pages Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-gold-400 py-2">
+                            More Pages <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 hidden group-hover:block w-60 bg-navy-900 border border-slate-700 rounded-lg shadow-xl py-2 z-50">
+                            <a href="about-us.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">About Us</a>
+                            <a href="marketing-hub.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Marketing Hub</a>
+                            <a href="document-checklist.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Document Checklist</a>
+                            <a href="blog.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Legal & Tax Blog</a>
+                            <a href="testimonials.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Client Testimonials</a>
+                            <a href="contact-us.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Contact Us</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Auth Buttons & Dashboards -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="user-dashboard.html" class="px-4 py-2 text-xs font-semibold text-slate-200 border border-slate-600 rounded-lg hover:border-gold-400 hover:text-gold-400 transition">Client Login</a>
+                    <a href="agent-dashboard.html" class="gold-btn px-4 py-2 text-xs font-bold text-navy-900 rounded-lg shadow">Agent Portal</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-200 hover:text-gold-400 text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden lg:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block py-2 text-gold-400 font-semibold border-b border-slate-800">Home</a>
+            <a href="services.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">All Services</a>
+            <a href="partner-network.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Partner Network</a>
+            <a href="calculators.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Calculators</a>
+            <a href="educational-hub.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Educational Hub</a>
+            <a href="user-dashboard.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">User Dashboard</a>
+            <a href="agent-dashboard.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-slate-800">Agent Dashboard</a>
+            <a href="contact-us.html" class="block py-2 text-slate-200 hover:text-gold-400">Contact Support</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-navy-900 text-white min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+        <!-- Interactive Canvas Background -->
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-800/80 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span> India's Premier Legal & Financial Ecosystem
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-serif leading-tight">
+                    Unified Platform for <span class="gold-gradient-text">Legal, Property & Finance</span> Services
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-light">
+                    Empowering individuals, property buyers, and businesses with expert legal counsel, seamless loan approvals, deed registrations, and a high-earning affiliate advisor network.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="services.html" class="gold-btn w-full sm:w-auto px-8 py-4 text-navy-900 font-bold rounded-xl shadow-lg flex items-center justify-center gap-2">
+                        <span>Explore Our Services</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="partner-network.html" class="w-full sm:w-auto px-8 py-4 border-2 border-gold-500/60 text-gold-400 font-bold rounded-xl hover:bg-gold-500/10 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-handshake"></i>
+                        <span>Become a Partner Agent</span>
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="pt-8 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-slate-400 text-xs sm:text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-gold-500"></i> Verified Legal Experts
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-gold-500"></i> 40+ Bank Tie-ups
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-gold-500"></i> Transparent Pricing
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Feature Quick Card -->
+            <div class="lg:col-span-5">
+                <div class="bg-navy-800/90 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+                    <h3 class="text-xl font-bold font-serif text-white mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-gold-400"></i> Fast Track Assistance
+                    </h3>
+                    <p class="text-xs text-slate-300 mb-6">Request a instant callback from our senior advisors.</p>
+                    
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Our advisor will call you within 15 minutes.');" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
+                            <input type="text" placeholder="John Doe" required class="w-full px-4 py-3 bg-navy-900/90 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Mobile Number</label>
+                            <input type="tel" placeholder="+91 98765 43210" required class="w-full px-4 py-3 bg-navy-900/90 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Service Required</label>
+                            <select class="w-full px-4 py-3 bg-navy-900/90 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-gold-500">
+                                <option>Property Title Verification & Legal Advice</option>
+                                <option>Home / Mortgage Loan Assistance</option>
+                                <option>Property Sale Agreement & Stamp Duty</option>
+                                <option>Join as Partner / Advisor Agent</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full gold-btn py-3.5 text-navy-900 font-bold rounded-lg uppercase tracking-wider text-xs">
+                            Submit Request Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Statistics -->
+    <section class="bg-navy-800 text-white py-12 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="p-4">
+                <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif">15,000+</p>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1 uppercase tracking-wider font-medium">Cases & Consultations</p>
+            </div>
+            <div class="p-4 border-l border-slate-700/60">
+                <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif">₹500 Cr+</p>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1 uppercase tracking-wider font-medium">Loans Disbursed</p>
+            </div>
+            <div class="p-4 border-l-0 md:border-l border-slate-700/60">
+                <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif">2,500+</p>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1 uppercase tracking-wider font-medium">Active Network Partners</p>
+            </div>
+            <div class="p-4 border-l border-slate-700/60">
+                <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif">99.2%</p>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1 uppercase tracking-wider font-medium">Client Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Grid Section -->
+    <section class="py-20 bg-offwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2">Complete Advisory Ecosystem</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-navy-900">Our Core Service Offerings</h3>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">Integrated solutions for your legal peace of mind, property ownership, and financial growth.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: Property -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-serif text-navy-900 mb-3">Property Solutions</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Title search reports, Sale Deed draftings, Property Registrations, RERA compliance, and Encumbrance verification.
+                        </p>
+                    </div>
+                    <a href="property-services.html" class="inline-flex items-center text-xs font-bold text-gold-600 hover:text-navy-900 gap-2">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Finance -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-serif text-navy-900 mb-3">Financial Services</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Home Loan facilitation, Business Loans, Loan Against Property (LAP), Balance Transfers, and CIBIL score enhancement.
+                        </p>
+                    </div>
+                    <a href="finance-services.html" class="inline-flex items-center text-xs font-bold text-gold-600 hover:text-navy-900 gap-2">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Legal -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-serif text-navy-900 mb-3">Legal Consultation</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            High Court & District Advocates consultation, Civil disputes, Contract drafting, Business Incorporation, and GST filing.
+                        </p>
+                    </div>
+                    <a href="legal-services.html" class="inline-flex items-center text-xs font-bold text-gold-600 hover:text-navy-900 gap-2">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4: Partner Network -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-serif text-navy-900 mb-3">Affiliate Network</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Empower your POSP / Financial Advisor business. Earn industry-best payouts on property, loan, and legal client referrals.
+                        </p>
+                    </div>
+                    <a href="partner-network.html" class="inline-flex items-center text-xs font-bold text-gold-600 hover:text-navy-900 gap-2">
+                        Join Network <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator Section -->
+    <section class="py-20 bg-navy-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-xs font-bold text-gold-400 uppercase tracking-widest mb-2">Smart Planning Tools</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Interactive Loan & EMI Calculator</h3>
+                <p class="text-slate-300 mt-2 text-sm">Calculate your monthly loan repayments and estimated eligibility in real-time.</p>
+            </div>
+
+            <div class="bg-navy-800 border border-slate-700/80 rounded-2xl p-6 sm:p-10 shadow-2xl max-w-4xl mx-auto grid md:grid-cols-12 gap-8 items-center">
+                <!-- Controls -->
+                <div class="md:col-span-7 space-y-6">
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-2">
+                            <span class="text-slate-300">Loan Amount (₹)</span>
+                            <span id="loan-amt-val" class="text-gold-400 font-bold text-sm">₹ 25,000,000</span>
+                        </div>
+                        <input id="loan-amt" type="range" min="100000" max="20000000" step="100000" value="2500000" class="w-full accent-gold-500 cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-2">
+                            <span class="text-slate-300">Interest Rate (% p.a.)</span>
+                            <span id="loan-rate-val" class="text-gold-400 font-bold text-sm">8.5 %</span>
+                        </div>
+                        <input id="loan-rate" type="range" min="5" max="18" step="0.1" value="8.5" class="w-full accent-gold-500 cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-2">
+                            <span class="text-slate-300">Tenure (Years)</span>
+                            <span id="loan-tenure-val" class="text-gold-400 font-bold text-sm">20 Years</span>
+                        </div>
+                        <input id="loan-tenure" type="range" min="1" max="30" step="1" value="20" class="w-full accent-gold-500 cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Display Results Box -->
+                <div class="md:col-span-5 bg-navy-900 border border-slate-700 p-6 rounded-xl text-center flex flex-col justify-between h-full space-y-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Estimated Monthly EMI</span>
+                        <div id="emi-result" class="text-3xl font-extrabold text-gold-400 font-serif my-2">₹ 21,696</div>
+                        <p class="text-[11px] text-slate-400">Principal + Interest repayment per month</p>
+                    </div>
+
+                    <div class="border-t border-slate-800 pt-4 space-y-2 text-xs">
+                        <div class="flex justify-between text-slate-300">
+                            <span>Total Interest Payable:</span>
+                            <span id="total-interest" class="font-bold text-white">₹ 2,707,040</span>
+                        </div>
+                        <div class="flex justify-between text-slate-300">
+                            <span>Total Amount Payable:</span>
+                            <span id="total-payable" class="font-bold text-white">₹ 5,207,040</span>
+                        </div>
+                    </div>
+
+                    <a href="calculators.html" class="gold-btn py-3 px-4 text-xs font-bold text-navy-900 rounded-lg block text-center uppercase tracking-wider">
+                        Detailed Eligibility Calculator
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Hub & Media Section -->
+    <section class="py-20 bg-offwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2">Knowledge Base</h2>
+                    <h3 class="text-3xl font-serif font-bold text-navy-900">Legal & Financial Insights</h3>
+                </div>
+                <a href="educational-hub.html" class="mt-4 md:mt-0 text-xs font-bold text-navy-800 hover:text-gold-600 flex items-center gap-2">
+                    View All Tutorials & Articles <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Video Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition">
+                    <div class="relative bg-navy-900 h-48 flex items-center justify-center cursor-pointer group" onclick="openVideoModal('Property Title Search Guide')">
+                        <i class="fa-solid fa-play-circle text-5xl text-gold-400 group-hover:scale-110 transition"></i>
+                        <span class="absolute bottom-3 right-3 bg-navy-900/90 text-white text-[10px] px-2 py-1 rounded">08:45 Min</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-wider">Property Law</span>
+                        <h4 class="text-base font-bold text-navy-900 mt-1 mb-2">Essential 7 Steps for Property Title Verification in India</h4>
+                        <p class="text-xs text-slate-600 line-clamp-2">Learn how to verify mother documents, clearance certificates, and avoid real estate frauds before buying property.</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition">
+                    <div class="relative bg-navy-800 h-48 flex items-center justify-center cursor-pointer group" onclick="openVideoModal('Home Loan Approval Hacks')">
+                        <i class="fa-solid fa-play-circle text-5xl text-gold-400 group-hover:scale-110 transition"></i>
+                        <span class="absolute bottom-3 right-3 bg-navy-900/90 text-white text-[10px] px-2 py-1 rounded">12:10 Min</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-wider">Home Finance</span>
+                        <h4 class="text-base font-bold text-navy-900 mt-1 mb-2">How to Get Lowest Home Loan Interest Rates</h4>
+                        <p class="text-xs text-slate-600 line-clamp-2">Understanding CIBIL impact, processing fee negotiation, and choosing between fixed vs floating interest rates.</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition">
+                    <div class="relative bg-navy-900 h-48 flex items-center justify-center cursor-pointer group" onclick="openVideoModal('POSP Agent Earnings Guide')">
+                        <i class="fa-solid fa-play-circle text-5xl text-gold-400 group-hover:scale-110 transition"></i>
+                        <span class="absolute bottom-3 right-3 bg-navy-900/90 text-white text-[10px] px-2 py-1 rounded">10:30 Min</span>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-wider">Partner Earnings</span>
+                        <h4 class="text-base font-bold text-navy-900 mt-1 mb-2">Building a ₹1 Lakh/Month Advisory Business</h4>
+                        <p class="text-xs text-slate-600 line-clamp-2">A step-by-step roadmap for financial advisors and agents using the Legal Mitra Network marketing hub.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Turtlemint Style Partner Network & Earnings Calculator -->
+    <section class="py-20 bg-navy-900 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold text-gold-400 uppercase tracking-widest">Partner Program</span>
+                    <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
+                        Grow Your Advisory Income with <span class="gold-gradient-text">Legal Mitra Network</span>
+                    </h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Join India's fastest growing network of financial advisors, tax consultants, and real estate associates. Offer 50+ financial and legal products to your client base with zero capital investment.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 font-bold shrink-0">
+                                <i class="fa-solid fa-money-bill-trend-up"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">Instant Commission Payouts</h5>
+                                <p class="text-xs text-slate-400">Transparent payout cycles with real-time tracking in your Agent Dashboard.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-navy-800 border border-gold-500/40 flex items-center justify-center text-gold-400 font-bold shrink-0">
+                                <i class="fa-solid fa-rectangle-ad"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">Custom Marketing Collateral</h5>
+                                <p class="text-xs text-slate-400">Access personalized posters, WhatsApp banners, and digital business cards.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="partner-network.html" class="gold-btn px-6 py-3.5 text-xs font-bold text-navy-900 rounded-lg inline-flex items-center gap-2 uppercase tracking-wider">
+                            Register As Agent Partner <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Earnings Estimator Box -->
+                <div class="lg:col-span-6 bg-navy-800 border border-slate-700 p-6 sm:p-8 rounded-2xl shadow-xl">
+                    <h4 class="text-xl font-bold font-serif text-white mb-2 text-center">Monthly Potential Earnings Estimator</h4>
+                    <p class="text-xs text-slate-400 text-center mb-6">Estimate your revenue based on client lead conversions.</p>
+
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-slate-300">Home Loans Disbursed / Month</span>
+                                <span id="partner-loan-num" class="text-gold-400 font-bold">2 Loans</span>
+                            </div>
+                            <input id="partner-loan" type="range" min="0" max="10" step="1" value="2" class="w-full accent-gold-500 cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-slate-300">Property Legal Services / Month</span>
+                                <span id="partner-legal-num" class="text-gold-400 font-bold">5 Cases</span>
+                            </div>
+                            <input id="partner-legal" type="range" min="0" max="20" step="1" value="5" class="w-full accent-gold-500 cursor-pointer">
+                        </div>
+
+                        <div class="p-5 bg-navy-900 rounded-xl border border-slate-700 text-center mt-6">
+                            <span class="text-xs text-slate-400 uppercase tracking-widest block font-medium">Estimated Monthly Earnings</span>
+                            <span id="partner-earning-total" class="text-3xl font-extrabold text-gold-400 font-serif my-1 block">₹ 45,000</span>
+                            <span class="text-[10px] text-slate-500">*Payouts based on average deal sizes and slab structures.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel Section -->
+    <section class="py-20 bg-offwhite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2">Testimonials</h2>
+                <h3 class="text-3xl font-serif font-bold text-navy-900">Trusted By Clients & Partners</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex text-gold-500 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed italic">
+                        "Legal Mitra Network made my flat registration and home loan disbursement completely hassle-free. Their legal team checked all title deeds meticulously!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center text-sm">
+                            RD
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-navy-900">Rajesh Deshmukh</h5>
+                            <span class="text-[10px] text-slate-500">Property Buyer, Pune</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex text-gold-500 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed italic">
+                        "As a financial consultant, joining their partner network increased my monthly income significantly. Their marketing hub materials are top quality."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center text-sm">
+                            SK
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-navy-900">Sanjay Kulkarni</h5>
+                            <span class="text-[10px] text-slate-500">Network Partner Agent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex text-gold-500 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed italic">
+                        "Prompt legal advice and contract drafting for our corporate setup. Professional Advocates and transparent documentation."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center text-sm">
+                            AM
+                        </div>
+                        <div>
+                            <h5 class="text-xs font-bold text-navy-900">Ananya Mehta</h5>
+                            <span class="text-[10px] text-slate-500">Startup Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner Section -->
+    <section class="py-16 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 text-white border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white">
+                Ready to Experience Seamless <span class="gold-gradient-text">Legal & Financial Services?</span>
+            </h2>
+            <p class="text-slate-300 text-sm max-w-2xl mx-auto">
+                Download the Legal Mitra mobile app or create your account today to access all services and track document statuses in real-time.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-2">
+                <a href="user-dashboard.html" class="gold-btn px-8 py-3.5 text-xs font-bold text-navy-900 rounded-xl shadow uppercase tracking-wider">
+                    Get Started Now
+                </a>
+                <a href="contact-us.html" class="px-8 py-3.5 border border-slate-600 text-slate-200 hover:border-gold-400 text-xs font-bold rounded-xl transition">
+                    Contact Consultation Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive 4-Column Footer -->
+    <footer class="bg-navy-900 text-slate-400 text-xs border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Column 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-navy-800 border border-gold-500 flex items-center justify-center text-gold-400">
+                            <i class="fa-solid fa-scale-balanced text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold font-serif text-white tracking-wide">LEGAL MITRA</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Legal Mitra Network is India's leading unified portal providing end-to-end legal consultation, property title clearance, financial loan approvals, and advisor partner enablement.
+                    </p>
+                    <div class="pt-2 text-slate-300">
+                        <p><i class="fa-solid fa-location-dot text-gold-500 mr-2"></i> Corporate Office: Business Tower, BKC, Mumbai, MH</p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Main Services Pages -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Core Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="hover:text-gold-400 transition">All Services Overview</a></li>
+                        <li><a href="property-services.html" class="hover:text-gold-400 transition">Property & Title Legal Services</a></li>
+                        <li><a href="finance-services.html" class="hover:text-gold-400 transition">Home Loan & Mortgage Facilitation</a></li>
+                        <li><a href="legal-services.html" class="hover:text-gold-400 transition">Advocate & Court Legal Solutions</a></li>
+                        <li><a href="partner-network.html" class="hover:text-gold-400 transition">POSP Agent & Partner Program</a></li>
+                        <li><a href="calculators.html" class="hover:text-gold-400 transition">EMI & Loan Eligibility Calculators</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Dashboards & Hubs -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Dashboards & Portals</h4>
+                    <ul class="space-y-2">
+                        <li><a href="user-dashboard.html" class="hover:text-gold-400 transition">Client / User Portal</a></li>
+                        <li><a href="agent-dashboard.html" class="hover:text-gold-400 transition">Agent / Advisor Dashboard</a></li>
+                        <li><a href="marketing-hub.html" class="hover:text-gold-400 transition">Marketing Materials Hub</a></li>
+                        <li><a href="educational-hub.html" class="hover:text-gold-400 transition">Educational Knowledge Hub</a></li>
+                        <li><a href="document-checklist.html" class="hover:text-gold-400 transition">Document Checklist Guide</a></li>
+                        <li><a href="blog.html" class="hover:text-gold-400 transition">Legal & Tax Articles Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Corporate & Legal Pages -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Company & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about-us.html" class="hover:text-gold-400 transition">About Legal Mitra Network</a></li>
+                        <li><a href="testimonials.html" class="hover:text-gold-400 transition">Client Testimonials & Reviews</a></li>
+                        <li><a href="contact-us.html" class="hover:text-gold-400 transition">Contact & Support Center</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-gold-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html" class="hover:text-gold-400 transition">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html" class="hover:text-gold-400 transition">Cancellation & Refund Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Bottom Credits -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-[11px]">
+                <p>© 2026 Legal Mitra Network Technologies Pvt. Ltd. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-slate-400">Privacy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-slate-400">Terms</a>
+                    <a href="refund-policy.html" class="hover:text-slate-400">Refunds</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Preview Modal Window -->
+    <div id="video-modal" class="fixed inset-0 z-50 bg-black/80 hidden items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-navy-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 text-white relative shadow-2xl">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modal-video-title" class="text-lg font-bold font-serif mb-4 text-gold-400">Tutorial Video</h3>
+            <div class="aspect-video bg-black rounded-lg flex items-center justify-center border border-slate-800">
+                <div class="text-center p-6 space-y-3">
+                    <i class="fa-solid fa-circle-play text-6xl text-gold-400 animate-bounce"></i>
+                    <p class="text-sm text-slate-300">Playing Tutorial Video Demo for <span id="modal-video-name" class="font-bold text-white"></span></p>
+                    <p class="text-xs text-slate-500">(Sample preview modal player for Legal Mitra Learning Hub)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded Interactive Client JavaScript -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileDrawer.classList.toggle('hidden');
+        });
+
+        // 2. Interactive EMI Calculator Script
+        const loanAmtInput = document.getElementById('loan-amt');
+        const loanRateInput = document.getElementById('loan-rate');
+        const loanTenureInput = document.getElementById('loan-tenure');
+
+        const loanAmtVal = document.getElementById('loan-amt-val');
+        const loanRateVal = document.getElementById('loan-rate-val');
+        const loanTenureVal = document.getElementById('loan-tenure-val');
+
+        const emiResult = document.getElementById('emi-result');
+        const totalInterest = document.getElementById('total-interest');
+        const totalPayable = document.getElementById('total-payable');
+
+        function calculateEMI() {
+            const P = parseFloat(loanAmtInput.value);
+            const r = parseFloat(loanRateInput.value) / 12 / 100;
+            const n = parseFloat(loanTenureInput.value) * 12;
+
+            loanAmtVal.innerText = '₹ ' + P.toLocaleString('en-IN');
+            loanRateVal.innerText = loanRateInput.value + ' %';
+            loanTenureVal.innerText = loanTenureInput.value + ' Years';
+
+            const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            const totalPay = emi * n;
+            const totalInt = totalPay - P;
+
+            emiResult.innerText = '₹ ' + Math.round(emi).toLocaleString('en-IN');
+            totalInterest.innerText = '₹ ' + Math.round(totalInt).toLocaleString('en-IN');
+            totalPayable.innerText = '₹ ' + Math.round(totalPay).toLocaleString('en-IN');
+        }
+
+        loanAmtInput.addEventListener('input', calculateEMI);
+        loanRateInput.addEventListener('input', calculateEMI);
+        loanTenureInput.addEventListener('input', calculateEMI);
+        calculateEMI();
+
+        // 3. Partner Earnings Estimator Script
+        const partnerLoan = document.getElementById('partner-loan');
+        const partnerLegal = document.getElementById('partner-legal');
+        const partnerLoanNum = document.getElementById('partner-loan-num');
+        const partnerLegalNum = document.getElementById('partner-legal-num');
+        const partnerEarningTotal = document.getElementById('partner-earning-total');
+
+        function calculatePartnerEarnings() {
+            const loans = parseInt(partnerLoan.value);
+            const legals = parseInt(partnerLegal.value);
+
+            partnerLoanNum.innerText = loans + ' Loans';
+            partnerLegalNum.innerText = legals + ' Cases';
+
+            // Estimated earnings formula: ₹15,000 per loan commission + ₹3,000 per legal case
+            const totalEarned = (loans * 15000) + (legals * 3000);
+            partnerEarningTotal.innerText = '₹ ' + totalEarned.toLocaleString('en-IN');
+        }
+
+        partnerLoan.addEventListener('input', calculatePartnerEarnings);
+        partnerLegal.addEventListener('input', calculatePartnerEarnings);
+        calculatePartnerEarnings();
+
+        // 4. Video Modal Control
+        function openVideoModal(title) {
+            document.getElementById('modal-video-name').innerText = title;
+            document.getElementById('video-modal').classList.remove('hidden');
+            document.getElementById('video-modal').classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            document.getElementById('video-modal').classList.add('hidden');
+            document.getElementById('video-modal').classList.remove('flex');
+        }
+
+        // 5. Hero Background Animated Geometric Canvas
+        const canvas = document.getElementById('hero-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+
+            function initCanvas() {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+                particles = [];
+                for (let i = 0; i < 45; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.8,
+                        vy: (Math.random() - 0.5) * 0.8,
+                        radius: Math.random() * 2 + 1
+                    });
+                }
+            }
+
+            function animateCanvas() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = '#D4AF37';
+                ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
+
+                for (let i = 0; i < particles.length; i++) {
+                    let p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let p2 = particles[j];
+                        let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateCanvas);
+            }
+
+            window.addEventListener('resize', initCanvas);
+            initCanvas();
+            animateCanvas();
+        }
+    </script>
+</body>
+</html>
