@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund & Cancellation Policy | Legal Mitra Network</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-navy: #0B1B3D;
+            --navy-light: #162B56;
+            --regal-gold: #D4AF37;
+            --gold-light: #F4E296;
+            --gold-dark: #AA820A;
+            --bg-offwhite: #F8FAFC;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --border-color: #E2E8F0;
+            --card-shadow: 0 10px 30px -5px rgba(11, 27, 61, 0.08);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-offwhite);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Glassmorphic Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 27, 61, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-crest {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--regal-gold);
+            background: linear-gradient(135deg, var(--primary-navy), var(--navy-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--regal-gold);
+            font-size: 1.2rem;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: var(--regal-gold);
+            font-size: 0.75rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #E2E8F0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--regal-gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--regal-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--regal-gold), var(--gold-dark));
+            color: #000;
+            font-weight: 600;
+            padding: 0.65rem 1.4rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, var(--gold-light), var(--regal-gold));
+        }
+
+        /* Hero Header with Canvas Animation */
+        .hero-section {
+            position: relative;
+            padding: 160px 5% 90px;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #050d21 100%);
+            color: #FFFFFF;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #heroCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .badge-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--regal-gold);
+            color: var(--regal-gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #D1D5DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #94A3B8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Policy Container Layout */
+        .policy-container {
+            max-width: 1000px;
+            margin: -40px auto 80px;
+            position: relative;
+            z-index: 10;
+            padding: 0 5%;
+        }
+
+        .policy-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            padding: 3.5rem;
+        }
+
+        .policy-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .policy-meta strong {
+            color: var(--primary-navy);
+        }
+
+        .policy-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .policy-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .policy-section h2 i {
+            color: var(--regal-gold);
+            font-size: 1.3rem;
+        }
+
+        .policy-section p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.7rem;
+            color: var(--text-muted);
+            font-size: 0.96rem;
+        }
+
+        .policy-section ul li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--regal-gold);
+        }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 4px solid var(--regal-gold);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            color: var(--primary-navy);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Standardized 19-Link Directory Footer */
+        .footer {
+            background: var(--primary-navy);
+            color: #94A3B8;
+            padding: 80px 5% 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-col h4 {
+            color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--regal-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--regal-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .policy-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <div class="logo-crest"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="logo-text">
+                <h1>Legal Mitra</h1>
+                <span>Network</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="property-services.html">Property</a></li>
+            <li><a href="finance-services.html">Finance</a></li>
+            <li><a href="legal-services.html">Legal</a></li>
+            <li><a href="partner-network.html">Partner POSP</a></li>
+            <li><a href="calculators.html">Calculators</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+        <a href="partner-network.html" class="btn-gold"><i class="fa-solid fa-user-plus"></i> Join Network</a>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="hero-section">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-content">
+            <div class="badge-gold"><i class="fa-solid fa-shield-halved"></i> Transparent Terms</div>
+            <h1 class="hero-title">Refund & Cancellation Policy</h1>
+            <p class="hero-subtitle">Clear guidelines regarding service execution, professional fees, statutory payments, and partner commission adjustments.</p>
+        </div>
+    </section>
+
+    <!-- Main Policy Container -->
+    <div class="policy-container">
+        <div class="policy-card">
+            <div class="policy-meta">
+                <div><strong>Effective Date:</strong> January 1, 2026</div>
+                <div><strong>Last Updated:</strong> March 2026</div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-circle-check"></i> 1. Overview & Scope</h2>
+                <p>At <strong>Legal Mitra Network</strong>, we maintain transparency across our property title search, mortgage syndication, legal drafting, and POSP affiliate network. This Refund & Cancellation Policy outlines the conditions under which cancellations are accepted and professional fees or service retainers are refunded.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-ban"></i> 2. Cancellation Before Work Begins</h2>
+                <p>If you cancel a requested service or legal drafting engagement before our team or assigned panel expert has initiated preparation or government filing work, you are entitled to a refund of your professional fee, subject to a nominal payment gateway processing deduction.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-landmark"></i> 3. Statutory & Government Fees Non-Refundability</h2>
+                <p>Many of our integrated services (such as property registration levies, stamp duties, company registrations, or statutory filing charges) involve government or regulatory fees collected on your behalf:</p>
+                <ul>
+                    <li>Once statutory fees have been dispatched or deposited with government portals or authorities, they are <strong>strictly non-refundable</strong> under any circumstances.</li>
+                    <li>Government authorities do not issue refunds for submitted applications once processing has commenced, regardless of final outcome or client withdrawal.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-scale-balanced"></i> 4. Refund Eligibility After Work Has Commenced</h2>
+                <p>Once our panel advocates, financial consultants, or technical experts have started executing your task, refunds are administered based on completion phases:</p>
+                <ul>
+                    <li><strong>Full Refund of Professional Fee:</strong> Applicable only if Legal Mitra Network fails to deliver the agreed service due to internal default, or in cases of proven duplicate transactions.</li>
+                    <li><strong>Partial Refund:</strong> If you cancel after preliminary drafting or title search reviews have begun but prior to final document execution, the professional fee will be refunded minus the standard value of work already performed.</li>
+                    <li><strong>No Refund:</strong> Once complete legal reports, executed sale deeds, or loan files are submitted to banks or statutory bodies, professional fees are non-refundable.</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> Note for POSP & Channel Partners: Affiliate commissions or network override bonuses credited against cancelled or fraudulent client transactions will be dynamically adjusted or debited from the partner's digital wallet balance.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-clock"></i> 5. Request Timeline & Processing Window</h2>
+                <p>To request a review of your case regarding cancellations or refunds:</p>
+                <ul>
+                    <li>Raise your ticket within <strong>30 days</strong> of making the payment or encountering the service dispute.</li>
+                    <li>Submit requests via email to <strong>support@legalmitranetwork.com</strong> detailing your transaction reference and case ID.</li>
+                    <li>Verified refunds are reviewed within 5–7 business days and processed back to the original payment source within 7–14 business days.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Standardized Directory Footer (19 Links) -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Main Directory</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">1. Home (index.html)</a></li>
+                    <li><a href="about-us.html">2. About Us (about-us.html)</a></li>
+                    <li><a href="services.html">3. All Services (services.html)</a></li>
+                    <li><a href="property-services.html">4. Property (property-services.html)</a></li>
+                    <li><a href="finance-services.html">5. Finance (finance-services.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Partner</h4>
+                <ul class="footer-links">
+                    <li><a href="legal-services.html">6. Legal Solutions (legal-services.html)</a></li>
+                    <li><a href="partner-network.html">7. POSP Network (partner-network.html)</a></li>
+                    <li><a href="calculators.html">8. Calculators (calculators.html)</a></li>
+                    <li><a href="contact-us.html">9. Contact Us (contact-us.html)</a></li>
+                    <li><a href="user-dashboard.html">10. Client Portal (user-dashboard.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Portals & Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="agent-dashboard.html">11. Agent Dashboard (agent-dashboard.html)</a></li>
+                    <li><a href="marketing-hub.html">12. Marketing Hub (marketing-hub.html)</a></li>
+                    <li><a href="educational-hub.html">13. Video Academy (educational-hub.html)</a></li>
+                    <li><a href="document-checklist.html">14. Checklists (document-checklist.html)</a></li>
+                    <li><a href="blog.html">15. Legal Blog (blog.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Trust & Compliance</h4>
+                <ul class="footer-links">
+                    <li><a href="testimonials.html">16. Testimonials (testimonials.html)</a></li>
+                    <li><a href="privacy-policy.html">17. Privacy Policy (privacy-policy.html)</a></li>
+                    <li><a href="terms-and-conditions.html">18. Terms of Use (terms-and-conditions.html)</a></li>
+                    <li><a href="refund-policy.html">19. Refund Policy (refund-policy.html)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Legal Mitra Network. All Rights Reserved. Built for Seamless Legal, Property & Financial Solutions.</p>
+        </div>
+    </footer>
+
+    <!-- Canvas Particle Background Script -->
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particles = Array.from({ length: 40 }, () => new Particle());
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    </script>
+</body>
+</html>
