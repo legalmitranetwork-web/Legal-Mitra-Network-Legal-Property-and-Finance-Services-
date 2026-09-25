@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Legal Mitra Network - Unified Legal, Property & Financial Services</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#030811',
+                            900: '#060F1E',
+                            800: '#0A192F',
+                            700: '#112240',
+                            600: '#1D3557'
+                        },
+                        gold: {
+                            300: '#F3E092',
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#B8860B'
+                        },
+                        offwhite: '#F8FAFC',
+                        charcoal: '#0F172A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(6, 15, 30, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E092 0%, #D4AF37 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 100%);
+            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.45);
+            transform: translateY(-2px);
+        }
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(10, 25, 47, 0.12), 0 0 15px rgba(212, 175, 55, 0.25);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060F1E;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        .filter-btn.active {
+            background-color: #0A192F;
+            color: #D4AF37;
+            border-color: #D4AF37;
+            box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-offwhite text-charcoal font-sans antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+    <!-- Top Info Bar -->
+    <div class="bg-navy-950 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-envelope text-gold-500 mr-1"></i> support@legalmitra.com</span>
+                <span><i class="fa-solid fa-phone text-gold-500 mr-1"></i> +91 1800-123-4567</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-gold-400 font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> Legal, Property & Financial Ecosystem</span>
+                <div class="flex items-center gap-3 text-slate-400">
+                    <a href="#" class="hover:text-gold-400 transition" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-navy-700/50 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-navy-800 border-2 border-gold-500 flex items-center justify-center text-gold-500 shadow-md">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold font-serif tracking-wide block leading-none">LEGAL MITRA</span>
+                        <span class="text-[10px] text-gold-400 tracking-widest uppercase font-semibold">Network Platform</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+                    <a href="index.html" class="hover:text-gold-400 transition">Home</a>
+                    <a href="about-us.html" class="hover:text-gold-400 transition">About Us</a>
+                    
+                    <!-- Services Link Active -->
+                    <a href="services.html" class="text-gold-400 font-semibold border-b-2 border-gold-500 py-1">Services</a>
+
+                    <a href="partner-network.html" class="hover:text-gold-400 transition">Partner Network</a>
+                    <a href="calculators.html" class="hover:text-gold-400 transition">Calculators</a>
+                    <a href="educational-hub.html" class="hover:text-gold-400 transition">Learning Hub</a>
+
+                    <!-- More Pages Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-gold-400 py-2">
+                            More Pages <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 hidden group-hover:block w-60 bg-navy-900 border border-navy-700 rounded-lg shadow-xl py-2 z-50">
+                            <a href="marketing-hub.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Marketing Hub</a>
+                            <a href="document-checklist.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Document Checklist</a>
+                            <a href="blog.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Legal & Tax Blog</a>
+                            <a href="testimonials.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Client Testimonials</a>
+                            <a href="contact-us.html" class="block px-4 py-2 text-sm text-slate-200 hover:bg-navy-800 hover:text-gold-400">Contact Us</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Auth Buttons & Dashboards -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="user-dashboard.html" class="px-4 py-2 text-xs font-semibold text-slate-200 border border-slate-600 rounded-lg hover:border-gold-400 hover:text-gold-400 transition">Client Login</a>
+                    <a href="agent-dashboard.html" class="gold-btn px-4 py-2 text-xs font-bold text-navy-950 rounded-lg shadow">Agent Portal</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-200 hover:text-gold-400 text-2xl focus:outline-none" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-drawer" class="hidden lg:hidden bg-navy-900 border-b border-navy-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Home</a>
+            <a href="about-us.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">About Us</a>
+            <a href="services.html" class="block py-2 text-gold-400 font-semibold border-b border-navy-800">Our Services</a>
+            <a href="partner-network.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Partner Network</a>
+            <a href="calculators.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Calculators</a>
+            <a href="educational-hub.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Educational Hub</a>
+            <a href="user-dashboard.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">User Dashboard</a>
+            <a href="agent-dashboard.html" class="block py-2 text-slate-200 hover:text-gold-400 border-b border-navy-800">Agent Portal</a>
+            <a href="contact-us.html" class="block py-2 text-slate-200 hover:text-gold-400">Contact Support</a>
+        </div>
+    </header>
+
+    <!-- Hero Header Section with Canvas Animation -->
+    <section class="relative bg-navy-900 text-white py-20 lg:py-28 overflow-hidden">
+        <canvas id="services-hero-canvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl">
+            <!-- Breadcrumbs -->
+            <nav class="flex justify-center items-center gap-2 text-xs text-slate-400 mb-6 uppercase tracking-wider">
+                <a href="index.html" class="hover:text-gold-400 transition">Home</a>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                <span class="text-gold-400 font-semibold">Our Services</span>
+            </nav>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-serif leading-tight">
+                Complete <span class="gold-gradient-text">Legal, Property & Financial</span> Ecosystem
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg mt-6 font-light leading-relaxed max-w-2xl mx-auto">
+                Explore our full suite of professional services designed for individuals, property buyers, businesses, and channel partners across India.
+            </p>
+
+            <!-- Search Bar Integration -->
+            <div class="mt-8 max-w-xl mx-auto relative">
+                <div class="relative flex items-center">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-lg"></i>
+                    <input type="text" id="service-search-input" placeholder="Search services (e.g., Title Search, Home Loan, Sale Deed, GST)..." 
+                        class="w-full pl-12 pr-10 py-4 rounded-xl bg-navy-800/90 border border-navy-600 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition shadow-xl">
+                    <button id="clear-search-btn" class="hidden absolute right-4 text-slate-400 hover:text-white text-sm">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Interactive Services Section -->
+    <main class="py-16 bg-offwhite flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12" id="category-filter-container">
+                <button class="filter-btn active px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="all">
+                    <i class="fa-solid fa-grid-2 mr-1.5"></i> All Services
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="legal">
+                    <i class="fa-solid fa-gavel mr-1.5"></i> Legal Solutions
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="property">
+                    <i class="fa-solid fa-building-user mr-1.5"></i> Property & Real Estate
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="finance">
+                    <i class="fa-solid fa-landmark mr-1.5"></i> Financial & Loans
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm font-semibold transition text-slate-700 bg-white hover:bg-navy-900 hover:text-gold-400" data-category="partner">
+                    <i class="fa-solid fa-handshake mr-1.5"></i> Partner Ecosystem
+                </button>
+            </div>
+
+            <!-- Services Grid Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+
+                <!-- Service 1: Legal Title Search -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="legal property" data-title="Legal Title Search & Due Diligence Report" data-keywords="title search encumbrance advocate legal report property verification 30 years search">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-magnifying-glass-location"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Legal & Property</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Legal Title Search & Due Diligence</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            30-year comprehensive title search, encumbrance verification, legal ownership chain analysis, and advocate certified search report for risk-free transactions.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> High Court Advocate Verification</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Encumbrance Certificate (EC) Audit</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Public Notice & Objection Issuance</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Timeline: 3-5 Working Days</span>
+                        <button onclick="openServiceModal('Legal Title Search & Due Diligence', 'Comprehensive 30-year title audit, encumbrance search, public notices, and High Court advocate clearance certificate.', 'legal')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Request Quote <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Agreement & Deed Drafting -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="legal" data-title="Agreement & Deed Drafting" data-keywords="sale deed lease agreement drafting rent deed mou power of attorney gift deed registration legal contract">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-file-signature"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Legal Solutions</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Agreement & Legal Deed Drafting</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Custom legal drafting for Sale Deeds, Leave & License Agreements, MOUs, Power of Attorney (POA), Development Agreements, and Partnership Contracts.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Customized Clause Protection</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Stamp Duty & e-Registration Guidance</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Biometric Registration Assistance</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Timeline: 24-48 Hours</span>
+                        <button onclick="openServiceModal('Agreement & Deed Drafting', 'Tailored legal drafting for Sale Deeds, MOUs, Lease Agreements, Power of Attorney, and custom contracts.', 'legal')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Request Quote <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Legal Consultation & Court Proceedings -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="legal" data-title="Legal Consultation & Court Representation" data-keywords="lawyer consultation court case high court rera tribunal litigation civil dispute legal notice">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-gavel"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Legal Solutions</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Legal Advice & Court Litigation</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Expert advocate consultation for property disputes, RERA complaints, recovery notices, consumer court cases, and civil court litigation support.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Senior Panel Advocate Review</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Legal Notice Drafting & Replies</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> RERA Tribunal Legal Filings</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Timeline: Immediate Session</span>
+                        <button onclick="openServiceModal('Legal Advisory & Litigation Support', 'Direct 1-on-1 legal advice with senior advocates for property litigation, legal notices, and court cases.', 'legal')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Book Consultation <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: CA / CS & Tax Services -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="legal partner" data-title="CA / CS & Business Tax Filings" data-keywords="gst registration tax filing company registration chartered accountant ca cs itr return balance sheet audit">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Tax & Advisory</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">CA / CS Business & Tax Compliance</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Company incorporation (Pvt Ltd, LLP), GST registration & returns, Income Tax Filings (ITR), accounting audits, and annual ROC filing support.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Company & Firm Formation</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> GST, TDS & ITR Return Filings</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Financial Audit & CA Certificates</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Timeline: 2-7 Days</span>
+                        <button onclick="openServiceModal('CA / CS & Business Tax Solutions', 'End-to-end corporate tax compliance, company incorporation, GST registration, and audit reports.', 'legal')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Request Quote <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5: Home Loan Facilitation -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="finance" data-title="Home Loan & Mortgage Facilitation" data-keywords="home loan mortgage bank loan balance transfer low interest rate sbi hdfc pnb housing loan">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-house-circle-check"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Financial Services</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Home Loan & Mortgage Advisory</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Fast sanction for new home loans, balance transfer at lower ROI, top-up loans, and instant eligibility assessment across 40+ PSU and Private Banks.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Multi-Bank Rate Comparison</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Zero Processing Fee Options</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Doorstep Document Pickup</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Timeline: 7-10 Days</span>
+                        <button onclick="openServiceModal('Home Loan & Mortgage Facilitation', 'Get competitive interest rates, doorstep document pickup, and quick loan approval with 40+ leading banks.', 'finance')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Apply Loan <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6: Business Loan & LAP -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="finance" data-title="Business Loan & Loan Against Property (LAP)" data-keywords="business loan lap loan against property MSME funding working capital commercial finance collateral">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Financial Services</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Business Loans & LAP Funding</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            High-value Loan Against Property (LAP), collateral-free MSME business loans, working capital enhancement, and commercial mortgage solutions.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Higher Loan-to-Value (LTV) Ratio</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> MSME Subsidy & Scheme Support</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Flexible Tenure Options</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Timeline: 5-7 Days</span>
+                        <button onclick="openServiceModal('Business Loans & LAP Funding', 'Custom financial structuring for MSME business loans and high-value Loan Against Property (LAP).', 'finance')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Apply Loan <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 7: Property Valuation & Land Records -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="property" data-title="Property Valuation & Government Records Extraction" data-keywords="property valuation government 7/12 extract property card cts map land record Government valuation stamp duty calculation">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Real Estate</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Property Valuation & Land Extraction</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Govt. approved valuer reports, official 7/12 extract, CTS survey map procurement, Ferfar entries, and exact stamp duty evaluation.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Govt. Registered Valuer Certificates</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Digital 7/12 & Property Cards</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Ready Reckoner Valuation Checks</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Timeline: 24-72 Hours</span>
+                        <button onclick="openServiceModal('Property Valuation & Land Records Extraction', 'Official land revenue record extraction (7/12, CTS Maps) and valuation reports for bank loan or taxation.', 'property')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Get Records <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 8: Property Buyer-Seller Matching & Verified Listings -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="property" data-title="Verified Property Matching & Buyer Advisory" data-keywords="property search verified real estate plot flat plot purchase buyer seller matching developer rera approved">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-city"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Real Estate</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">Verified Property Buyer Advisory</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Direct buyer-seller matchmaking for 100% legally clear flats, plots, and commercial properties audited by our legal and financial teams.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Pre-cleared Title Clearance</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Zero Fraud & Dispute Guarantee</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Direct Deal Negotiating Support</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Timeline: On Demand</span>
+                        <button onclick="openServiceModal('Verified Property Buyer Advisory', 'Access pre-verified real estate listings with pre-checked legal titles and direct developer deals.', 'property')" 
+                            class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition">
+                            Explore Listings <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 9: POSP Agent & Referral Partner Ecosystem -->
+                <div class="service-card glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-category="partner" data-title="POSP Partner & Channel Affiliate Network" data-keywords="partner agent POSP affiliate commission passive income real estate broker CA referral advisor earnings dashboard">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl shadow">
+                                <i class="fa-solid fa-users-gear"></i>
+                            </div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full">Partner Ecosystem</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif text-navy-900 mb-2">POSP Affiliate Partner Program</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Join India's leading legal-tech POSP network. Offer property verification, legal agreements, and bank loans to your client base and earn payout commissions.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Real-time Commission Tracker</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Co-branded Marketing Hub</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-600"></i> Dedicated Relationship Manager</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">Free Agent Registration</span>
+                        <a href="partner-network.html" class="px-4 py-2 text-xs font-bold bg-navy-900 text-white rounded-lg hover:bg-navy-800 hover:text-gold-400 transition flex items-center">
+                            Join Network <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="no-services-found" class="hidden text-center py-16">
+                <div class="w-16 h-16 bg-slate-200 text-slate-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h4 class="text-xl font-serif font-bold text-navy-900">No Matching Services Found</h4>
+                <p class="text-xs text-slate-500 mt-2">Try adjusting your search query or switching categories above.</p>
+                <button id="reset-search-btn" class="mt-4 px-4 py-2 text-xs font-bold text-navy-900 bg-gold-400 rounded-lg hover:bg-gold-500 transition">
+                    Reset All Filters
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Service Quote & Request Modal Popup -->
+    <div id="service-modal" class="fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200">
+            <!-- Close Modal Button -->
+            <button onclick="closeServiceModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-6">
+                <span id="modal-category-badge" class="text-[10px] font-bold tracking-wider uppercase bg-navy-800 text-gold-400 px-3 py-1 rounded-full inline-block mb-2">Service Request</span>
+                <h3 id="modal-title" class="text-2xl font-bold font-serif text-navy-900">Service Name</h3>
+                <p id="modal-description" class="text-xs text-slate-600 mt-2 leading-relaxed">Detailed service description prompt.</p>
+            </div>
+
+            <form id="service-request-form" class="space-y-4" onsubmit="handleServiceSubmit(event)">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Your Full Name *</label>
+                    <input type="text" required placeholder="e.g. Rahul Sharma" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile Number *</label>
+                        <input type="tel" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">City / Location *</label>
+                        <input type="text" required placeholder="e.g. Mumbai / Pune" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
+                    <input type="email" placeholder="rahul@example.com" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Specific Requirements or Query</label>
+                    <textarea rows="3" placeholder="Provide details regarding your property, loan requirement, or legal document need..." class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="gold-btn w-full py-3 text-xs font-bold text-navy-950 rounded-xl uppercase tracking-wider shadow">
+                        Submit Service Request
+                    </button>
+                </div>
+            </form>
+
+            <div id="modal-success-msg" class="hidden text-center py-6">
+                <div class="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="text-xl font-bold font-serif text-navy-900">Request Submitted!</h4>
+                <p class="text-xs text-slate-600 mt-2">Thank you! Our dedicated legal or financial specialist will review your request and get in touch within 2 business hours.</p>
+                <button onclick="closeServiceModal()" class="mt-6 px-6 py-2.5 bg-navy-900 text-gold-400 text-xs font-bold rounded-lg hover:bg-navy-800 transition">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <section class="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white py-16 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+            <h2 class="text-2xl sm:text-4xl font-serif font-bold mb-4">Need Custom Legal or Financial Advisory?</h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                Speak directly with our senior legal consultants, chartered accountants, and mortgage experts to create a custom service solution tailored for your specific case.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="contact-us.html" class="gold-btn px-8 py-3.5 text-xs font-bold text-navy-950 rounded-xl uppercase tracking-wider shadow">
+                    Book Free Legal Call
+                </a>
+                <a href="partner-network.html" class="px-8 py-3.5 border border-slate-600 text-slate-200 hover:border-gold-400 hover:text-gold-400 text-xs font-bold rounded-xl transition">
+                    Become a Referral Partner
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive 4-Column Footer -->
+    <footer class="bg-navy-950 text-slate-400 text-xs border-t border-navy-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-navy-800">
+                
+                <!-- Column 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-navy-800 border border-gold-500 flex items-center justify-center text-gold-400">
+                            <i class="fa-solid fa-scale-balanced text-sm"></i>
+                        </div>
+                        <span class="text-lg font-bold font-serif text-white tracking-wide">LEGAL MITRA</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Legal Mitra Network is India's leading unified portal providing end-to-end legal consultation, property title clearance, financial loan approvals, and advisor partner enablement.
+                    </p>
+                    <div class="pt-2 text-slate-300">
+                        <p><i class="fa-solid fa-location-dot text-gold-500 mr-2"></i> Corporate Office: Business Tower, BKC, Mumbai, MH</p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Main Services Pages -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Core Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gold-400 font-medium">All Services Overview</a></li>
+                        <li><a href="property-services.html" class="hover:text-gold-400 transition">Property & Title Legal Services</a></li>
+                        <li><a href="finance-services.html" class="hover:text-gold-400 transition">Home Loan & Mortgage Facilitation</a></li>
+                        <li><a href="legal-services.html" class="hover:text-gold-400 transition">Advocate & Court Legal Solutions</a></li>
+                        <li><a href="partner-network.html" class="hover:text-gold-400 transition">POSP Agent & Partner Program</a></li>
+                        <li><a href="calculators.html" class="hover:text-gold-400 transition">EMI & Loan Eligibility Calculators</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Dashboards & Hubs -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Dashboards & Portals</h4>
+                    <ul class="space-y-2">
+                        <li><a href="user-dashboard.html" class="hover:text-gold-400 transition">Client / User Portal</a></li>
+                        <li><a href="agent-dashboard.html" class="hover:text-gold-400 transition">Agent / Advisor Dashboard</a></li>
+                        <li><a href="marketing-hub.html" class="hover:text-gold-400 transition">Marketing Materials Hub</a></li>
+                        <li><a href="educational-hub.html" class="hover:text-gold-400 transition">Educational Knowledge Hub</a></li>
+                        <li><a href="document-checklist.html" class="hover:text-gold-400 transition">Document Checklist Guide</a></li>
+                        <li><a href="blog.html" class="hover:text-gold-400 transition">Legal & Tax Articles Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Corporate & Legal Pages -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-serif">Company & Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about-us.html" class="hover:text-gold-400 transition">About Legal Mitra Network</a></li>
+                        <li><a href="testimonials.html" class="hover:text-gold-400 transition">Client Testimonials & Reviews</a></li>
+                        <li><a href="contact-us.html" class="hover:text-gold-400 transition">Contact & Support Center</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-gold-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html" class="hover:text-gold-400 transition">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html" class="hover:text-gold-400 transition">Cancellation & Refund Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Bottom Credits -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-[11px]">
+                <p>© 2026 Legal Mitra Network Technologies Pvt. Ltd. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="privacy-policy.html" class="hover:text-slate-400">Privacy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-slate-400">Terms</a>
+                    <a href="refund-policy.html" class="hover:text-slate-400">Refunds</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Client Scripts -->
+    <script>
+        // 1. Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileDrawer.classList.toggle('hidden');
+        });
+
+        // 2. Interactive Service Search & Filter Logic
+        const serviceCards = document.querySelectorAll('.service-card');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const searchInput = document.getElementById('service-search-input');
+        const clearSearchBtn = document.getElementById('clear-search-btn');
+        const noServicesMsg = document.getElementById('no-services-found');
+        const resetSearchBtn = document.getElementById('reset-search-btn');
+
+        let activeCategory = 'all';
+
+        function filterServices() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            serviceCards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                const title = card.getAttribute('data-title').toLowerCase();
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+
+                const matchesCategory = activeCategory === 'all' || categories.includes(activeCategory);
+                const matchesQuery = query === '' || title.includes(query) || keywords.includes(query);
+
+                if (matchesCategory && matchesQuery) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0) {
+                noServicesMsg.classList.remove('hidden');
+            } else {
+                noServicesMsg.classList.add('hidden');
+            }
+
+            if (query !== '') {
+                clearSearchBtn.classList.remove('hidden');
+            } else {
+                clearSearchBtn.classList.add('hidden');
+            }
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.getAttribute('data-category');
+                filterServices();
+            });
+        });
+
+        searchInput.addEventListener('input', filterServices);
+
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filterServices();
+        });
+
+        resetSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            activeCategory = 'all';
+            filterBtns.forEach(b => b.classList.remove('active'));
+            filterBtns[0].classList.add('active');
+            filterServices();
+        });
+
+        // 3. Modal Popup Functions
+        const modal = document.getElementById('service-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalCategoryBadge = document.getElementById('modal-category-badge');
+        const requestForm = document.getElementById('service-request-form');
+        const successMsg = document.getElementById('modal-success-msg');
+
+        function openServiceModal(name, description, category) {
+            modalTitle.innerText = name;
+            modalDescription.innerText = description;
+            modalCategoryBadge.innerText = category ? category.toUpperCase() + ' SERVICE' : 'SERVICE REQUEST';
+            
+            requestForm.classList.remove('hidden');
+            successMsg.classList.add('hidden');
+            requestForm.reset();
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeServiceModal() {
+            modal.classList.add('hidden');
+        }
+
+        function handleServiceSubmit(e) {
+            e.preventDefault();
+            requestForm.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+        }
+
+        // Close Modal on Background Click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeServiceModal();
+            }
+        });
+
+        // 4. Hero Particle Canvas Animation
+        const canvas = document.getElementById('services-hero-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+
+            function initCanvas() {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+                particles = [];
+                for (let i = 0; i < 40; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 2 + 1
+                    });
+                }
+            }
+
+            function animateCanvas() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = '#D4AF37';
+                ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
+
+                for (let i = 0; i < particles.length; i++) {
+                    let p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let p2 = particles[j];
+                        let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 110) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateCanvas);
+            }
+
+            window.addEventListener('resize', initCanvas);
+            initCanvas();
+            animateCanvas();
+        }
+    </script>
+</body>
+</html>
