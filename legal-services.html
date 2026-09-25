@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal & CA Solutions | Legal Mitra Network</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-navy: #0B1B3D;
+            --navy-light: #162B56;
+            --regal-gold: #D4AF37;
+            --gold-light: #F4E296;
+            --gold-dark: #AA820A;
+            --bg-offwhite: #F8FAFC;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --border-color: #E2E8F0;
+            --card-shadow: 0 10px 30px -5px rgba(11, 27, 61, 0.08);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-offwhite);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphic Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 27, 61, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-crest {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--regal-gold);
+            background: linear-gradient(135deg, var(--primary-navy), var(--navy-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--regal-gold);
+            font-size: 1.2rem;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: var(--regal-gold);
+            font-size: 0.75rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #E2E8F0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--regal-gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--regal-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--regal-gold), var(--gold-dark));
+            color: #000;
+            font-weight: 600;
+            padding: 0.65rem 1.4rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, var(--gold-light), var(--regal-gold));
+        }
+
+        /* Hero Header with Canvas Animation */
+        .hero-section {
+            position: relative;
+            padding: 160px 5% 90px;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #050d21 100%);
+            color: #FFFFFF;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #heroCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .badge-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--regal-gold);
+            color: var(--regal-gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #D1D5DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #94A3B8;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* Interactive Fee & Service Estimator Section */
+        .calculator-container {
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            margin: -60px auto 80px;
+            max-width: 1100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .calc-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .calc-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-navy);
+            font-size: 2rem;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .service-selection-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .select-card {
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .select-card:hover, .select-card.selected {
+            border-color: var(--regal-gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .select-card i {
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .select-card h4 {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .calc-result-box {
+            background: linear-gradient(135deg, var(--primary-navy), var(--navy-light));
+            border-radius: 16px;
+            padding: 2.5rem;
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .calc-result-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+        }
+
+        .result-item label {
+            font-size: 0.9rem;
+            color: #94A3B8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .result-item .amount {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--regal-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1rem;
+            margin-top: 1rem;
+            font-size: 0.88rem;
+            color: #CBD5E1;
+        }
+
+        /* Filterable Services Grid */
+        .section-padding {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: var(--primary-navy);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--primary-navy);
+            color: var(--regal-gold);
+            border-color: var(--primary-navy);
+            box-shadow: 0 4px 15px rgba(11, 27, 61, 0.15);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--regal-gold);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: rgba(11, 27, 61, 0.05);
+            color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .card-icon {
+            background: var(--primary-navy);
+            color: var(--regal-gold);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 0.8rem;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list li {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-list li i {
+            color: var(--regal-gold);
+        }
+
+        /* Legal Panel Matrix */
+        .matrix-section {
+            background: #FFFFFF;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .matrix-table-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            background: #FFFFFF;
+        }
+
+        .matrix-table th {
+            background: var(--primary-navy);
+            color: #FFFFFF;
+            padding: 1.2rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .matrix-table td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .matrix-table tr:hover {
+            background: #F8FAFC;
+        }
+
+        .badge-verified {
+            background: #DEF7EC;
+            color: #03543F;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Interactive Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 27, 61, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            max-width: 550px;
+            width: 100%;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            animation: modalFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-navy);
+            box-shadow: 0 0 0 3px rgba(11, 27, 61, 0.1);
+        }
+
+        /* Standardized 19-Link Directory Footer */
+        .footer {
+            background: var(--primary-navy);
+            color: #94A3B8;
+            padding: 80px 5% 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-col h4 {
+            color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--regal-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--regal-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .service-selection-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo-container">
+            <div class="logo-crest"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="logo-text">
+                <h1>Legal Mitra</h1>
+                <span>Network</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="property-services.html">Property</a></li>
+            <li><a href="finance-services.html">Finance</a></li>
+            <li><a href="legal-services.html" class="active">Legal</a></li>
+            <li><a href="partner-network.html">Partner POSP</a></li>
+            <li><a href="calculators.html">Calculators</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+        <a href="partner-network.html" class="btn-gold"><i class="fa-solid fa-user-plus"></i> Join Network</a>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="hero-section">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-content">
+            <div class="badge-gold"><i class="fa-solid fa-gavel"></i> Certified Legal Panel</div>
+            <h1 class="hero-title">Expert Legal & Corporate Advisory</h1>
+            <p class="hero-subtitle">Connect with high-court enrolled Advocates, CAs, and CS specialists for legal notices, contract drafting, property clearance certificates, and corporate compliance.</p>
+        </div>
+    </section>
+
+    <!-- Interactive Fee & Service Estimator -->
+    <div class="calculator-container">
+        <div class="calc-header">
+            <h2>Instant Legal Fee Estimator</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Select your legal document requirement to get an estimate on drafting, lawyer consultation, and government filing fees.</p>
+        </div>
+        <div class="calc-grid">
+            <div class="service-selection">
+                <div class="service-selection-group">
+                    <div class="select-card selected" onclick="selectLegalService(this, 'notice', 2500, 500)">
+                        <i class="fa-solid fa-file-signature"></i>
+                        <h4>Legal Notice</h4>
+                    </div>
+                    <div class="select-card" onclick="selectLegalService(this, 'agreement', 3500, 1000)">
+                        <i class="fa-solid fa-file-contract"></i>
+                        <h4>Draft Agreement</h4>
+                    </div>
+                    <div class="select-card" onclick="selectLegalService(this, 'title', 5000, 1500)">
+                        <i class="fa-solid fa-building-shield"></i>
+                        <h4>Title Clearance</h4>
+                    </div>
+                    <div class="select-card" onclick="selectLegalService(this, 'ca', 4000, 800)">
+                        <i class="fa-solid fa-calculator"></i>
+                        <h4>GST / CA Filing</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Execution Mode</label>
+                    <select class="form-control" id="urgencySelect" onchange="updateEstimates()">
+                        <option value="standard">Standard Processing (3-5 Business Days)</option>
+                        <option value="express">Express Priority (24-48 Hours) [+$1,500]</option>
+                    </select>
+                </div>
+            </div>
+            <div class="calc-result-box">
+                <div class="result-item">
+                    <label>Estimated Service Fee</label>
+                    <div class="amount" id="totalLegalFee">₹ 3,000</div>
+                </div>
+                <div class="breakdown-row">
+                    <span>Drafting & Advocate Consultation:</span>
+                    <strong id="draftingFeeText" style="color: #FFF;">₹ 2,500</strong>
+                </div>
+                <div class="breakdown-row">
+                    <span>Government Stamp & Misc:</span>
+                    <strong id="miscFeeText" style="color: var(--regal-gold);">₹ 500</strong>
+                </div>
+                <button class="btn-gold" style="width: 100%; margin-top: 1.5rem; justify-content: center;" onclick="openModal('Legal Drafting Request')">Initiate Drafting</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filterable Legal Services Suite -->
+    <section class="section-padding">
+        <div class="section-title">
+            <h2>Legal & Corporate Services</h2>
+            <p>Tailored legal solutions backed by vetted High Court Advocates, Chartered Accountants, and Company Secretaries.</p>
+        </div>
+
+        <div class="filter-tabs">
+            <button class="tab-btn active" onclick="filterServices('all')">All Legal Services</button>
+            <button class="tab-btn" onclick="filterServices('deeds')">Deeds & Drafting</button>
+            <button class="tab-btn" onclick="filterServices('ca')">CA & Tax Services</button>
+            <button class="tab-btn" onclick="filterServices('court')">Litigation & Notices</button>
+        </div>
+
+        <div class="services-grid">
+            <!-- Legal Notice -->
+            <div class="service-card" data-category="court">
+                <div>
+                    <div class="card-icon"><i class="fa-solid fa-gavel"></i></div>
+                    <h3 class="card-title">Legal Notice Drafting</h3>
+                    <p class="card-desc">Formal legal notices drafted by expert advocates for recovery of funds, breach of contract, or property disputes.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> High Court Advocate Verification</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Official Registered Post Tracking</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Reply Notice Drafting Included</li>
+                    </ul>
+                </div>
+                <button class="btn-gold" onclick="openModal('Legal Notice Service')">Request Notice</button>
+            </div>
+
+            <!-- Agreement Drafting -->
+            <div class="service-card" data-category="deeds">
+                <div>
+                    <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3 class="card-title">Custom Agreement & MOU</h3>
+                    <p class="card-desc">Legally binding Sale Deeds, Gift Deeds, Leave & License Agreements, and Partnership MOUs.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Tailored Clause Protection</li>
+                        <li><i class="fa-solid fa-circle-check"></i> E-Stamp Integration Ready</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Dual Verification Checks</li>
+                    </ul>
+                </div>
+                <button class="btn-gold" onclick="openModal('Agreement Drafting')">Draft Contract</button>
+            </div>
+
+            <!-- CA & Tax Filings -->
+            <div class="service-card" data-category="ca">
+                <div>
+                    <div class="card-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h3 class="card-title">GST & ITR Filing Services</h3>
+                    <p class="card-desc">End-to-end Chartered Accountant support for Income Tax Returns, GST Registration, and Business Audits.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Certified CA Signatures</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Max Tax Saving Optimization</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Timely Filing Guarantee</li>
+                    </ul>
+                </div>
+                <button class="btn-gold" onclick="openModal('CA & Tax Services')">Book CA Consultation</button>
+            </div>
+
+            <!-- Company Registration -->
+            <div class="service-card" data-category="ca deeds">
+                <div>
+                    <div class="card-icon"><i class="fa-solid fa-city"></i></div>
+                    <h3 class="card-title">Company Incorporation (Pvt Ltd / LLP)</h3>
+                    <p class="card-desc">Register your Private Limited, OPC, or LLP company with complete MCA compliance, PAN, and TAN.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Name Approval & DIN Allocation</li>
+                        <li><i class="fa-solid fa-circle-check"></i> MOA & AOA Drafting</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Digital Signature Certificate (DSC)</li>
+                    </ul>
+                </div>
+                <button class="btn-gold" onclick="openModal('Company Registration')">Start Registration</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Panel Verification Matrix -->
+    <section class="section-padding matrix-section">
+        <div class="section-title">
+            <h2>Empaneled Advocates & Expert Network</h2>
+            <p>Our cases and legal documents are evaluated by vetted legal professionals across various specializations.</p>
+        </div>
+        <div class="matrix-table-wrapper">
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Legal Expertise Tier</th>
+                        <th>Bar Association / Panel</th>
+                        <th>Avg. Experience</th>
+                        <th>Service Domain</th>
+                        <th>Turnaround Time</th>
+                        <th>Verification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Senior High Court Advocates</strong></td>
+                        <td>State Bar Council</td>
+                        <td>15+ Years</td>
+                        <td>Property Disputes & Litigation</td>
+                        <td>24 - 48 Hours</td>
+                        <td><span class="badge-verified">Verified Panel</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Certified CA / CS Network</strong></td>
+                        <td>ICAI / ICSI</td>
+                        <td>10+ Years</td>
+                        <td>Tax Audit & Corporate Law</td>
+                        <td>1 - 3 Days</td>
+                        <td><span class="badge-verified">Verified Panel</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Property Conveyancing Experts</strong></td>
+                        <td>Revenue Bar Association</td>
+                        <td>12+ Years</td>
+                        <td>Title Search & Property Deeds</td>
+                        <td>2 - 4 Days</td>
+                        <td><span class="badge-verified">Verified Panel</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="applicationModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--primary-navy); font-size: 1.5rem; margin-bottom: 0.5rem;" id="modalTitle">Request Legal Service</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">Provide your legal query details to assign an advocate to your matter.</p>
+            
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="form-group">
+                    <label>Legal Matter / Service Details</label>
+                    <textarea class="form-control" rows="3" placeholder="Describe your legal notice requirement or agreement details..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Attach Supporting Documents (Optional)</label>
+                    <input type="file" class="form-control">
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; margin-top: 1rem;">Submit Legal Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Standardized Directory Footer (19 Links) -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Main Directory</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">1. Home (index.html)</a></li>
+                    <li><a href="about-us.html">2. About Us (about-us.html)</a></li>
+                    <li><a href="services.html">3. All Services (services.html)</a></li>
+                    <li><a href="property-services.html">4. Property (property-services.html)</a></li>
+                    <li><a href="finance-services.html">5. Finance (finance-services.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Partner</h4>
+                <ul class="footer-links">
+                    <li><a href="legal-services.html">6. Legal Solutions (legal-services.html)</a></li>
+                    <li><a href="partner-network.html">7. POSP Network (partner-network.html)</a></li>
+                    <li><a href="calculators.html">8. Calculators (calculators.html)</a></li>
+                    <li><a href="contact-us.html">9. Contact Us (contact-us.html)</a></li>
+                    <li><a href="user-dashboard.html">10. Client Portal (user-dashboard.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Portals & Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="agent-dashboard.html">11. Agent Dashboard (agent-dashboard.html)</a></li>
+                    <li><a href="marketing-hub.html">12. Marketing Hub (marketing-hub.html)</a></li>
+                    <li><a href="educational-hub.html">13. Video Academy (educational-hub.html)</a></li>
+                    <li><a href="document-checklist.html">14. Checklists (document-checklist.html)</a></li>
+                    <li><a href="blog.html">15. Legal Blog (blog.html)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Trust & Compliance</h4>
+                <ul class="footer-links">
+                    <li><a href="testimonials.html">16. Testimonials (testimonials.html)</a></li>
+                    <li><a href="privacy-policy.html">17. Privacy Policy (privacy-policy.html)</a></li>
+                    <li><a href="terms-and-conditions.html">18. Terms of Use (terms-and-conditions.html)</a></li>
+                    <li><a href="refund-policy.html">19. Refund Policy (refund-policy.html)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Legal Mitra Network. All Rights Reserved. Built for Seamless Legal, Property & Financial Solutions.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Hero Canvas Particle Animation
+        const canvas = document.getElementById('heroCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particles = Array.from({ length: 40 }, () => new Particle());
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Legal Fee Estimator Logic
+        let baseDraftingFee = 2500;
+        let baseMiscFee = 500;
+
+        function selectLegalService(element, serviceType, drafting, misc) {
+            document.querySelectorAll('.select-card').forEach(card => card.classList.remove('selected'));
+            element.classList.add('selected');
+
+            baseDraftingFee = drafting;
+            baseMiscFee = misc;
+            updateEstimates();
+        }
+
+        function updateEstimates() {
+            const urgency = document.getElementById('urgencySelect').value;
+            const extraUrgency = (urgency === 'express') ? 1500 : 0;
+
+            const total = baseDraftingFee + baseMiscFee + extraUrgency;
+
+            document.getElementById('draftingFeeText').innerText = `₹ ${(baseDraftingFee + extraUrgency).toLocaleString('en-IN')}`;
+            document.getElementById('miscFeeText').innerText = `₹ ${baseMiscFee.toLocaleString('en-IN')}`;
+            document.getElementById('totalLegalFee').innerText = `₹ ${total.toLocaleString('en-IN')}`;
+        }
+
+        // Filter Services Tabs
+        function filterServices(category) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.service-card').forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Controls
+        function openModal(serviceName) {
+            document.getElementById('modalTitle').innerText = `Request ${serviceName}`;
+            document.getElementById('applicationModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('applicationModal').style.display = 'none';
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Your legal request has been submitted successfully! An advocate from Legal Mitra Network will contact you within 2 business hours.');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
